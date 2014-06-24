@@ -1,0 +1,28 @@
+.container
+    .well
+        .row
+            .col-md-10
+                h2 Offices
+            .col-md-2.topspace
+                a(href="/offices/create") New Office
+        .table-reponsive
+        table.table.table-striped
+            thead
+                tr
+                    th Name
+                    th Company
+                    th Headoffice
+                    th Responsible
+                    th Open Times
+                    th
+            tbody 
+                tr(ng-repeat="office in offices | orderBy:office_name")
+                    td {{office.office_name}}
+                    td {{office.company}}
+                    td {{office.is_headoffice}}
+                    td {{office.responsible1}}
+                    td {{office.open_times}}
+                    td
+                        a(href="/offices/{{office.id}}") Edit
+                        | &nbsp;|&nbsp; 
+                        a(href="", ng-click="delete(office)") Delete

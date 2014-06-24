@@ -1,0 +1,30 @@
+.container
+    .well
+        .row
+            .col-md-10
+                h2 People List
+            .col-md-2.topspace
+                a(href="/persons/create") New Person
+        .table-reponsive
+        table.table.table-striped
+            thead
+                tr
+                    th Name
+                    th Title
+                    th Telephone
+                    th Phone
+                    th Email
+                    th Company
+                    th
+            tbody 
+                tr(ng-repeat="person in people | orderBy:pname")
+                    td {{person.pname}}
+                    td {{person.title}}
+                    td {{person.telephone}}
+                    td {{person.mobile}}
+                    td {{person.email}}
+                    td {{person.company}}
+                    td
+                        a(href="/persons/{{person.id}}") Edit
+                        | &nbsp;|&nbsp; 
+                        a(href="", ng-click="delete(person)") Delete

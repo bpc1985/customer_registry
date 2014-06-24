@@ -1,0 +1,30 @@
+.container
+    .well
+        .row
+            .col-md-10
+                h2 Companies
+            .col-md-2.topspace
+                a(href="/companies/create") New Company
+        .table-reponsive
+            table.table.table-striped
+                thead
+                    tr
+                        th Name
+                        th Type
+                        th Code
+                        th Phone
+                        th Email
+                        th Contact
+                        th
+                tbody 
+                    tr(ng-repeat="company in companies | orderBy:name")
+                        td {{company.company_name}}
+                        td {{company.company_type}}
+                        td {{company.company_code}}
+                        td {{company.phone}}
+                        td {{company.email}}
+                        td {{company.contact1}}
+                        td
+                            a(href="/companies/{{company.id}}") Edit
+                            | &nbsp;|&nbsp; 
+                            a(href="", ng-click="delete(company)") Delete

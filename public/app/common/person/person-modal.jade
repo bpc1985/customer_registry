@@ -1,0 +1,49 @@
+section(ng-controller="crPersonModalCreateCtrl")
+    #personModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                    h4.modal-title Add New Person
+                .modal-body
+                    form.form-horizontal(name="personForm")
+                        fieldset
+                            .form-group
+                                label.col-md-2.control-label(for="personname") Name
+                                .col-md-10
+                                    input.form-control(name="personname", type="text", ng-model="person.pname")
+                            .form-group
+                                label.col-md-2.control-label(for="persontitle") Title
+                                .col-md-10
+                                    input.form-control(name="persontitle", type="text", ng-model="person.title")
+                            .form-group
+                                label.col-md-2.control-label(for="persontelephone") Telephone
+                                .col-md-10
+                                    input.form-control(name="persontelephone", type="text", ng-model="person.telephone")
+                            .form-group
+                                label.col-md-2.control-label(for="personmobile") Mobile
+                                .col-md-10
+                                    input.form-control(name="personmobile", type="text", ng-model="person.mobile")
+                            .form-group
+                                label.col-md-2.control-label(for="personstreet") Street
+                                .col-md-10
+                                    input.form-control(name="personstreet", type="text", ng-model="person.street")
+                            .form-group
+                                label.col-md-2.control-label(for="personzipcode") Zipcode
+                                .col-md-10
+                                    input.form-control(name="personzipcode", type="text", ng-model="person.zipcode")
+                            .form-group
+                                label.col-md-2.control-label(for="personcity") City
+                                .col-md-10
+                                    input.form-control(name="personcity", type="text", ng-model="person.city")
+                            .form-group
+                                label.col-md-2.control-label(for="personcountry") Country
+                                .col-md-10
+                                    input.form-control(name="personcountry", type="text", ng-model="person.country")
+                            .form-group
+                                label.col-md-2.control-label(for="personemail") Email
+                                .col-md-10
+                                    input.form-control(name="personemail", type="text", ng-model="person.email")
+                .modal-footer
+                    button.btn.btn-default(type='button', data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button', ng-click="createNewPerson()", data-dismiss='modal') Save

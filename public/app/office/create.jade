@@ -1,0 +1,62 @@
+.container
+    .well
+        form.form-horizontal(name="officeForm")
+            fieldset
+                legend Office Form
+                .form-group
+                    label.col-md-2.control-label(for="officename") Office Name
+                    .col-md-10
+                        input.form-control(name="officename", type="text", ng-model="office.office_name")
+                .form-group
+                    label.col-md-2.control-label(for="officecompany") Company
+                    .col-md-5
+                        select.form-control(ng-model="office.company" ng-options="company.id as company.company_name for company in companies")
+                            option(value='') Please select company
+                    .col-md-1
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal") Add New
+                .form-group
+                    label.col-md-2.control-label(for="is_headoffice") Head Office
+                    .col-md-10
+                        input.form-control(name="is_headoffice", type="checkbox", ng-model="office.is_headoffice")
+                .form-group
+                    label.col-md-2.control-label(for="responsible1") Responsible 1
+                    .col-md-5
+                        select.form-control(ng-model="office.responsible1" ng-options="person.id as person.pname for person in persons")
+                            option(value='') Please select responsible person
+                    .col-md-1
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add New
+                .form-group
+                    label.col-md-2.control-label(for="responsible2") Responsible 2
+                    .col-md-5
+                        select.form-control(ng-model="office.responsible2" ng-options="person.id as person.pname for person in persons")
+                            option(value='') Please select responsible person
+                    .col-md-1
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add New
+                .form-group
+                    label.col-md-2.control-label(for="opentimes") Open Times
+                    .col-md-10
+                        input.form-control(name="opentimes", type="text", ng-model="office.open_times")
+                .form-group
+                    label.col-md-2.control-label(for="visitable_location") Visitable Location
+                    .col-md-10
+                        input.form-control(name="visitable_location", type="checkbox", ng-model="office.visitable_location")
+                .form-group
+                    label.col-md-2.control-label(for="officestreet") Street
+                    .col-md-10
+                        input.form-control(name="officestreet", type="text", ng-model="office.street_address")
+                .form-group
+                    label.col-md-2.control-label(for="officezipcode") Zipcode
+                    .col-md-10
+                        input.form-control(name="officezipcode", type="text", ng-model="office.zipcode")
+                .form-group
+                    label.col-md-2.control-label(for="officecity") City
+                    .col-md-10
+                        input.form-control(name="officecity", type="text", ng-model="office.city")
+                .form-group
+                    .col-md-10.col-md-offset-2
+                        .pull-right
+                            button.btn.btn-primary(ng-click="create()", ng-disabled="officeForm.$invalid") Submit
+                            | &nbsp;
+                            a.btn.btn-default(href="/offices") Cancel
+    include ../common/company/company-modal
+    include ../common/person/person-modal
