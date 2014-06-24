@@ -9,7 +9,7 @@ module.exports = {
   },
   production: {
     rootPath: rootPath,
-    db: 'mongodb://production_path_for_mongodb',
+    db: 'mongodb://bpc1985:hnh2812@ds053978.mongolab.com:53978/customer_registry',
     port: process.env.PORT || 80
   }
 }
