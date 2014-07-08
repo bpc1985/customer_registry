@@ -2,20 +2,38 @@ var mongoose = require('mongoose'),
     ObjectId = mongoose.Schema.ObjectId;
 
 var officeSchema = mongoose.Schema({
-    office_name: String,
-    company: { type: ObjectId, default: null },
-    is_headoffice: { type: Boolean, default: null },
-    responsible1: { type: ObjectId, default: null },
-    responsible2: { type: ObjectId, default: null },
-    open_times: String,
-    visitable_location: { type: Boolean, default: null },
-    street_address: String,
-    zipcode: String,
-    city: String,
-    lat: { type: Number, default: null },
-    lng: { type: Number, default: null },
-    b2bcustomerid: { type: ObjectId, default: null },
-    locationchecked: Boolean
+    office_name:    { type: String, require: true },
+    company:        { type: ObjectId, ref: 'Company', default: null },
+    contact_persons: [{ type: ObjectId, ref: 'Person', default: null }],
+    contact_info:   {
+        street_address: { type: String, require: true },
+        zipcode:        { type: String, require: true },
+        city:           { type: String, require: true },
+        phone:          { type: String, require: true },
+        alt_phone:      { type: String, require: false },
+        fax:            { type: String, require: false },
+        email:          { type: String, require: false },
+        website:        { type: String, require: false }
+    },
+    services:        [ { type: String } ],
+    description:    {
+        short_info: { type: String, require: true },
+        long_info:  { type: String, require: false }
+    },
+    profile_img:    { type: String, require: false },
+    is_headoffice:  { type: Boolean, default: null },
+    show_office:    { type: Boolean, default: true },
+    open_times: {
+        weekdays: [
+            {
+                day: { type: String },
+                from: { type: String },
+                to: { type: String },
+                is_closed: { type: Boolean, default: false }
+            }
+        ],
+        holiday: { type: String }
+    }
 });
 
 // Duplicate the ID field.

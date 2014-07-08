@@ -1,15 +1,34 @@
 var Office = require('mongoose').model('Office');
+var Company = require('mongoose').model('Company');
 
 exports.getOffices = function(req, res){
-    Office.find({}).exec(function(err, collection){
-        if(err) { res.status(400); return res.send({reason:err.toString()});}
+    Office.find({}).populate('company').exec(function(err, collection){
+        if(err) {
+            res.status(400);
+            return res.send({reason:err.toString()});
+        }
         res.send(collection);
     });
 };
 
 exports.getOffice = function(req, res){
-    Office.findOne({_id:req.params.id}).exec(function(err, office){
-        if(err) { res.status(400); return res.send({reason:err.toString()});}
+    Office.findOne({_id:req.params.id}).populate('company').exec(function(err, office){
+        if(err) {
+            res.status(400);
+            return res.send({reason:err.toString()});
+        }
+
+        /*
+        var options = {
+          path: 'contact_persons',
+          model: 'Person'
+        };
+
+        Office.populate(office, options, function (err, office) {
+            res.send(office);
+        });
+        */
+
         res.send(office);
     });
 };
@@ -34,18 +53,14 @@ exports.updateOffice = function(req, res){
 
         office.office_name = req.body.office_name;
         office.company = req.body.company;
+        office.contact_persons = req.body.contact_persons;
+        office.contact_info = req.body.contact_info;
+        office.services = req.body.services;
+        office.description = req.body.description;
+        office.profile_img = req.body.img;
         office.is_headoffice = req.body.is_headoffice;
-        office.responsible1 = req.body.responsible1;
-        office.responsible2 = req.body.responsible2;
+        office.show_office = req.body.show_office;
         office.open_times = req.body.open_times;
-        office.visitable_location = req.body.visitable_location;
-        office.street_address = req.body.street_address;
-        office.zipcode = req.body.zipcode;
-        office.city = req.body.city;
-        office.lat = req.body.lat;
-        office.lng = req.body.lng;
-        office.b2bcustomerid = req.body.b2bcustomerid;
-        office.locationchecked = req.body.locationchecked;
 
         office.save(function (err) {
             if(err) { res.status(400); return res.send({reason:err.toString()});}
