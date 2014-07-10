@@ -18,7 +18,7 @@ var officeSchema = mongoose.Schema({
             latitude:  { type: Number, require: false },
             longitude: { type: Number, require: false }
         }
-    }
+    },
     services:        [ { type: String } ],
     description:    {
         short_info: { type: String, require: true },
