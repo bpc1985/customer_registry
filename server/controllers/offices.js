@@ -1,8 +1,13 @@
 var Office = require('mongoose').model('Office');
 var Company = require('mongoose').model('Company');
 
+var populateQuery = [
+    { path:'company', select:'company_name company_type company_code phone email web_url' },
+    { path:'contact_persons', select:'pname title telephone mobile email' }
+];
+
 exports.getOffices = function(req, res){
-    Office.find({}).populate('company').exec(function(err, collection){
+    Office.find({}).populate(populateQuery).exec(function(err, collection){
         if(err) {
             res.status(400);
             return res.send({reason:err.toString()});
@@ -12,23 +17,11 @@ exports.getOffices = function(req, res){
 };
 
 exports.getOffice = function(req, res){
-    Office.findOne({_id:req.params.id}).populate('company').exec(function(err, office){
+    Office.findOne({_id:req.params.id}).populate(populateQuery).exec(function(err, office){
         if(err) {
             res.status(400);
             return res.send({reason:err.toString()});
         }
-
-        /*
-        var options = {
-          path: 'contact_persons',
-          model: 'Person'
-        };
-
-        Office.populate(office, options, function (err, office) {
-            res.send(office);
-        });
-        */
-
         res.send(office);
     });
 };
