@@ -13,8 +13,12 @@ var officeSchema = mongoose.Schema({
         alt_phone:      { type: String, require: false },
         fax:            { type: String, require: false },
         email:          { type: String, require: false },
-        website:        { type: String, require: false }
-    },
+        website:        { type: String, require: false },
+        coordinates: {
+            latitude:  { type: Number, require: false },
+            longitude: { type: Number, require: false }
+        }
+    }
     services:        [ { type: String } ],
     description:    {
         short_info: { type: String, require: true },
@@ -26,9 +30,8 @@ var officeSchema = mongoose.Schema({
     open_times: {
         weekdays: [
             {
-                day: { type: String },
-                from: { type: String },
-                to: { type: String },
+                from:      { type: String },
+                to:        { type: String },
                 is_closed: { type: Boolean, default: false }
             }
         ],
