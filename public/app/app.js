@@ -1,4 +1,4 @@
-angular.module('app', ['ngResource', 'ngRoute', 'ngCookies', 'restangular']);
+angular.module('app', ['ngResource', 'ngRoute', 'ngCookies', 'restangular', 'ui.select2']);
 
 angular.module('app').config(function(RestangularProvider, $routeProvider, $locationProvider){
     var routeRoleChecks = {
@@ -10,6 +10,7 @@ angular.module('app').config(function(RestangularProvider, $routeProvider, $loca
         }
     }
 
+    //uiSelectConfig.theme = 'bootstrap';
     RestangularProvider.setBaseUrl("/api");
     $locationProvider.html5Mode(true);
     $routeProvider

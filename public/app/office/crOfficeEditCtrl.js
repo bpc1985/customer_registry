@@ -2,14 +2,15 @@ angular.module('app').controller('crOfficeEditCtrl', function($scope, $location,
     $scope.init = function(){
         crOfficeFactory.getOffice($routeParams.id).then(function(office){
             $scope.office = Restangular.copy(office);
-            crCompanyFactory.getCompanies().then(function(companies){
-                $scope.companies = companies;
-                $scope.persons = crPersonFactory.getPeople();
-            });
         });
     };
 
     $scope.update = function(){
+        $scope.office.company = $scope.office.company.id;
+        $scope.office.contact_persons = _.pluck($scope.office.contact_persons, 'id');
+
+        console.log("$scope.office: ", $scope.office);
+
         crOfficeFactory.updateOffice($scope.office).then(function(){
             crNotifier.notify('Office has been updated!');
             $location.path('/offices');

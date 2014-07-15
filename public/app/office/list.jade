@@ -13,16 +13,16 @@
                     th Company
                     th Headoffice
                     th Responsible
-                    th Open Times
+                    th Address
                     th
-            tbody 
+            tbody
                 tr(ng-repeat="office in offices | orderBy:office_name")
                     td {{office.office_name}}
-                    td {{office.company}}
+                    td {{office.company.company_name}}
                     td {{office.is_headoffice}}
-                    td {{office.responsible1}}
-                    td {{office.open_times}}
+                    td {{office.contact_persons[0].pname}}
+                    td {{office.contact_info.street_address}}, {{office.contact_info.city}}
                     td
                         a(href="/offices/{{office.id}}") Edit
-                        | &nbsp;|&nbsp; 
+                        | &nbsp;|&nbsp;
                         a(href="", ng-click="delete(office)") Delete

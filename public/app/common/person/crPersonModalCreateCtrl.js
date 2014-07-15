@@ -15,13 +15,15 @@ angular.module('app').controller('crPersonModalCreateCtrl',
             company: $scope.person.company
         };
 
-        console.log("Person Data: ", newPersonData);
-
         crPersonFactory.createPerson(newPersonData).then(function(newPerson){
             crNotifier.notify('New person has been created!');
-            $scope.persons.push(newPerson);
+            if(!_.isUndefined($scope.persons)){
+                $scope.persons.push(newPerson);
+            } else {
+                $scope.office.contact_persons.push(newPerson);
+            }
         }, function(reason){
             crNotifier.error(reason);
-        });;
+        });
     };
 });

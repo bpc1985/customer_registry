@@ -50,8 +50,9 @@ exports.updateOffice = function(req, res){
         office.contact_info = req.body.contact_info;
         office.services = req.body.services;
         office.description = req.body.description;
-        office.profile_img = req.body.img;
+        office.profile_img = req.body.profile_img;
         office.is_headoffice = req.body.is_headoffice;
+        office.profile_img = req.body.profile_img;
         office.show_office = req.body.show_office;
         office.open_times = req.body.open_times;
 

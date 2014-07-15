@@ -4,59 +4,159 @@
             fieldset
                 legend Office Form
                 .form-group
-                    label.col-md-2.control-label(for="officename") Office Name
+                    label.col-md-2.control-label(for="office_company") Company
                     .col-md-10
-                        input.form-control(name="officename", type="text", ng-model="office.office_name")
+                        input.form-control(name="office_company", readonly, type="text", ng-model="office.company.company_name")
+                        input.hidden.form-control(name="office_company_id", type="text", ng-model="office.company.id")
                 .form-group
-                    label.col-md-2.control-label(for="officecompany") Company
-                    .col-md-5
-                        select.form-control(ng-model="office.company" ng-options="company.id as company.company_name for company in companies")
-                            option(value='') Please select company
-                    .col-md-1
-                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal") Add New
+                    label.col-md-2.control-label(for="office_name") Office Name
+                    .col-md-10
+                        input.form-control(name="office_name", type="text", ng-model="office.office_name")
                 .form-group
                     label.col-md-2.control-label(for="is_headoffice") Head Office
                     .col-md-10
-                        input.form-control(name="is_headoffice", type="checkbox", ng-model="office.is_headoffice")
+                        input.form-control(type="checkbox", ng-model="office.is_headoffice")
                 .form-group
-                    label.col-md-2.control-label(for="responsible1") Responsible 1
+                    label.col-md-2.control-label(for="office_street") Street
+                    .col-md-10
+                        input.form-control(name="office_street", type="text", ng-model="office.contact_info.street_address")
+                .form-group
+                    label.col-md-2.control-label(for="office_city") City
+                    .col-md-10
+                        input.form-control(name="office_city", type="text", ng-model="office.contact_info.city")
+                .form-group
+                    label.col-md-2.control-label(for="office_zipcode") Zipcode
+                    .col-md-10
+                        input.form-control(name="office_zipcode", type="text", ng-model="office.contact_info.zipcode")
+                .form-group
+                    label.col-md-2.control-label(for="office_coordinates") Coordinates
+                    .col-md-2
+                        input.form-control(name="office_coordinates", type="text", ng-model="office.contact_info.coordinates.latitude")
+                    .col-md-2
+                        input.form-control(name="office_coordinates", type="text", ng-model="office.contact_info.coordinates.longitude")
+                .form-group
+                    label.col-md-2.control-label(for="office_phone") Phone
+                    .col-md-10
+                        input.form-control(name="office_phone", type="text", ng-model="office.contact_info.phone")
+                .form-group
+                    label.col-md-2.control-label(for="office_altphone") Alt Phone
+                    .col-md-10
+                        input.form-control(name="office_altphone", type="text", ng-model="office.contact_info.alt_phone")
+                .form-group
+                    label.col-md-2.control-label(for="office_fax") Fax
+                    .col-md-10
+                        input.form-control(name="officefax", type="text", ng-model="office.contact_info.fax")
+                .form-group
+                    label.col-md-2.control-label(for="office_email") Email
+                    .col-md-10
+                        input.form-control(name="office_email", type="text", ng-model="office.contact_info.email")
+                .form-group
+                    label.col-md-2.control-label(for="office_web") Website
+                    .col-md-10
+                        input.form-control(name="office_web", type="text", ng-model="office.contact_info.website")
+                .form-group
+                    label.col-md-2.control-label(for="office_picture") Picture
+                    .col-md-10
+                        input.form-control(name="office_picture", type="text", ng-model="office.profile_img")
+                .form-group
+                    label.col-md-2.control-label(for="office_short_desc") Short Desc
+                    .col-md-10
+                        textarea.form-control(name="office_short_desc", type="text", ng-model="office.description.short_info")
+                .form-group
+                    label.col-md-2.control-label(for="office_long_desc") Long Desc
+                    .col-md-10
+                        textarea.form-control(name="office_long_desc", type="text", ng-model="office.description.long_info")
+                .form-group
+                    label.col-md-2.control-label(for="office_services") Services
                     .col-md-5
-                        select.form-control(ng-model="office.responsible1" ng-options="person.id as person.pname for person in persons")
-                            option(value='') Please select responsible person
+                        ul.list-group(ng-repeat="service in office.services")
+                            li.list-group-item {{service}}
                     .col-md-1
-                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add New
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add Service
                 .form-group
-                    label.col-md-2.control-label(for="responsible2") Responsible 2
+                    label.col-md-2.control-label(for="office_contact_persons") Contact
                     .col-md-5
-                        select.form-control(ng-model="office.responsible2" ng-options="person.id as person.pname for person in persons")
-                            option(value='') Please select responsible person
+                        ul.list-group(ng-repeat="person in office.contact_persons")
+                            li.list-group-item {{person.pname}} - {{person.email}}
                     .col-md-1
-                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add New
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add Person
                 .form-group
-                    label.col-md-2.control-label(for="opentimes") Open Times
+                    label.col-md-2.control-label(for="office_show") Show office on ekukka.fi website
                     .col-md-10
-                        input.form-control(name="opentimes", type="text", ng-model="office.open_times")
+                        input.form-control(name="office_show", type="checkbox", ng-model="office.show_office")
+
+                legend Open Times
                 .form-group
-                    label.col-md-2.control-label(for="visitable_location") Visitable Location
-                    .col-md-10
-                        input.form-control(name="visitable_location", type="checkbox", ng-model="office.visitable_location")
+                    label.col-md-2.control-label Monday
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[0].from")
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[0].to")
+                    label.col-sm-1.control-label Close
+                    .col-md-2
+                        input.form-control(type="checkbox", ng-model="office.open_times.weekdays[0].is_closed")
                 .form-group
-                    label.col-md-2.control-label(for="officestreet") Street
-                    .col-md-10
-                        input.form-control(name="officestreet", type="text", ng-model="office.street_address")
+                    label.col-md-2.control-label Tuesday
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[1].from")
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[1].to")
+                    label.col-sm-1.control-label Close
+                    .col-md-2
+                        input.form-control(type="checkbox", ng-model="office.open_times.weekdays[1].is_closed")
                 .form-group
-                    label.col-md-2.control-label(for="officezipcode") Zipcode
-                    .col-md-10
-                        input.form-control(name="officezipcode", type="text", ng-model="office.zipcode")
+                    label.col-md-2.control-label Wednesday
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[2].from")
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[2].to")
+                    label.col-sm-1.control-label Close
+                    .col-md-2
+                        input.form-control(type="checkbox", ng-model="office.open_times.weekdays[2].is_closed")
                 .form-group
-                    label.col-md-2.control-label(for="officecity") City
-                    .col-md-10
-                        input.form-control(name="officecity", type="text", ng-model="office.city")
+                    label.col-md-2.control-label Thursday
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[3].from")
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[3].to")
+                    label.col-sm-1.control-label Close
+                    .col-md-2
+                        input.form-control(type="checkbox", ng-model="office.open_times.weekdays[3].is_closed")
+                .form-group
+                    label.col-md-2.control-label Friday
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[4].from")
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[4].to")
+                    label.col-sm-1.control-label Close
+                    .col-md-2
+                        input.form-control(type="checkbox", ng-model="office.open_times.weekdays[4].is_closed")
+                .form-group
+                    label.col-md-2.control-label Saturday
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[5].from")
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[5].to")
+                    label.col-sm-1.control-label Close
+                    .col-md-2
+                        input.form-control(type="checkbox", ng-model="office.open_times.weekdays[5].is_closed")
+                .form-group
+                    label.col-md-2.control-label Sunday
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[6].from")
+                    .col-md-2
+                        input.form-control(type="text", ng-model="office.open_times.weekdays[6].to")
+                    label.col-sm-1.control-label Close
+                    .col-md-2
+                        input.form-control(type="checkbox", ng-model="office.open_times.weekdays[6].is_closed")
+                .form-group
+                    label.col-md-2.control-label Holidays
+                    .col-md-6
+                        textarea.form-control(type="text", ng-model="office.open_times.holiday")
                 .form-group
                     .col-md-10.col-md-offset-2
                         .pull-right
                             button.btn.btn-primary(ng-click="update()", ng-disabled="officeForm.$invalid") Submit
                             | &nbsp;
                             a.btn.btn-default(href="/offices") Cancel
-    include ../common/company/company-modal
     include ../common/person/person-modal
