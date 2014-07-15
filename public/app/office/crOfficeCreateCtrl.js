@@ -17,7 +17,10 @@ angular.module('app').controller('crOfficeCreateCtrl', function($scope, $http, $
     };
 
     $scope.create = function(){
-        $scope.office.open_times.weekdays = $scope.weekdays;
+        $scope.office.open_times = {
+            'weekdays': $scope.weekdays,
+            'holiday': $scope.holiday
+        };
         $scope.office.services = $scope.office.services.split(",");
 
         console.log($scope.office);

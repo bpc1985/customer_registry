@@ -33,9 +33,9 @@
                 .form-group
                     label.col-md-2.control-label(for="office_coordinates") Coordinates
                     .col-md-2
-                        input.form-control(name="office_coordinates", type="text", ng-model="office.contact_info.coordinates.latitude")
+                        input.form-control(name="office_coordinates", type="text", ng-model="office.contact_info.coordinates.latitude", placeholder="Latitude")
                     .col-md-2
-                        input.form-control(name="office_coordinates", type="text", ng-model="office.contact_info.coordinates.longitude")
+                        input.form-control(name="office_coordinates", type="text", ng-model="office.contact_info.coordinates.longitude", placeholder="Longitude")
                 .form-group
                     label.col-md-2.control-label(for="office_phone") Phone
                     .col-md-10
@@ -71,7 +71,7 @@
                 .form-group
                     label.col-md-2.control-label(for="office_services") Services
                     .col-md-10
-                        input.form-control(name="office_services", type="text", ng-model="office.services")
+                        input.form-control(name="office_services", type="text", ng-model="office.services", placeholder="Service name should seperate with ',' For ex: wedding, delivery, design")
                 .form-group
                     label.col-md-2.control-label(for="office_contact_persons") Contact
                     .col-md-7
@@ -88,70 +88,70 @@
                 .form-group
                     label.col-md-2.control-label Monday
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[0].from")
+                        input.form-control(type="text", ng-model="weekdays[0].from", placeholder="From")
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[0].to")
+                        input.form-control(type="text", ng-model="weekdays[0].to", placeholder="To")
                     label.col-sm-1.control-label Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[0].is_closed")
                 .form-group
                     label.col-md-2.control-label Tuesday
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[1].from")
+                        input.form-control(type="text", ng-model="weekdays[1].from", placeholder="From")
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[1].to")
+                        input.form-control(type="text", ng-model="weekdays[1].to", placeholder="To")
                     label.col-sm-1.control-label Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[1].is_closed")
                 .form-group
                     label.col-md-2.control-label Wednesday
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[2].from")
+                        input.form-control(type="text", ng-model="weekdays[2].from", placeholder="From")
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[2].to")
+                        input.form-control(type="text", ng-model="weekdays[2].to", placeholder="To")
                     label.col-sm-1.control-label Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[2].is_closed")
                 .form-group
                     label.col-md-2.control-label Thursday
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[3].from")
+                        input.form-control(type="text", ng-model="weekdays[3].from", placeholder="From")
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[3].to")
+                        input.form-control(type="text", ng-model="weekdays[3].to", placeholder="To")
                     label.col-sm-1.control-label Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[3].is_closed")
                 .form-group
                     label.col-md-2.control-label Friday
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[4].from")
+                        input.form-control(type="text", ng-model="weekdays[4].from", placeholder="From")
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[4].to")
+                        input.form-control(type="text", ng-model="weekdays[4].to", placeholder="To")
                     label.col-sm-1.control-label Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[4].is_closed")
                 .form-group
                     label.col-md-2.control-label Saturday
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[5].from")
+                        input.form-control(type="text", ng-model="weekdays[5].from", placeholder="From")
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[5].to")
+                        input.form-control(type="text", ng-model="weekdays[5].to", placeholder="To")
                     label.col-sm-1.control-label Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[5].is_closed")
                 .form-group
                     label.col-md-2.control-label Sunday
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[6].from")
+                        input.form-control(type="text", ng-model="weekdays[6].from", placeholder="From")
                     .col-md-2
-                        input.form-control(type="text", ng-model="weekdays[6].to")
+                        input.form-control(type="text", ng-model="weekdays[6].to", placeholder="To")
                     label.col-sm-1.control-label Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[6].is_closed")
                 .form-group
                     label.col-md-2.control-label Holidays
                     .col-md-6
-                        textarea.form-control(type="text", ng-model="office.open_times.holiday")
+                        textarea.form-control(type="text", ng-model="holiday")
                 .form-group
                     .col-md-10.col-md-offset-2
                         .pull-right

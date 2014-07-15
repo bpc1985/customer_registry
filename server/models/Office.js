@@ -35,7 +35,7 @@ var officeSchema = mongoose.Schema({
                 is_closed: { type: Boolean, default: false }
             }
         ],
-        holiday: { type: String }
+        holiday: { type: String, require: false }
     }
 });
 
