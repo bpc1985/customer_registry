@@ -30,10 +30,14 @@
                         input.form-control(name="office_zipcode", type="text", ng-model="office.contact_info.zipcode")
                 .form-group
                     label.col-md-2.control-label(for="office_coordinates") Coordinates
-                    .col-md-2
-                        input.form-control(name="office_coordinates", type="text", ng-model="office.contact_info.coordinates.latitude")
-                    .col-md-2
-                        input.form-control(name="office_coordinates", type="text", ng-model="office.contact_info.coordinates.longitude")
+                    .col-md-3
+                        input.form-control(name="office_coordinates", readonly, type="text", ng-model="office.contact_info.coordinates.latitude")
+                    .col-md-3
+                        input.form-control(name="office_coordinates", readonly, type="text", ng-model="office.contact_info.coordinates.longitude")
+                .form-group
+                    label.col-md-2.control-label(for="office_map") Map
+                    .col-md-10
+                        gmap(address="office.contact_info.street_address", city="office.contact_info.city", latitude="office.contact_info.coordinates.latitude", longitude="office.contact_info.coordinates.longitude")
                 .form-group
                     label.col-md-2.control-label(for="office_phone") Phone
                     .col-md-10

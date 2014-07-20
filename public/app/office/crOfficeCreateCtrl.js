@@ -23,8 +23,6 @@ angular.module('app').controller('crOfficeCreateCtrl', function($scope, $http, $
         };
         $scope.office.services = $scope.office.services.split(",");
 
-        console.log($scope.office);
-
         crOfficeFactory.createOffice($scope.office).then(function(){
             crNotifier.notify('New office has been created!');
             $location.path('/offices');
