@@ -72,18 +72,18 @@
                         textarea.form-control(name="office_long_desc", type="text", ng-model="office.description.long_info")
                 .form-group
                     label.col-md-2.control-label(for="office_services") Services
-                    .col-md-5
-                        ul.list-group(ng-repeat="service in office.services")
-                            li.list-group-item {{service}}
+                    .col-md-7
+                        select.form-control(name="office_services", ng-model="office.services", ui-select2="{ allowClear: true}", multiple, ng-required="true")
+                            option(ng-repeat='service in services', value='{{service}}') {{ service }}
                     .col-md-1
-                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add Service
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#serviceModal") New Service
                 .form-group
                     label.col-md-2.control-label(for="office_contact_persons") Contact
-                    .col-md-5
-                        ul.list-group(ng-repeat="person in office.contact_persons")
-                            li.list-group-item {{person.pname}} - {{person.email}}
+                    .col-md-7
+                        select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
+                            option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
                     .col-md-1
-                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add Person
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") New Person
                 .form-group
                     label.col-md-2.control-label(for="office_show") Show office on ekukka.fi website
                     .col-md-10
@@ -163,4 +163,5 @@
                             button.btn.btn-primary(ng-click="update()", ng-disabled="officeForm.$invalid") Submit
                             | &nbsp;
                             a.btn.btn-default(href="/offices") Cancel
+    include ../common/service/service-modal
     include ../common/person/person-modal

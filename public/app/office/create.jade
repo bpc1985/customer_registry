@@ -82,7 +82,7 @@
                         select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
                             option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
                     .col-md-1
-                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add Person
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add New Person
                 .form-group
                     label.col-md-2.control-label(for="office_show") Show office on ekukka.fi website
                     .col-md-10
