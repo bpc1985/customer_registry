@@ -1,4 +1,4 @@
-angular.module('app', ['ngResource', 'ngRoute', 'ngCookies', 'restangular', 'ui.select2']);
+angular.module('app', ['ngResource', 'ngRoute', 'ngCookies', 'restangular', 'ui.select2', 'ui.bootstrap']);
 
 angular.module('app').config(function(RestangularProvider, $routeProvider, $locationProvider){
     var routeRoleChecks = {
