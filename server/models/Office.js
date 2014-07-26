@@ -9,6 +9,7 @@ var officeSchema = mongoose.Schema({
         street_address: { type: String, require: true },
         zipcode:        { type: String, require: true },
         city:           { type: String, require: true },
+        country:        { type: String, require: false },
         phone:          { type: String, require: true },
         alt_phone:      { type: String, require: false },
         fax:            { type: String, require: false },

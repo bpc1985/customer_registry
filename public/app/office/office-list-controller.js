@@ -9,7 +9,7 @@ angular.module('app').controller('crOfficeListCtrl', function($scope, $http, $lo
             crNotifier.notify('Office has been deleted!');
         }, function(reason){
             crNotifier.error(reason);
-        });;
+        });
     };
 
     $scope.list();
