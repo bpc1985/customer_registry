@@ -30,7 +30,10 @@ footer p {
 .topspace {
   margin-top: 30px;
 }
-.choose_time input {
+.choose_time table {
+  margin-left: 15px;
+}
+.choose_time table input {
   width: 60px !important;
 }
 hr {

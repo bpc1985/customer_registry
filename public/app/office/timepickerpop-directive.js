@@ -127,7 +127,7 @@ angular.module('app').directive('timepickerPop', function($document, timepickerS
                 });
             });
         },
-        template : "<input type='text' placeholder='{{description}}' class='form-control' ng-model='inputTime' disabled time-format show-meridian='showMeridian' ng-focus='open()' />"
+        template : "<input type='text' placeholder='{{description}}' class='form-control' ng-model='inputTime' time-format show-meridian='showMeridian' ng-focus='open()' />"
           + "  <div class='input-group-btn' ng-class='{open:isOpen}'> "
           + "    <button type='button' ng-disabled='disabledInt' class='btn btn-default' ng-class=\"{'btn-primary':isOpen}\" data-toggle='dropdown' ng-click='toggle()'> "
           + "        <i class='glyphicon glyphicon-time'></i></button> "
