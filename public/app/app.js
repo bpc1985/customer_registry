@@ -1,6 +1,6 @@
-angular.module('app', ['ngResource', 'ngRoute', 'ngCookies', 'restangular', 'ui.select2', 'ui.bootstrap']);
+var app = angular.module('app', ['ngResource', 'ngRoute', 'ngCookies', 'restangular', 'ui.select2', 'ui.bootstrap', 'pascalprecht.translate']);
 
-angular.module('app').config(function(RestangularProvider, $routeProvider, $locationProvider){
+app.config(function(RestangularProvider, $routeProvider, $locationProvider, $translateProvider){
     var routeRoleChecks = {
         admin: {
             auth: function(crAuth) { return crAuth.authorizeCurrentUserForRoute('admin') }
@@ -29,6 +29,20 @@ angular.module('app').config(function(RestangularProvider, $routeProvider, $loca
         .when('/offices/create', { templateUrl: '/partials/office/create', controller: 'crOfficeCreateCtrl', resolve: routeRoleChecks.user })
         .when('/offices/:id', { templateUrl: '/partials/office/edit', controller: 'crOfficeEditCtrl', resolve: routeRoleChecks.user })
         .otherwise({ redirectTo: "/" });
+
+    $translateProvider.useLoader('$translatePartialLoader', {
+        urlTemplate: '../translation/{part}/{lang}.json'
+    });
+
+    if(localStorage.getItem('NG_TRANSLATE_LANG_KEY')){
+        $translateProvider.preferredLanguage(localStorage.getItem('NG_TRANSLATE_LANG_KEY'));
+        moment.lang(localStorage.getItem('NG_TRANSLATE_LANG_KEY'));
+    } else {
+        $translateProvider.preferredLanguage('en');
+        moment.lang('en');
+    }
+
+    $translateProvider.useLocalStorage();
 });
 
 angular.module('app').run(function($rootScope, $location) {

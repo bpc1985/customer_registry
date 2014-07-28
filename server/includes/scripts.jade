@@ -1,6 +1,9 @@
 //- Library
 script(type="text/javascript", src="/vendor/jquery/dist/jquery.min.js")
 script(type="text/javascript", src="/vendor/moment/min/moment.min.js")
+script(type="text/javascript", src="/vendor/moment/min/moment-with-langs.min.js")
+script(type="text/javascript", src="/vendor/moment/lang/fi.js")
+script(type="text/javascript", src="/vendor/moment/lang/sv.js")
 script(type="text/javascript", src="/vendor/angular/angular.js")
 script(type="text/javascript", src="/vendor/bootstrap/dist/js/bootstrap.min.js")
 script(type="text/javascript", src="/vendor/toastr/toastr.min.js")
@@ -13,9 +16,16 @@ script(type="text/javascript", src="/vendor/select2/select2.js")
 script(type="text/javascript", src="/vendor/angular-ui-select2/src/select2.js")
 script(type="text/javascript", src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false')
 script(type="text/javascript", src="/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js")
+script(type="text/javascript", src="/vendor/angular-translate/angular-translate.min.js")
+script(type="text/javascript", src="/vendor/angular-translate-loader-partial/angular-translate-loader-partial.min.js")
+script(type="text/javascript", src="/vendor/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js")
+script(type="text/javascript", src="/vendor/angular-translate-storage-local/angular-translate-storage-local.min.js")
 
 //- AngularJS application
 script(type="text/javascript", src="/app/app.js")
+//- Root
+script(type="text/javascript", src="/app/root/root-controller.js")
+script(type="text/javascript", src="/app/root/root-factory.js")
 //- Common
 script(type="text/javascript", src="/app/common/crNotifier.js")
 script(type="text/javascript", src="/app/common/person/crPersonModalCreateCtrl.js")
