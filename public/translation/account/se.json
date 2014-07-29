@@ -1,0 +1,15 @@
+{
+    "Home": "Hemsida",
+    "Companies": "Företag",
+    "Persons": "Personer",
+    "Offices": "Kontor",
+    "Sign up": "Anmäl dig",
+    "Sign in": "Logga in",
+    "User Admin": "Användar Admin",
+    "Profile": "Profil",
+    "Sign Out": "Logga ut",
+
+    "You have successfully signed in": "Du har loggat in",
+    "Email/Password combination incorrect": "E-post / lösenord kombination felaktig",
+    "You have successfully signed out": "Du har loggat ut"
+}

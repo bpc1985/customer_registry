@@ -2,18 +2,18 @@
     .well
         .row
             .col-md-10
-                h2 Offices
+                h2(translate='') Offices
             .col-md-2.topspace
-                a(href="/offices/create") New Office
+                a(href="/offices/create", translate='') New Office
         .table-reponsive
         table.table.table-striped
             thead
                 tr
-                    th Name
-                    th Company
-                    th Headoffice
-                    th Responsible
-                    th Address
+                    th(translate='') Name
+                    th(translate='') Company
+                    th(translate='') Headoffice
+                    th(translate='') Responsible
+                    th(translate='') Address
                     th
             tbody
                 tr(ng-repeat="office in offices | orderBy:office_name")
@@ -23,6 +23,6 @@
                     td {{office.contact_persons[0].pname}}
                     td {{office.contact_info.street_address}}, {{office.contact_info.city}}
                     td
-                        a(href="/offices/{{office.id}}") Edit
+                        a(href="/offices/{{office.id}}", translate='') Edit
                         | &nbsp;|&nbsp;
-                        a(href="", ng-click="delete(office)") Delete
+                        a(href="", ng-click="delete(office)", translate='') Delete

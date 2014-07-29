@@ -1,0 +1,33 @@
+{
+    "Companies": "Companies",
+    "New Company": "New Company",
+    "Name": "Name",
+    "Type": "Type",
+    "Phone": "Phone",
+    "Email": "Email",
+    "Contact": "Contact",
+    "Edit": "Edit",
+    "Delete": "Delete",
+
+    "Company Profile": "Company Profile",
+    "Company Name": "Company Name",
+    "Company Type": "Company Type",
+    "Company Code": "Company Code",
+    "Phone": "Phone",
+    "Alt Phone": "Alt Phone",
+    "Fax": "Fax",
+    "Web": "Web",
+    "Email": "Email",
+    "Contact 1": "Contact 1",
+    "Please select contact person": "Please select contact person",
+    "Add New": "Add New",
+    "Contact 2": "Contact 2",
+    "Contact 3": "Contact 3",
+    "Newsletter": "Newsletter",
+    "Submit": "Submit",
+    "Cancel": "Cancel",
+
+    "New company has been created": "New company has been created",
+    "Company has been updated": "ompany has been updated",
+    "Company has been deleted": "Company has been deleted"
+}

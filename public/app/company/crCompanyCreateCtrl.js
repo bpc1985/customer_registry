@@ -1,6 +1,7 @@
 angular.module('app').controller('crCompanyCreateCtrl',
-            function($scope, $http, $location, crNotifier, crCompanyFactory, crPersonFactory){
+            function($scope, $translate, $location, crNotifier, crCompanyFactory, crPersonFactory, crRootFactory){
 
+    crRootFactory.setLanguageDir('company');
     //$scope.showModal = crAddPersonModalService.showModal();
 
     $scope.init = function(){
@@ -28,7 +29,7 @@ angular.module('app').controller('crCompanyCreateCtrl',
         };
 
         crCompanyFactory.createCompany(newCompanyData).then(function(){
-            crNotifier.notify('New company has been created!');
+            crNotifier.notify($translate.instant('New company has been created'));
             $location.path('/companies');
         }, function(reason){
             crNotifier.error(reason);

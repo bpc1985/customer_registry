@@ -1,4 +1,4 @@
-angular.module('app').controller('crOfficeEditCtrl', function($scope, $location, $routeParams, Restangular, crNotifier, crOfficeFactory, crCompanyFactory, crPersonFactory){
+angular.module('app').controller('crOfficeEditCtrl', function($scope, $location, $routeParams, $translate, Restangular, crNotifier, crOfficeFactory, crCompanyFactory, crPersonFactory){
     $scope.init = function(){
         crOfficeFactory.getOffice($routeParams.id).then(function(office){
             $scope.office = Restangular.copy(office);
@@ -16,7 +16,7 @@ angular.module('app').controller('crOfficeEditCtrl', function($scope, $location,
         console.log("$scope.office: ", $scope.office);
 
         crOfficeFactory.updateOffice($scope.office).then(function(){
-            crNotifier.notify('Office has been updated!');
+            crNotifier.notify($translate.instant('Office has been updated'));
             $location.path('/offices');
         }, function(reason){
             crNotifier.error(reason);

@@ -1,12 +1,13 @@
-angular.module('app').controller('crNavBarLoginCtrl', function($scope, $http, $location, crIdentity, crNotifier, crAuth){
+angular.module('app').controller('crNavBarLoginCtrl', function($scope, $translate, $location, crIdentity, crNotifier, crAuth, crRootFactory){
+    crRootFactory.setLanguageDir('account');
     $scope.identity = crIdentity;
 
     $scope.signin = function(email, password){
         crAuth.authenticateUser(email, password).then(function(success){
             if(success) {
-                crNotifier.notify('You have successfully signed in!');
+                crNotifier.notify($translate.instant('You have successfully signed in'));
             } else {
-                crNotifier.error('Email/Password combination incorrect');
+                crNotifier.error($translate.instant('Email/Password combination incorrect'));
             }
         });
     };
@@ -15,7 +16,7 @@ angular.module('app').controller('crNavBarLoginCtrl', function($scope, $http, $l
         crAuth.logoutUser().then(function(){
             $scope.email = "";
             $scope.password = "";
-            crNotifier.notify("You have successfully signed out!");
+            crNotifier.notify($translate.instant("You have successfully signed out"));
             $location.path('/');
         });
     };

@@ -1,4 +1,6 @@
-angular.module('app').controller('crOfficeCreateCtrl', function($scope, $http, $location, crNotifier, crOfficeFactory, crPersonFactory, crCompanyFactory){
+angular.module('app').controller('crOfficeCreateCtrl', function($scope, $translate, $location, crNotifier, crOfficeFactory, crPersonFactory, crCompanyFactory, crRootFactory){
+    crRootFactory.setLanguageDir('office');
+
     $scope.init = function(){
         $scope.weekdays = [];
 
@@ -24,7 +26,7 @@ angular.module('app').controller('crOfficeCreateCtrl', function($scope, $http, $
         $scope.office.services = $scope.office.services.split(",");
 
         crOfficeFactory.createOffice($scope.office).then(function(){
-            crNotifier.notify('New office has been created!');
+            crNotifier.notify($translate.instant('New office has been created'));
             $location.path('/offices');
         }, function(reason){
             crNotifier.error(reason);

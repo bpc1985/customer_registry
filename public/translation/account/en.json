@@ -1,0 +1,15 @@
+{
+    "Home": "Home",
+    "Companies": "Companies",
+    "Persons": "Persons",
+    "Offices": "Offices",
+    "Sign up": "Sign up",
+    "Sign in": "Sign in",
+    "User Admin": "User Admin",
+    "Profile": "Profile",
+    "Sign Out": "Sign Out",
+
+    "You have successfully signed in": "",
+    "Email/Password combination incorrect": "",
+    "You have successfully signed out": ""
+}

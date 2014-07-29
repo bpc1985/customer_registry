@@ -1,0 +1,15 @@
+{
+    "Home": "Etusivu",
+    "Companies": "Yritykset",
+    "Persons": "Henkilöt",
+    "Offices": "Toimistot",
+    "Sign up": "Ilmoittautua",
+    "Sign in": "Kirjaudu sisään",
+    "User Admin": "Käyttäjän Admin",
+    "Profile": "Profiili",
+    "Sign Out": "Kirjaudu ulos",
+
+    "You have successfully signed in": "Olet kirjautunut sisään",
+    "Email/Password combination incorrect": "Sähköposti / salasana-yhdistelmä virheellinen",
+    "You have successfully signed out": "Olet kirjautunut ulos"
+}

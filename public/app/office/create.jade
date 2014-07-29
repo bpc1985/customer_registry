@@ -2,165 +2,165 @@
     .well
         form.form-horizontal(name="officeForm")
             fieldset
-                legend Office Form
+                legend(translate='') Office Form
                 .form-group
-                    label.col-md-2.control-label(for="office_company") Company
+                    label.col-md-2.control-label(for="office_company", translate='') Company
                     .col-md-5
                         select.form-control(ng-model="office.company" ng-options="company.id as company.company_name for company in companies")
-                            option(value='') Please select company
+                            option(value='', translate='') Please select company
                     .col-md-1
-                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal") Add New
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal", translate='') Add New
                 .form-group
-                    label.col-md-2.control-label(for="office_name") Office Name
+                    label.col-md-2.control-label(for="office_name", translate='') Office Name
                     .col-md-10
                         input.form-control(name="office_name", type="text", ng-model="office.office_name")
                 .form-group
-                    label.col-md-2.control-label(for="is_headoffice") Head Office
+                    label.col-md-2.control-label(for="is_headoffice", translate='') Head Office
                     .col-md-10
                         input.form-control(type="checkbox", ng-model="office.is_headoffice")
                 .form-group
-                    label.col-md-2.control-label(for="office_street") Street
+                    label.col-md-2.control-label(for="office_street", translate='') Street
                     .col-md-10
                         input.form-control(name="office_street", type="text", ng-model="office.contact_info.street_address")
                 .form-group
-                    label.col-md-2.control-label(for="office_city") City
+                    label.col-md-2.control-label(for="office_city", translate='') City
                     .col-md-10
                         input.form-control(name="office_city", type="text", ng-model="office.contact_info.city")
                 .form-group
-                    label.col-md-2.control-label(for="office_zipcode") Zipcode
+                    label.col-md-2.control-label(for="office_zipcode", translate='') Zipcode
                     .col-md-10
                         input.form-control(name="office_zipcode", type="text", ng-model="office.contact_info.zipcode")
                 .form-group
-                    label.col-md-2.control-label(for="office_coordinates") Coordinates
+                    label.col-md-2.control-label(for="office_coordinates", translate='') Coordinates
                     .col-md-3
                         input.form-control(name="office_coordinates", readonly, type="text", ng-model="office.contact_info.coordinates.latitude", placeholder="Latitude")
                     .col-md-3
                         input.form-control(name="office_coordinates", readonly, type="text", ng-model="office.contact_info.coordinates.longitude", placeholder="Longitude")
                 .form-group
-                    label.col-md-2.control-label(for="office_map") Map
+                    label.col-md-2.control-label(for="office_map", translate='') Map
                     .col-md-10
                         gmap(address="office.contact_info.street_address", city="office.contact_info.city", latitude="office.contact_info.coordinates.latitude", longitude="office.contact_info.coordinates.longitude")
                 .form-group
-                    label.col-md-2.control-label(for="office_phone") Phone
+                    label.col-md-2.control-label(for="office_phone", translate='') Phone
                     .col-md-10
                         input.form-control(name="office_phone", type="text", ng-model="office.contact_info.phone")
                 .form-group
-                    label.col-md-2.control-label(for="office_altphone") Alt Phone
+                    label.col-md-2.control-label(for="office_altphone", translate='') Alt Phone
                     .col-md-10
                         input.form-control(name="office_altphone", type="text", ng-model="office.contact_info.alt_phone")
                 .form-group
-                    label.col-md-2.control-label(for="office_fax") Fax
+                    label.col-md-2.control-label(for="office_fax", translate='') Fax
                     .col-md-10
                         input.form-control(name="officefax", type="text", ng-model="office.contact_info.fax")
                 .form-group
-                    label.col-md-2.control-label(for="office_email") Email
+                    label.col-md-2.control-label(for="office_email", translate='') Email
                     .col-md-10
                         input.form-control(name="office_email", type="text", ng-model="office.contact_info.email")
                 .form-group
-                    label.col-md-2.control-label(for="office_web") Website
+                    label.col-md-2.control-label(for="office_web", translate='') Website
                     .col-md-10
                         input.form-control(name="office_web", type="text", ng-model="office.contact_info.website")
                 .form-group
-                    label.col-md-2.control-label(for="office_picture") Picture
+                    label.col-md-2.control-label(for="office_picture", translate='') Picture
                     .col-md-10
                         input.form-control(name="office_picture", type="text", ng-model="office.profile_img")
                 .form-group
-                    label.col-md-2.control-label(for="office_short_desc") Short Desc
+                    label.col-md-2.control-label(for="office_short_desc", translate='') Short Desc
                     .col-md-10
                         textarea.form-control(name="office_short_desc", type="text", ng-model="office.description.short_info")
                 .form-group
-                    label.col-md-2.control-label(for="office_long_desc") Long Desc
+                    label.col-md-2.control-label(for="office_long_desc", translate='') Long Desc
                     .col-md-10
                         textarea.form-control(name="office_long_desc", type="text", ng-model="office.description.long_info")
                 .form-group
-                    label.col-md-2.control-label(for="office_services") Services
+                    label.col-md-2.control-label(for="office_services", translate='') Services
                     .col-md-10
                         input.form-control(name="office_services", type="text", ng-model="office.services", placeholder="Service name should seperate with ',' For ex: wedding, delivery, design")
                 .form-group
-                    label.col-md-2.control-label(for="office_contact_persons") Contact
+                    label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
                     .col-md-7
                         select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
                             option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
                     .col-md-1
-                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add New Person
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New Person
                 .form-group
-                    label.col-md-2.control-label(for="office_show") Show office on ekukka.fi website
+                    label.col-md-2.control-label(for="office_show", translate='') Show office on ekukka.fi website
                     .col-md-10
                         input.form-control(name="office_show", type="checkbox", ng-model="office.show_office")
 
-                legend Open Times
+                legend(translate='') Open Times
                 .form-group
-                    label.col-md-2.control-label Monday
+                    label.col-md-2.control-label(translate='') Monday
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[0].from', disabled='disabled', show-meridian='false', description='From')
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[0].to', disabled='disabled', show-meridian='false', description='To')
-                    label.col-sm-1.control-label Close
+                    label.col-sm-1.control-label(translate='') Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[0].is_closed")
                 .form-group
-                    label.col-md-2.control-label Tuesday
+                    label.col-md-2.control-label(translate='') Tuesday
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[1].from', disabled='disabled', show-meridian='false', description='From')
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[1].to', disabled='disabled', show-meridian='false', description='To')
-                    label.col-sm-1.control-label Close
+                    label.col-sm-1.control-label(translate='') Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[1].is_closed")
                 .form-group
-                    label.col-md-2.control-label Wednesday
+                    label.col-md-2.control-label(translate='') Wednesday
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[2].from', disabled='disabled', show-meridian='false', description='From')
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[2].to', disabled='disabled', show-meridian='false', description='To')
-                    label.col-sm-1.control-label Close
+                    label.col-sm-1.control-label(translate='') Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[2].is_closed")
                 .form-group
-                    label.col-md-2.control-label Thursday
+                    label.col-md-2.control-label(translate='') Thursday
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[3].from', disabled='disabled', show-meridian='false', description='From')
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[3].to', disabled='disabled', show-meridian='false', description='To')
-                    label.col-sm-1.control-label Close
+                    label.col-sm-1.control-label(translate='') Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[3].is_closed")
                 .form-group
-                    label.col-md-2.control-label Friday
+                    label.col-md-2.control-label(translate='') Friday
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[4].from', disabled='disabled', show-meridian='false', description='From')
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[4].to', disabled='disabled', show-meridian='false', description='To')
-                    label.col-sm-1.control-label Close
+                    label.col-sm-1.control-label(translate='') Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[4].is_closed")
                 .form-group
-                    label.col-md-2.control-label Saturday
+                    label.col-md-2.control-label(translate='') Saturday
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[5].from', disabled='disabled', show-meridian='false', description='From')
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[5].to', disabled='disabled', show-meridian='false', description='To')
-                    label.col-sm-1.control-label Close
+                    label.col-sm-1.control-label(translate='') Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[5].is_closed")
                 .form-group
-                    label.col-md-2.control-label Sunday
+                    label.col-md-2.control-label(translate='') Sunday
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[6].from', disabled='disabled', show-meridian='false', description='From')
                     .col-md-2
                         timepicker-pop.input-group(input-time='weekdays[6].to', disabled='disabled', show-meridian='false', description='To')
-                    label.col-sm-1.control-label Close
+                    label.col-sm-1.control-label(translate='') Close
                     .col-md-2
                         input.form-control(type="checkbox", ng-model="weekdays[6].is_closed")
                 .form-group
-                    label.col-md-2.control-label Holidays
+                    label.col-md-2.control-label(translate='') Holidays
                     .col-md-6
                         textarea.form-control(type="text", ng-model="holiday")
                 .form-group
                     .col-md-10.col-md-offset-2
                         .pull-right
-                            button.btn.btn-primary(ng-click="create()", ng-disabled="officeForm.$invalid") Submit
+                            button.btn.btn-primary(ng-click="create()", ng-disabled="officeForm.$invalid", translate='') Submit
                             | &nbsp;
-                            a.btn.btn-default(href="/offices") Cancel
+                            a.btn.btn-default(href="/offices", translate='') Cancel
     include ../common/company/company-modal
     include ../common/person/person-modal

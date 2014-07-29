@@ -1,4 +1,6 @@
-angular.module('app').controller('crOfficeListCtrl', function($scope, $http, $location, crNotifier, crOfficeFactory){
+angular.module('app').controller('crOfficeListCtrl', function($scope, $http, $translate, crNotifier, crOfficeFactory, crRootFactory){
+    crRootFactory.setLanguageDir('office');
+
     $scope.list = function(){
         $scope.offices = crOfficeFactory.getOffices();
     };
@@ -6,7 +8,7 @@ angular.module('app').controller('crOfficeListCtrl', function($scope, $http, $lo
     $scope.delete = function(office){
         _.remove($scope.offices, {'id': office.id});
         crOfficeFactory.deleteOffice(office).then(function(){
-            crNotifier.notify('Office has been deleted!');
+            crNotifier.notify($translate.instant('Office has been deleted'));
         }, function(reason){
             crNotifier.error(reason);
         });

@@ -2,5 +2,11 @@
     "English": "Englanti",
     "Finnish": "Suomeksi",
     "Swedish": "På svenska",
+
+    "Home": "Etusivu",
+    "Companies": "Yritykset",
+    "Persons": "Henkilöt",
+    "Offices": "Toimistot",
+
     "Language has been changed": "Kieli on muuttunut"
 }

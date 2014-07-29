@@ -2,19 +2,19 @@
     .well
         .row
             .col-md-10
-                h2 Companies
+                h2(translate='') Companies
             .col-md-2.topspace
-                a(href="/companies/create") New Company
+                a(href="/companies/create", translate='') New Company
         .table-reponsive
             table.table.table-striped
                 thead
                     tr
-                        th Name
-                        th Type
-                        th Code
-                        th Phone
-                        th Email
-                        th Contact
+                        th(translate='') Name
+                        th(translate='') Type
+                        th(translate='') Code
+                        th(translate='') Phone
+                        th(translate='') Email
+                        th(translate='') Contact
                         th
                 tbody 
                     tr(ng-repeat="company in companies | orderBy:name")
@@ -25,6 +25,6 @@
                         td {{company.email}}
                         td {{company.contact1}}
                         td
-                            a(href="/companies/{{company.id}}") Edit
-                            | &nbsp;|&nbsp; 
-                            a(href="", ng-click="delete(company)") Delete
+                            a(href="/companies/{{company.id}}", translate='') Edit
+                            | &nbsp;|&nbsp;
+                            a(href="", ng-click="delete(company)", translate='') Delete

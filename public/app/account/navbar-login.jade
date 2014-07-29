@@ -1,23 +1,23 @@
 .navbar-collapse.collapse(ng-controller="crNavBarLoginCtrl")
     ul.nav.navbar-nav(ng-show="identity.isAuthenticated()")
         li
-            a(href="/") Home
+            a(href="/", translate='') Home
         li
-            a(href="/companies") Companies
+            a(href="/companies", translate='') Companies
         li
-            a(href="/persons") Persons
+            a(href="/persons", translate='') Persons
         li
-            a(href="/offices") Offices
+            a(href="/offices", translate='') Offices
     .navbar-right
         form.navbar-form(ng-hide="identity.isAuthenticated()")
             ul.nav.navbar-nav
                 li
-                    a(href="/signup") Sign up
+                    a(href="/signup", translate='') Sign up
             .form-group
                 input.form-control(placeholder="Email", ng-model="email")
             .form-group
                 input.form-control(type="password", placeholder="Password", ng-model="password")
-            button.btn.btn-primary(ng-click="signin(email, password)") Sign in
+            button.btn.btn-primary(ng-click="signin(email, password)", translate='') Sign in
         ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
             li.dropdown
                 a.dropdown-toggle(href="", data-toggle="dropdown")
@@ -25,8 +25,8 @@
                 b.caret
                 ul.dropdown-menu
                     li(ng-show="identity.currentUser.isAdmin()")
-                        a(href="/admin/users") User Admin
+                        a(href="/admin/users", translate='') User Admin
                     li
-                        a(href="/profile") Profile
+                        a(href="/profile", translate='') Profile
                     li
-                        a(href="", ng-click="signout()") Sign Out
+                        a(href="", ng-click="signout()", translate='') Sign Out

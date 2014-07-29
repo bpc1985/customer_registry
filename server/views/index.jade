@@ -12,7 +12,9 @@ block main-content
 
     footer.container.text-center
         p &copy; 2014 Floweb Ltd.
-        select(ng-model='language', ng-change='changeLanguage(language)')
-            option(value='en', translate) English
-            option(value='fi', translate) Finnish
-            option(value='se', translate) Swedish
+            span.pull-right
+                select(ng-model='language', ng-change='changeLanguage(language)')
+                    option(value='en', translate) English
+                    option(value='fi', translate) Finnish
+                    option(value='se', translate) Swedish
+                    option(value='de', translate) German
