@@ -1,4 +1,6 @@
-angular.module('app').controller('crPersonCreateCtrl', function($scope, $http, $location, crNotifier, crPersonFactory, crCompanyFactory){
+angular.module('app').controller('crPersonCreateCtrl', function($scope, $translate, $location, crNotifier, crPersonFactory, crCompanyFactory, crRootFactory){
+    crRootFactory.setLanguageDir('person');
+
     $scope.init = function(){
         crCompanyFactory.getCompanies().then(function(companies){
             $scope.companies = companies;
@@ -20,7 +22,7 @@ angular.module('app').controller('crPersonCreateCtrl', function($scope, $http, $
         };
 
         crPersonFactory.createPerson(newPersonData).then(function(){
-            crNotifier.notify('New person has been created!');
+            crNotifier.notify($translate.instant('New person has been created'));
             $location.path('/persons');
         }, function(reason){
             crNotifier.error(reason);

@@ -1,0 +1,26 @@
+{
+    "People List": "Människor Lista",
+    "New Person": "Ny person",
+    "Name": "Namn",
+    "Title": "Titel",
+    "Telephone": "Telefon",
+    "Phone": "Mobiltelefon",
+    "Email": "Email",
+    "Company": "Företag",
+    "Edit": "Redigera",
+    "Delete": "Radera",
+
+    "Person Form": "",
+    "Mobile": "Mobiltelefon",
+    "Street": "Gata",
+    "Zipcode": "Postnummer",
+    "City": "Stad",
+    "Country": "Land",
+    "Please select company": "Välj bolag",
+    "Submit": "Inkomma",
+    "Cancel": "Avbryt",
+
+    "Person has been deleted": "Personen har tagits bort",
+    "New person has been created": "Ny person har skapats",
+    "Person has been updated": "Personen har uppdaterats"
+}

@@ -3,6 +3,8 @@ angular.module('app').controller('RootCtrl', function($translate, $scope, $cooki
 
     if($translateLocalStorage.get($translate.storageKey())){
         $scope.language = $translateLocalStorage.get($translate.storageKey());
+    } else {
+        $scope.language = 'fi';
     }
 
     $scope.changeLanguage = function (langKey) {

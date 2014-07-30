@@ -1,0 +1,26 @@
+{
+    "People List": "People List",
+    "New Person": "New Person",
+    "Name": "Name",
+    "Title": "Title",
+    "Telephone": "Telephone",
+    "Phone": "Phone",
+    "Email": "Email",
+    "Company": "Company",
+    "Edit": "Edit",
+    "Delete": "Delete",
+
+    "Person Form": "Person Form",
+    "Mobile": "Mobile",
+    "Street": "Street",
+    "Zipcode": "Zipcode",
+    "City": "City",
+    "Country": "Country",
+    "Please select company": "Please select company",
+    "Submit": "Submit",
+    "Cancel": "Cancel",
+
+    "Person has been deleted": "Person has been deleted",
+    "New person has been created": "New person has been created",
+    "Person has been updated": "Person has been updated"
+}

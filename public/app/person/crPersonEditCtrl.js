@@ -1,4 +1,6 @@
-angular.module('app').controller('crPersonEditCtrl', function($scope, $location, $routeParams, Restangular, crNotifier, crPersonFactory, crCompanyFactory){
+angular.module('app').controller('crPersonEditCtrl', function($scope, $translate, $location, $routeParams, Restangular, crNotifier, crPersonFactory, crCompanyFactory, crRootFactory){
+    crRootFactory.setLanguageDir('person');
+
     $scope.init = function(){
         crPersonFactory.getPerson($routeParams.id).then(function(person){
             $scope.person = Restangular.copy(person);
@@ -10,7 +12,7 @@ angular.module('app').controller('crPersonEditCtrl', function($scope, $location,
 
     $scope.update = function(){
         crPersonFactory.updatePerson($scope.person).then(function(){
-            crNotifier.notify('Person has been updated!');
+            crNotifier.notify($translate.instant('Person has been updated'));
             $location.path('/persons');
         }, function(reason){
             crNotifier.error(reason);

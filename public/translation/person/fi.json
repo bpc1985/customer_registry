@@ -1,0 +1,26 @@
+{
+    "People List": "Ihmiset Lista",
+    "New Person": "Lisää uusi henkilö",
+    "Name": "Nimi",
+    "Title": "Asema yrityksessä",
+    "Telephone": "Puhelin",
+    "Phone": "Matkapuhelin",
+    "Email": "Sähköposti",
+    "Company": "Yritys",
+    "Edit": "Peruuta",
+    "Delete": "Poista",
+
+    "Person Form": "Henkilötiedot",
+    "Mobile": "Matkapuhelin",
+    "Street": "Katuosoite",
+    "Zipcode": "Postinumero",
+    "City": "Kaupunki",
+    "Country": "Maa",
+    "Please select company": "Valitse yritys",
+    "Submit": "Tallenna",
+    "Cancel": "Peruuta",
+
+    "Person has been deleted": "Henkilö on poistettu",
+    "New person has been created": "Uusi henkilö on luotu",
+    "Person has been updated": "Henkilö on päivitetty"
+}

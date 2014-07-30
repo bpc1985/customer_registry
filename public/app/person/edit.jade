@@ -2,54 +2,54 @@
     .well
         form.form-horizontal(name="personForm")
             fieldset
-                legend Person Form
+                legend(translate="") Person Form
                 .form-group
-                    label.col-md-2.control-label(for="personname") Name
+                    label.col-md-2.control-label(for="personname", translate="") Name
                     .col-md-10
                         input.form-control(name="personname", type="text", ng-model="person.pname")
                 .form-group
-                    label.col-md-2.control-label(for="persontitle") Title
+                    label.col-md-2.control-label(for="persontitle", translate="") Title
                     .col-md-10
                         input.form-control(name="persontitle", type="text", ng-model="person.title")
                 .form-group
-                    label.col-md-2.control-label(for="persontelephone") Telephone
+                    label.col-md-2.control-label(for="persontelephone", translate="") Telephone
                     .col-md-10
                         input.form-control(name="persontelephone", type="text", ng-model="person.telephone")
                 .form-group
-                    label.col-md-2.control-label(for="personmobile") Mobile
+                    label.col-md-2.control-label(for="personmobile", translate="") Mobile
                     .col-md-10
                         input.form-control(name="personmobile", type="text", ng-model="person.mobile")
                 .form-group
-                    label.col-md-2.control-label(for="personstreet") Street
+                    label.col-md-2.control-label(for="personstreet", translate="") Street
                     .col-md-10
                         input.form-control(name="personstreet", type="text", ng-model="person.street")
                 .form-group
-                    label.col-md-2.control-label(for="personzipcode") Zipcode
+                    label.col-md-2.control-label(for="personzipcode", translate="") Zipcode
                     .col-md-10
                         input.form-control(name="personzipcode", type="text", ng-model="person.zipcode")
                 .form-group
-                    label.col-md-2.control-label(for="personcity") City
+                    label.col-md-2.control-label(for="personcity", translate="") City
                     .col-md-10
                         input.form-control(name="personcity", type="text", ng-model="person.city")
                 .form-group
-                    label.col-md-2.control-label(for="personcountry") Country
+                    label.col-md-2.control-label(for="personcountry", translate="") Country
                     .col-md-10
                         input.form-control(name="personcountry", type="text", ng-model="person.country")
                 .form-group
-                    label.col-md-2.control-label(for="personemail") Email
+                    label.col-md-2.control-label(for="personemail", translate="") Email
                     .col-md-10
                         input.form-control(name="personemail", type="text", ng-model="person.email")
                 .form-group
-                    label.col-md-2.control-label(for="personcompany") Company
+                    label.col-md-2.control-label(for="personcompany", translate="") Company
                     .col-md-5
                         select.form-control(ng-model="person.company" ng-options="company.id as company.company_name for company in companies")
-                            option(value='') Please select company
+                            option(value='', translate="") Please select company
                     .col-md-1
-                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal") Add New
+                        button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal", translate="") Add New
                 .form-group
                     .col-md-10.col-md-offset-2
                         .pull-right
-                            button.btn.btn-primary(ng-click="update()", ng-disabled="personForm.$invalid") Submit
+                            button.btn.btn-primary(ng-click="update()", ng-disabled="personForm.$invalid", translate="") Submit
                             | &nbsp;
-                            a.btn.btn-default(href="/persons") Cancel
+                            a.btn.btn-default(href="/persons", translate="") Cancel
     include ../common/company/company-modal

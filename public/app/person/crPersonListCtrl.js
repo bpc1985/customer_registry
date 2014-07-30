@@ -1,4 +1,6 @@
-angular.module('app').controller('crPersonListCtrl', function($scope, $http, $location, crNotifier, crPersonFactory){
+angular.module('app').controller('crPersonListCtrl', function($scope, $translate, $location, crNotifier, crPersonFactory, crRootFactory){
+    crRootFactory.setLanguageDir('person');
+
     $scope.list = function(){
         $scope.people = crPersonFactory.getPeople();
     };
@@ -7,7 +9,7 @@ angular.module('app').controller('crPersonListCtrl', function($scope, $http, $lo
         _.remove($scope.people, {'id': person.id});
 
         crPersonFactory.deletePerson(person).then(function(){
-            crNotifier.notify('Person has been deleted!');
+            crNotifier.notify($translate.instant('Person has been deleted'));
         }, function(reason){
             crNotifier.error(reason);
         });;

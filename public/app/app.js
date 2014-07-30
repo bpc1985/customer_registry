@@ -38,8 +38,8 @@ app.config(function(RestangularProvider, $routeProvider, $locationProvider, $tra
         $translateProvider.preferredLanguage(localStorage.getItem('NG_TRANSLATE_LANG_KEY'));
         moment.lang(localStorage.getItem('NG_TRANSLATE_LANG_KEY'));
     } else {
-        $translateProvider.preferredLanguage('en');
-        moment.lang('en');
+        $translateProvider.preferredLanguage('fi');
+        moment.lang('fi');
     }
 
     $translateProvider.useLocalStorage();
