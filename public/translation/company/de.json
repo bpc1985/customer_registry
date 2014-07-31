@@ -1,0 +1,33 @@
+{
+    "Companies": "Firmen",
+    "New Company": "Neue Gesellschaft",
+    "Name": "Name",
+    "Type": "Typ",
+    "Phone": "Telefon",
+    "Email": "Email",
+    "Contact": "Kontakt",
+    "Edit": "Bearbeiten",
+    "Delete": "Delete",
+
+    "Company Profile": "Daten des Unternehmens",
+    "Company Name": "Name des Unternehmens",
+    "Company Type": "Rechtsform",
+    "Company Code": "FK-Nummer",
+    "Phone": "Telefon 1",
+    "Alt Phone": "Telefon 2",
+    "Fax": "Fax",
+    "Web": "Internet",
+    "Email": "E-mail",
+    "Contact 1": "Unternehmer/in 1",
+    "Please select contact person": "Bitte wählen Sie Ansprechpartner",
+    "Add New": "Neue",
+    "Contact 2": "Unternehmer/in 2",
+    "Contact 3": "Unternehmer/in 3",
+    "Newsletter": "Newsletter",
+    "Submit": "Speichern",
+    "Cancel": "Abbrechen",
+
+    "New company has been created": "Neue Unternehmen erstellt wurde",
+    "Company has been updated": "Unternehmen wurde aktualisiert",
+    "Company has been deleted": "Firma gelöscht wurde"
+}

@@ -1,0 +1,17 @@
+{
+    "Home": "Startseite",
+    "Companies": "Firmen",
+    "Persons": "Person",
+    "Offices": "Büros",
+    "Sign up": "Registrieren",
+    "Sign in": "Anmelden",
+    "User Admin": "User Admin",
+    "Profile": "Profil",
+    "Sign Out": "Austragen",
+    "Email": "Email",
+    "Password": "Passwort",
+
+    "You have successfully signed in": "Sie haben sich erfolgreich angemeldet",
+    "Email/Password combination incorrect": "Email / Passwort-Kombination nicht korrekt",
+    "You have successfully signed out": "Sie haben sich erfolgreich abgemeldet"
+}
