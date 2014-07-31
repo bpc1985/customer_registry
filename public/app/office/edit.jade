@@ -27,7 +27,7 @@
                 label.col-md-2.control-label(for="office_zipcode", translate='') Zipcode
                 .col-md-10
                     input.form-control(name="office_zipcode", type="text", ng-model="office.contact_info.zipcode")
-            .form-group
+            .form-group.hide
                 label.col-md-2.control-label(for="office_coordinates", translate='') Coordinates
                 .col-md-3
                     input.form-control(name="office_coordinates", readonly, type="text", ng-model="office.contact_info.coordinates.latitude")
@@ -83,72 +83,68 @@
                         option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') New Person
-            .form-group
-                label.col-md-2.control-label(for="office_show", translate='') Show office on ekukka.fi website
-                .col-md-10
-                    input.form-control(name="office_show", type="checkbox", ng-model="office.show_office")
             hr
             legend(translate='') Open Times
             .form-group
                 label.col-md-2.control-label(translate='') Monday
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[0].from', disabled='disabled', show-meridian='false', description='From')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[0].from', disabled='disabled', show-meridian='false', description="{{'From'|translate}}")
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[0].to', disabled='disabled', show-meridian='false', description='To')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[0].to', disabled='disabled', show-meridian='false', description="{{'To'|translate}}")
                 label.col-sm-1.control-label(translate='') Close
                 .col-md-2
                     input.form-control(type="checkbox", ng-model="office.open_times.weekdays[0].is_closed")
             .form-group
                 label.col-md-2.control-label(translate='') Tuesday
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[1].from', disabled='disabled', show-meridian='false', description='From')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[1].from', disabled='disabled', show-meridian='false', description="{{'From'|translate}}")
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[1].to', disabled='disabled', show-meridian='false', description='To')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[1].to', disabled='disabled', show-meridian='false', description="{{'To'|translate}}")
                 label.col-sm-1.control-label(translate='') Close
                 .col-md-2
                     input.form-control(type="checkbox", ng-model="office.open_times.weekdays[1].is_closed")
             .form-group
                 label.col-md-2.control-label(translate='') Wednesday
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[2].from', disabled='disabled', show-meridian='false', description='From')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[2].from', disabled='disabled', show-meridian='false', description="{{'From'|translate}}")
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[2].to', disabled='disabled', show-meridian='false', description='To')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[2].to', disabled='disabled', show-meridian='false', description="{{'To'|translate}}")
                 label.col-sm-1.control-label(translate='') Close
                 .col-md-2
                     input.form-control(type="checkbox", ng-model="office.open_times.weekdays[2].is_closed")
             .form-group
                 label.col-md-2.control-label(translate='') Thursday
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[3].from', disabled='disabled', show-meridian='false', description='From')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[3].from', disabled='disabled', show-meridian='false', description="{{'From'|translate}}")
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[3].to', disabled='disabled', show-meridian='false', description='To')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[3].to', disabled='disabled', show-meridian='false', description="{{'To'|translate}}")
                 label.col-sm-1.control-label(translate='') Close
                 .col-md-2
                     input.form-control(type="checkbox", ng-model="office.open_times.weekdays[3].is_closed")
             .form-group
                 label.col-md-2.control-label(translate='') Friday
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[4].from', disabled='disabled', show-meridian='false', description='From')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[4].from', disabled='disabled', show-meridian='false', description="{{'From'|translate}}")
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[4].to', disabled='disabled', show-meridian='false', description='To')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[4].to', disabled='disabled', show-meridian='false', description="{{'To'|translate}}")
                 label.col-sm-1.control-label(translate='') Close
                 .col-md-2
                     input.form-control(type="checkbox", ng-model="office.open_times.weekdays[4].is_closed")
             .form-group
                 label.col-md-2.control-label(translate='') Saturday
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[5].from', disabled='disabled', show-meridian='false', description='From')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[5].from', disabled='disabled', show-meridian='false', description="{{'From'|translate}}")
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[5].to', disabled='disabled', show-meridian='false', description='To')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[5].to', disabled='disabled', show-meridian='false', description="{{'To'|translate}}")
                 label.col-sm-1.control-label(translate='') Close
                 .col-md-2
                     input.form-control(type="checkbox", ng-model="office.open_times.weekdays[5].is_closed")
             .form-group
                 label.col-md-2.control-label(translate='') Sunday
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[6].from', disabled='disabled', show-meridian='false', description='From')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[6].from', disabled='disabled', show-meridian='false', description="{{'From'|translate}}")
                 .col-md-2
-                    timepicker-pop.input-group(input-time='office.open_times.weekdays[6].to', disabled='disabled', show-meridian='false', description='To')
+                    timepicker-pop.input-group(input-time='office.open_times.weekdays[6].to', disabled='disabled', show-meridian='false', description="{{'To'|translate}}")
                 label.col-sm-1.control-label(translate='') Close
                 .col-md-2
                     input.form-control(type="checkbox", ng-model="office.open_times.weekdays[6].is_closed")
@@ -156,6 +152,10 @@
                 label.col-md-2.control-label(translate='') Holidays
                 .col-md-6
                     textarea.form-control(type="text", ng-model="office.open_times.holiday")
+            .form-group
+                label.col-md-2.control-label(for="office_show", translate='') Show office on ekukka.fi website
+                .col-md-10
+                    input.form-control(name="office_show", type="checkbox", ng-model="office.show_office")
             .form-group
                 .col-md-10.col-md-offset-2
                     .pull-right

@@ -8,8 +8,10 @@
     "User Admin": "User Admin",
     "Profile": "Profile",
     "Sign Out": "Sign Out",
+    "Email": "Email",
+    "Password": "Password",
 
-    "You have successfully signed in": "",
-    "Email/Password combination incorrect": "",
-    "You have successfully signed out": ""
+    "You have successfully signed in": "You have successfully signed in",
+    "Email/Password combination incorrect": "Email/Password combination incorrect",
+    "You have successfully signed out": "You have successfully signed out"
 }

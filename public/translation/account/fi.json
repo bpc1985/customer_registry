@@ -8,6 +8,8 @@
     "User Admin": "Käyttäjän Admin",
     "Profile": "Profiili",
     "Sign Out": "Kirjaudu ulos",
+    "Email": "Sähköposti",
+    "Password": "Salasana",
 
     "You have successfully signed in": "Olet kirjautunut sisään",
     "Email/Password combination incorrect": "Sähköposti / salasana-yhdistelmä virheellinen",

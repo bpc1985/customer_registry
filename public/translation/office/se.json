@@ -32,6 +32,7 @@
 	"Contact": "",
 	"Add New Person": "",
 	"Show office on ekukka.fi website": "",
+	"Services should be seperated with commas such as wedding, delivery, design": "Services should be seperated with commas such as wedding, delivery, design",
 	"Open Times": "",
 	"Close": "",
 	"Monday": "",
@@ -44,6 +45,8 @@
 	"Holidays": "",
 	"Submit": "",
 	"Cancel": "",
+	"From": "",
+	"To": "",
 
 	"Office has been deleted": "Office has been deleted",
 	"New office has been created": "New office has been created",
