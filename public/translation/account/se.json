@@ -11,7 +11,18 @@
     "Email": "Email",
     "Password": "Lösenord",
 
+    "User Profile": "Användarprofil",
+    "New User Information": "Ny användarinformation",
+    "Email": "Epost",
+    "First Name": "Förnamn",
+    "Last Name": "Efternamn",
+    "Password": "Lösenord",
+    "Submit": "Spara",
+    "Cancel": "Annnulera",
+
     "You have successfully signed in": "Du har loggat in",
     "Email/Password combination incorrect": "E-post / lösenord kombination felaktig",
-    "You have successfully signed out": "Du har loggat ut"
+    "You have successfully signed out": "Du har loggat ut",
+    "User account has been created": "Användarens konto har skapats",
+    "Your user account has been updated": "Ditt användarkonto har uppdaterats"
 }

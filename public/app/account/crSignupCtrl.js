@@ -8,7 +8,7 @@ angular.module('app').controller('crSignupCtrl', function($scope, $location, crN
         };
 
         crAuth.createUser(newUserData).then(function(){
-            crNotifier.notify('User account has been created!');
+            crNotifier.notify('User account has been created');
             $location.path('/');
         }, function(reason){
             crNotifier.error(reason);

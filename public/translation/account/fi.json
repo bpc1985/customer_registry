@@ -11,7 +11,18 @@
     "Email": "Sähköposti",
     "Password": "Salasana",
 
+    "User Profile": "Oma Profiili",
+    "New User Information": "",
+    "Email": "Sähköposti",
+    "First Name": "Etunimi",
+    "Last Name": "Sukunimi",
+    "Password": "Salasana",
+    "Submit": "Tallenna",
+    "Cancel": "Peruuta",
+
     "You have successfully signed in": "Olet kirjautunut sisään",
     "Email/Password combination incorrect": "Sähköposti / salasana-yhdistelmä virheellinen",
-    "You have successfully signed out": "Olet kirjautunut ulos"
+    "You have successfully signed out": "Olet kirjautunut ulos",
+    "User account has been created": "Käyttäjätili on luotu",
+    "Your user account has been updated": "Käyttäjätilillä on päivitetty"
 }

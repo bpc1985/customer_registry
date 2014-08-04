@@ -11,7 +11,18 @@
     "Email": "Email",
     "Password": "Password",
 
+    "User Profile": "User Profile",
+    "New User Information": "New User Information",
+    "Email": "Email",
+    "First Name": "First Name",
+    "Last Name": "Last Name",
+    "Password": "Password",
+    "Submit": "Submit",
+    "Cancel": "Cancel",
+
     "You have successfully signed in": "You have successfully signed in",
     "Email/Password combination incorrect": "Email/Password combination incorrect",
-    "You have successfully signed out": "You have successfully signed out"
+    "You have successfully signed out": "You have successfully signed out",
+    "User account has been created": "User account has been created",
+    "Your user account has been updated": "Your user account has been updated"
 }

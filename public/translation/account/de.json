@@ -11,7 +11,18 @@
     "Email": "Email",
     "Password": "Passwort",
 
+    "User Profile": "Benutzerprofil",
+    "New User Information": "Neue Benutzer-Informationen",
+    "Email": "Email",
+    "First Name": "Vorname",
+    "Last Name": "Nachname",
+    "Password": "Passwort",
+    "Submit": "Einreichen",
+    "Cancel": "Stornieren",
+
     "You have successfully signed in": "Sie haben sich erfolgreich angemeldet",
     "Email/Password combination incorrect": "Email / Passwort-Kombination nicht korrekt",
-    "You have successfully signed out": "Sie haben sich erfolgreich abgemeldet"
+    "You have successfully signed out": "Sie haben sich erfolgreich abgemeldet",
+    "User account has been created": "Benutzerkonto erstellt wurde",
+    "Your user account has been updated": "Ihr Benutzerkonto wurde aktualisiert"
 }
