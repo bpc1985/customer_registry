@@ -1,5 +1,5 @@
 {
-    "People List": "Ihmiset Lista",
+    "People List": "Henkilötiedot",
     "New Person": "Lisää uusi henkilö",
     "Name": "Nimi",
     "Title": "Asema yrityksessä",
@@ -7,7 +7,7 @@
     "Phone": "Matkapuhelin",
     "Email": "Sähköposti",
     "Company": "Yritys",
-    "Edit": "Peruuta",
+    "Edit": "Muokkaa",
     "Delete": "Poista",
 
     "Person Form": "Henkilötiedot",

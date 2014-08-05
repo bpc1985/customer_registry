@@ -11,17 +11,17 @@
                 tr
                     th(translate='') Name
                     th(translate='') Company
-                    th(translate='') Headoffice
-                    th(translate='') Responsible
                     th(translate='') Address
+                    th(translate='') Telephone
+                    th(translate='') Responsible
                     th
             tbody
                 tr(ng-repeat="office in offices | orderBy:office_name")
                     td {{office.office_name}}
                     td {{office.company.company_name}}
-                    td {{office.is_headoffice}}
-                    td {{office.contact_persons[0].pname}}
                     td {{office.contact_info.street_address}}, {{office.contact_info.city}}
+                    td {{office.contact_info.phone}}
+                    td {{office.contact_persons[0].pname}}
                     td
                         a(href="/offices/{{office.id}}", translate='') Edit
                         | &nbsp;|&nbsp;

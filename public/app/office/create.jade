@@ -13,7 +13,7 @@
                 .form-group
                     label.col-md-2.control-label(for="office_name", translate='') Office Name
                     .col-md-10
-                        input.form-control(name="office_name", type="text", ng-model="office.office_name")
+                        input.form-control(name="office_name", type="text", ng-model="office.office_name", placeholder="{{'Enter the office name, if different from the company official name' | translate }}")
                 .form-group
                     label.col-md-2.control-label(for="is_headoffice", translate='') Head Office
                     .col-md-10
@@ -67,11 +67,11 @@
                 .form-group
                     label.col-md-2.control-label(for="office_short_desc", translate='') Short Desc
                     .col-md-10
-                        textarea.form-control(name="office_short_desc", type="text", ng-model="office.description.short_info")
+                        textarea.form-control(name="office_short_desc", type="text", ng-model="office.description.short_info", placeholder="{{'Enter the marketing slogan slogan max 100 characters. For example Service is our passion'|translate}}")
                 .form-group
                     label.col-md-2.control-label(for="office_long_desc", translate='') Long Desc
                     .col-md-10
-                        textarea.form-control(name="office_long_desc", type="text", ng-model="office.description.long_info")
+                        textarea.form-control(name="office_long_desc", type="text", ng-model="office.description.long_info", placeholder="{{'Write concise description of the operation of shop'|translate}}")
                 .form-group
                     label.col-md-2.control-label(for="office_services", translate='') Services
                     .col-md-10
@@ -79,7 +79,7 @@
                 .form-group
                     label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
                     .col-md-7
-                        select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
+                        select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true", placeholder="{{'Contact information will not be displayed ekukka.fi search service'|translate}}")
                             option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
                     .col-md-1
                         button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New Person
