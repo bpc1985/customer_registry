@@ -2,7 +2,7 @@
     .well
         form.form-horizontal(name="officeForm")
             legend(translate='') Office Form
-            .form-group
+            .form-group.required
                 label.col-md-2.control-label(for="office_company", translate='') Company
                 .col-md-10
                     input.form-control(name="office_company", readonly, type="text", ng-model="office.company.company_name")
@@ -15,15 +15,15 @@
                 label.col-md-2.control-label(for="is_headoffice", translate='') Head Office
                 .col-md-10
                     input.form-control(type="checkbox", ng-model="office.is_headoffice")
-            .form-group
+            .form-group.required
                 label.col-md-2.control-label(for="office_street", translate='') Street
                 .col-md-10
                     input.form-control(name="office_street", type="text", ng-model="office.contact_info.street_address")
-            .form-group
+            .form-group.required
                 label.col-md-2.control-label(for="office_city", translate='') City
                 .col-md-10
                     input.form-control(name="office_city", type="text", ng-model="office.contact_info.city")
-            .form-group
+            .form-group.required
                 label.col-md-2.control-label(for="office_zipcode", translate='') Zipcode
                 .col-md-10
                     input.form-control(name="office_zipcode", type="text", ng-model="office.contact_info.zipcode")
@@ -37,7 +37,7 @@
                 label.col-md-2.control-label(for="office_map", translate='') Map
                 .col-md-10
                     gmap(address="office.contact_info.street_address", city="office.contact_info.city", latitude="office.contact_info.coordinates.latitude", longitude="office.contact_info.coordinates.longitude")
-            .form-group
+            .form-group.required
                 label.col-md-2.control-label(for="office_phone", translate='') Phone
                 .col-md-10
                     input.form-control(name="office_phone", type="text", ng-model="office.contact_info.phone")
@@ -49,7 +49,7 @@
                 label.col-md-2.control-label(for="office_fax", translate='') Fax
                 .col-md-10
                     input.form-control(name="officefax", type="text", ng-model="office.contact_info.fax")
-            .form-group
+            .form-group.required
                 label.col-md-2.control-label(for="office_email", translate='') Email
                 .col-md-10
                     input.form-control(name="office_email", type="text", ng-model="office.contact_info.email")
@@ -61,15 +61,15 @@
                 label.col-md-2.control-label(for="office_picture", translate='') Picture
                 .col-md-10
                     input.form-control(name="office_picture", type="text", ng-model="office.profile_img")
-            .form-group
+            .form-group.required
                 label.col-md-2.control-label(for="office_short_desc", translate='') Short Desc
                 .col-md-10
                     textarea.form-control(name="office_short_desc", type="text", ng-model="office.description.short_info", placeholder="{{'Enter the marketing slogan slogan max 100 characters. For example Service is our passion'|translate}}")
-            .form-group
+            .form-group.required
                 label.col-md-2.control-label(for="office_long_desc", translate='') Long Desc
                 .col-md-10
                     textarea.form-control(name="office_long_desc", type="text", ng-model="office.description.long_info", placeholder="{{'Write concise description of the operation of shop'|translate}}")
-            .form-group
+            .form-group.required
                 label.col-md-2.control-label(for="office_services", translate='') Services
                 .col-md-7
                     select.form-control(name="office_services", ng-model="office.services", ui-select2="{ allowClear: true}", multiple, ng-required="true", placeholder="{{'Contact information will not be displayed ekukka.fi search service'|translate}}")

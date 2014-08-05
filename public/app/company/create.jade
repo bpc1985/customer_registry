@@ -3,11 +3,11 @@
         form.form-horizontal(name="companyForm")
             fieldset
                 legend(translate='') Company Profile
-                .form-group
+                .form-group.required
                     label.col-md-2.control-label(for="companyname", translate='') Company Name
                     .col-md-10
                         input.form-control(name="companyname", type="text", ng-model="company.name")
-                .form-group
+                .form-group.required
                     label.col-md-2.control-label(for="companycode", translate='') Company Type
                     .col-md-5
                         select.form-control(ng-model="company.type")
@@ -18,11 +18,11 @@
                             option(value='TN', translate='') TN
                             option(value='KO', translate='') KO
                             option(value='YH', translate='') YH
-                .form-group
+                .form-group.required
                     label.col-md-2.control-label(for="companycode", translate='') Company Code
                     .col-md-10
                         input.form-control(name="companycode", type="text", ng-model="company.code")
-                .form-group
+                .form-group.required
                     label.col-md-2.control-label(for="companyphone", translate='') Phone
                     .col-md-10
                         input.form-control(name="companyphone", type="text", ng-model="company.phone")
@@ -38,7 +38,7 @@
                     label.col-md-2.control-label(for="companyweb", translate='') Web
                     .col-md-10
                         input.form-control(name="companyweb", type="text", ng-model="company.web")
-                .form-group
+                .form-group.required
                     label.col-md-2.control-label(for="companyemail", translate='') Email
                     .col-md-10
                         input.form-control(name="companyemail", type="text", ng-model="company.email")
