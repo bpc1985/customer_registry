@@ -1,6 +1,10 @@
 body {
   padding-top: 61px;
 }
+.navbar-inverse {
+  background-color: #95ba00;
+  border-color: #95ba00;
+}
 .navbar-header a.navbar-brand {
   margin-top: -15px;
   margin-bottom: -20px;

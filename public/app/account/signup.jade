@@ -1,27 +1,26 @@
 .container
     .well
         form.form-horizontal(name="signupForm")
-            fieldset
-                legend(translate='') New User Information
-                .form-group
-                    label.col-md-2.control-label(for="email", translate='') Email
-                    .col-md-10
-                        input.form-control(name="email", type="email", placeholder="{{'Email'|translate}}", ng-model="email", required)
-                .form-group
-                    label.col-md-2.control-label(for="password", translate='') Password
-                    .col-md-10
-                        input.form-control(name="password", type="password", placeholder="{{'Password'|translate}}", ng-model="password", required)
-                .form-group
-                    label.col-md-2.control-label(for="fname", translate='') First Name
-                    .col-md-10
-                        input.form-control(name="fname", type="text", placeholder="{{'First Name'|translate}}", ng-model="fname", required)
-                .form-group
-                    label.col-md-2.control-label(for="lname", translate='') Last Name
-                    .col-md-10
-                        input.form-control(name="lname", type="text", placeholder="{{'Last Name'|translate}}", ng-model="lname", required)
-                .form-group
-                    .col-md-10.col-md-offset-2
-                        .pull-right
-                            button.btn.btn-primary(ng-click="signup()", ng-disabled="signupForm.$invalid", translate='') Submit
-                            | &nbsp;
-                            a.btn.btn-default(href="/", translate='') Cancel
+            legend(translate='') New User Information
+            .form-group
+                label.col-md-2.control-label(for="email", translate='') Email
+                .col-md-10
+                    input.form-control(name="email", type="email", placeholder="{{'Email'|translate}}", ng-model="email", required)
+            .form-group
+                label.col-md-2.control-label(for="password", translate='') Password
+                .col-md-10
+                    input.form-control(name="password", type="password", placeholder="{{'Password'|translate}}", ng-model="password", required)
+            .form-group
+                label.col-md-2.control-label(for="fname", translate='') First Name
+                .col-md-10
+                    input.form-control(name="fname", type="text", placeholder="{{'First Name'|translate}}", ng-model="fname", required)
+            .form-group
+                label.col-md-2.control-label(for="lname", translate='') Last Name
+                .col-md-10
+                    input.form-control(name="lname", type="text", placeholder="{{'Last Name'|translate}}", ng-model="lname", required)
+            .form-group
+                .col-md-10.col-md-offset-2
+                    .pull-right
+                        button.btn.btn-primary(ng-click="signup()", ng-disabled="signupForm.$invalid", translate='') Submit
+                        | &nbsp;
+                        a.btn.btn-default(href="/", translate='') Cancel
