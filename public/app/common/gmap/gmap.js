@@ -1,7 +1,7 @@
-angular.module('app').directive('gmap', function ($window) {
+angular.module('app').directive('gmap', function ($window, $translate) {
      // directive link function
     var link = function(scope, element, attrs) {
-        var map, mapOptions;
+        var map, mapOptions, infowindow;
         var combined_address;
         var geocoder = new google.maps.Geocoder();
 
@@ -52,6 +52,14 @@ angular.module('app').directive('gmap', function ($window) {
                 scope.longitude = map_marker.latLng.lng();
                 scope.$apply();
             });
+
+            infowindow = new google.maps.InfoWindow({
+              content: $translate.instant('If pin is not right place, you can move it')
+            });
+
+            google.maps.event.addListener(marker, 'click', function (map_marker) {
+                infowindow.open(map, marker);
+            });
         }
 
         function runMap(){
@@ -59,13 +67,13 @@ angular.module('app').directive('gmap', function ($window) {
                 navigator.geolocation.getCurrentPosition(function(position) {
                     createMapOptions(position.coords.latitude, position.coords.longitude);
                     initMap();
-                    setMarker(map, position.coords.latitude, position.coords.longitude, 'Current Position', 'Just some content');
+                    setMarker(map, position.coords.latitude, position.coords.longitude, $translate.instant('If pin is not right place, you can move it'), 'Just some content');
                 });
             } else {
                 alert("Geolocation is not supported by this browser.");
                 createMapOptions(172059075759336, 24.941139147607373);
                 initMap();
-                setMarker(map, 60.172059075759336, 24.941139147607373, 'Helsinki', 'Just some content');
+                setMarker(map, 60.172059075759336, 24.941139147607373, $translate.instant('If pin is not right place, you can move it'), 'Just some content');
             }
         }
 
@@ -84,7 +92,7 @@ angular.module('app').directive('gmap', function ($window) {
                         createMapOptions(lat, lng);
                         map = new google.maps.Map(element[0], mapOptions);
                         map.setCenter(results[0].geometry.location);
-                        setMarker(map, lat, lng, 'Current Position', 'Just some content');
+                        setMarker(map, lat, lng, $translate.instant('If pin is not right place, you can move it'), 'Just some content');
                     }
                 });
             }

@@ -54,5 +54,6 @@
 
 	"Office has been deleted": "Toimisto on poistettu",
 	"New office has been created": "Uusi toimisto on luotu",
-	"Office has been updated": "Office on päivitetty"
+	"Office has been updated": "Office on päivitetty",
+	"If pin is not right place, you can move it": "Jos nuoli kartalla ei ole oikeassa osoitteessa, voit liikuttaa sitä haluamaasi paikkaan"
 }
