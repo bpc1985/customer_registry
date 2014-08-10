@@ -55,6 +55,7 @@ exports.updateOffice = function(req, res){
         office.profile_img = req.body.profile_img;
         office.show_office = req.body.show_office;
         office.open_times = req.body.open_times;
+        office.delivery_areas = req.body.delivery_areas;
 
         office.save(function (err) {
             if(err) { res.status(400); return res.send({reason:err.toString()});}

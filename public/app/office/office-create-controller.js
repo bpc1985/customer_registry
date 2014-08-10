@@ -1,8 +1,10 @@
-angular.module('app').controller('crOfficeCreateCtrl', function($scope, $translate, $location, crNotifier, crOfficeFactory, crPersonFactory, crCompanyFactory, crRootFactory){
+angular.module('app').controller('crOfficeCreateCtrl',
+    function($scope, $translate, $location, crNotifier, crOfficeFactory, crPersonFactory, crCompanyFactory, crRootFactory){
     crRootFactory.setLanguageDir('office');
 
     $scope.init = function(){
         $scope.weekdays = [];
+        $scope.office = { delivery_areas: [] };
 
         for (var i = 0; i < 7; i++) {
             $scope.weekdays[i] = {

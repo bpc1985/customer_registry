@@ -83,6 +83,10 @@
                         option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') New Person
+            .form-group
+                label.col-md-2.control-label(for="office_delivery_areas", translate='') Delivery Areas
+                .col-md-1
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#deliveryModal", translate='') Add Delivery Areas
             hr
             legend(translate='') Open Times
             .form-group
@@ -164,3 +168,4 @@
                         a.btn.btn-default(href="/offices", translate='') Cancel
     include ../common/service/service-modal
     include ../common/person/person-modal
+    include delivery-modal

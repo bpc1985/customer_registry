@@ -83,9 +83,9 @@
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New Person
             .form-group
-                label.col-md-2.control-label(for="office_show", translate='') Show office on ekukka.fi website
-                .col-md-10
-                    input.form-control(name="office_show", type="checkbox", ng-model="office.show_office")
+                label.col-md-2.control-label(for="office_delivery_areas", translate='') Delivery areas
+                .col-md-1
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#deliveryModal", translate='') Add Delivery Areas
 
             legend(translate='') Open Times
             .form-group
@@ -167,3 +167,4 @@
                         a.btn.btn-default(href="/offices", translate='') Cancel
     include ../common/company/company-modal
     include ../common/person/person-modal
+    include delivery-modal

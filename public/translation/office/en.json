@@ -32,7 +32,8 @@
 	"Long Desc": "Long Desc",
 	"Write concise description of the operation of shop": "Write concise description of the operation of shop",
 	"Services": "Services",
-	"Contact": "Contact",
+	"New Service": "New Service",
+	"New Person": "New Person",
 	"Contact information will not be displayed ekukka.fi search service": "Contact information will not be displayed ekukka.fi search service",
 	"Add New Person": "Add New Person",
 	"Show office on ekukka.fi website": "Show office on ekukka.fi website",
@@ -51,6 +52,12 @@
 	"Cancel": "Cancel",
 	"From": "From",
 	"To": "To",
+
+	"Delivery Areas": "Delivery Areas",
+	"Add Delivery Areas": "Add Delivery Areas",
+	"Enter new zipcode": "Enter new zipcode",
+	"Add": "Add",
+	"Save": "Save",
 
 	"Office has been deleted": "Office has been deleted",
 	"New office has been created": "New office has been created",

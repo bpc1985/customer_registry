@@ -37,7 +37,8 @@ var officeSchema = mongoose.Schema({
             }
         ],
         holiday: { type: String, require: false }
-    }
+    },
+    delivery_areas: [{ type: String }]
 });
 
 // Duplicate the ID field.

@@ -31,6 +31,8 @@
 	"Long Desc": "Beschreibung der Services",
 	"Write concise description of the operation of shop": "Schreiben Sie kurz und bissig Beschreibung der Funktionsweise von Shop",
 	"Services": "Services",
+	"New Service": "Neue Service",
+	"New Person": "Neue Person",
 	"Contact": "Kontakt",
 	"Contact information will not be displayed ekukka.fi search service": "Kontaktinformationen werden nicht ekukka.fi Suchdienst angezeigt werden",
 	"Add New Person": "Neue Kontaktperson einfügen",
@@ -50,6 +52,12 @@
 	"Cancel": "Abbrechen",
 	"From": "Von Zeit",
 	"To": "Zeit",
+
+	"Delivery Areas": "Liefergebiete",
+	"Add Delivery Areas": "Fügen Liefergebiete",
+	"Enter new zipcode": "Geben Sie die neue Postleitzahl",
+	"Add": "Hinzufügen",
+	"Save": "Speichern",
 
 	"Office has been deleted": "Büro gelöscht wurde",
 	"New office has been created": "Neues Büro erstellt wurde",

@@ -1,4 +1,8 @@
-angular.module('app').controller('crOfficeEditCtrl', function($scope, $location, $routeParams, $translate, Restangular, crNotifier, crOfficeFactory, crCompanyFactory, crPersonFactory){
+angular.module('app').controller('crOfficeEditCtrl',
+            function($scope, $location, $routeParams, $translate, Restangular, crNotifier, crOfficeFactory, crCompanyFactory, crRootFactory){
+
+    crRootFactory.setLanguageDir('office');
+
     $scope.init = function(){
         crOfficeFactory.getOffice($routeParams.id).then(function(office){
             $scope.office = Restangular.copy(office);

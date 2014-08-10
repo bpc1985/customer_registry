@@ -32,6 +32,9 @@
 	"Long Desc": "Kaupan palveluiden kuvaus",
 	"Write concise description of the operation of shop": "Kirjoita tähän tiivis ja napakka kuvaus kauppasi toiminnasta",
 	"Services": "Palvelut",
+	"New Service": "New Palvelu",
+	"New Person": "Uusi Henkilö",
+	"Contact": "Contact",
 	"Contact": "Yhteyshenkilö",
 	"Contact information will not be displayed ekukka.fi search service": "Yhteyshenkilön tietoja ei näytetä ekukka.fi hakupalvelussa",
 	"Add New Person": "Lisää uusi yhteyshenkilö",
@@ -51,6 +54,12 @@
 	"Cancel": "Keskeytä",
 	"From": "Avaamme",
 	"To": "Suljemme",
+
+	"Delivery Areas": "Toimitusaika alueet",
+	"Add Delivery Areas": "Lisää Toimitusaika alueet",
+	"Enter new zipcode": "Anna uusi Postinumero",
+	"Add": "Lisää",
+	"Save": "Tallenna",
 
 	"Office has been deleted": "Toimisto on poistettu",
 	"New office has been created": "Uusi toimisto on luotu",

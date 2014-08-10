@@ -33,6 +33,8 @@
 	"Long Desc": "Beskrivning av butikens tjänster",
 	"Write concise description of the operation of shop": "Skriv en kortfattad och galleriets beskrivning av driften av butiken",
 	"Services": "Tjänster",
+	"New Service": "Ny Service",
+	"New Person": "Ny Person",
 	"Contact": "Kontaktperson",
 	"Contact information will not be displayed ekukka.fi search service": "Kontaktuppgifter kommer inte att visas ekukka.fi söktjänst",
 	"Add New Person": "Lägg till kontaktperson",
@@ -52,6 +54,12 @@
 	"Cancel": "Annnulera",
 	"From": "Från",
 	"To": "Till",
+
+	"Delivery Areas": "Leveransområden",
+	"Add Delivery Areas": "Lägg Leveransområden",
+	"Enter new zipcode": "Skriv in nytt postnummer",
+	"Add": "Lägg",
+	"Save": "Spara",
 
 	"Office has been deleted": "Office har tagits bort",
 	"New office has been created": "Nytt kontor har skapats",
