@@ -35,5 +35,9 @@ angular.module('app').controller('crOfficeCreateCtrl',
         });
     };
 
+    $scope.removeZipCode = function(value){
+        $scope.office.delivery_areas = _.without($scope.office.delivery_areas, value);
+    };
+
     $scope.init();
 });

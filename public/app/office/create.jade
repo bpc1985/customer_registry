@@ -83,7 +83,13 @@
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New Person
             .form-group
-                label.col-md-2.control-label(for="office_delivery_areas", translate='') Delivery areas
+                label.col-md-2.control-label(for="office_delivery_areas", translate='') Delivery Areas
+                .col-md-7(ng-show="office.delivery_areas.length > 0")
+                    .select2-container.select2-container-multi.form-control
+                        ul.select2-choices
+                            li.select2-search-choice(ng-repeat="zipcode in office.delivery_areas")
+                                div {{zipcode}}
+                                a.select2-search-choice-close(href='#', tabindex='-1', ng-click='removeZipCode(zipcode)')
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#deliveryModal", translate='') Add Delivery Areas
 
