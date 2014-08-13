@@ -77,13 +77,6 @@
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#serviceModal", translate='') New Service
             .form-group
-                label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
-                .col-md-7
-                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
-                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') New Person
-            .form-group
                 label.col-md-2.control-label(for="office_delivery_areas", translate='') Delivery Areas
                 .col-md-7(ng-show="office.delivery_areas.length > 0")
                     .select2-container.select2-container-multi.form-control
@@ -92,7 +85,18 @@
                                 div {{zipcode}}
                                 a.select2-search-choice-close(href='#', tabindex='-1', ng-click='removeZipCode(zipcode)')
                 .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#deliveryModal", translate='') Add Delivery Areas
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#deliveryModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add Delivery Areas' | translate}}
+            .form-group
+                label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
+                .col-md-7
+                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
+                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
+                .col-md-1
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add New Person' | translate}}
             hr
             legend(translate='') Open Times
             .form-group

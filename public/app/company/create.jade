@@ -10,17 +10,30 @@
                 label.col-md-2.control-label(for="companycode", translate='') Company Type
                 .col-md-5
                     select.form-control(ng-model="company.type")
-                        option(value='OY', translate='') OY
+                        option(value='', translate='') Please select company type
+                        option(value='TMI', translate='') TMI
                         option(value='KY', translate='') KY
                         option(value='AY', translate='') AY
-                        option(value='OK', translate='') OK
-                        option(value='TN', translate='') TN
-                        option(value='KO', translate='') KO
-                        option(value='YH', translate='') YH
+                        option(value='OY', translate='') OY
+                        option(value='Osuuskunta', translate='') Osuuskunta
+                        option(value='Oppilaitos', translate='') Oppilaitos
+                        option(value='Muu', translate='') Muu
             .form-group.required
                 label.col-md-2.control-label(for="companycode", translate='') Company Code
                 .col-md-10
                     input.form-control(name="companycode", type="text", ng-model="company.code")
+            .form-group
+                label.col-md-2.control-label(for="companystreet", translate='') Street
+                .col-md-10
+                    input.form-control(name="companystreet", type="text", ng-model="company.street")
+            .form-group
+                label.col-md-2.control-label(for="companycity", translate='') City
+                .col-md-10
+                    input.form-control(name="companycity", type="text", ng-model="company.city")
+            .form-group
+                label.col-md-2.control-label(for="companyzip", translate='') Zip
+                .col-md-10
+                    input.form-control(name="companyzip", type="text", ng-model="company.zip")
             .form-group.required
                 label.col-md-2.control-label(for="companyphone", translate='') Phone
                 .col-md-10
@@ -42,46 +55,10 @@
                 .col-md-10
                     input.form-control(name="companyemail", type="text", ng-model="company.email")
             .form-group
-                label.col-md-2.control-label(for="contact1", translate='') Contact 1
+                label.col-md-2.control-label(for="contact", translate='') Contact
                 .col-md-5
-                    select.form-control(ng-model="company.contact1" ng-options="person.id as person.pname for person in persons")
+                    select.form-control(ng-model="company.contact" ng-options="person.id as person.pname for person in persons")
                         option(value='', translate='') Please select contact person
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add New
-            .form-group
-                label.col-md-2.control-label(for="contact2", translate='') Contact 2
-                .col-md-5
-                    select.form-control(ng-model="company.contact2" ng-options="person.id as person.pname for person in persons")
-                        option(value='', translate='') Please select contact person
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New
-            .form-group
-                label.col-md-2.control-label(for="contact3", translate='') Contact 3
-                .col-md-5
-                    select.form-control(ng-model="company.contact3" ng-options="person.id as person.pname for person in persons")
-                        option(value='', translate='') Please select contact person
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New
-            .form-group
-                label.col-md-2.control-label(for="newsletter", translate='') Newsletter
-                .col-md-10
-                    input.form-control(name="newsletter", type="checkbox", ng-model="company.newsletter")
-            .form-group
-                label.col-md-2.control-label(for="number", translate='') Number
-                .col-md-10
-                    input.form-control(name="number", type="text", ng-model="company.cnumber")
-            .form-group
-                label.col-md-2.control-label(for="responsible1", translate='') Responsible 1
-                .col-md-5
-                    select.form-control(ng-model="company.responsible1" ng-options="person.id as person.pname for person in persons")
-                        option(value='', translate='') Please select responsible person
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal") Add New
-            .form-group
-                label.col-md-2.control-label(for="responsible2", translate='') Responsible 2
-                .col-md-5
-                    select.form-control(ng-model="company.responsible2" ng-options="person.id as person.pname for person in persons")
-                        option(value='', translate='') Please select responsible person
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New
             .form-group

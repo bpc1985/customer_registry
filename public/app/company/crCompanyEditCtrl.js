@@ -1,4 +1,5 @@
-angular.module('app').controller('crCompanyEditCtrl', function($scope, $location, $routeParams, Restangular, crNotifier, crCompanyFactory, crPersonFactory, crRootFactory){
+angular.module('app').controller('crCompanyEditCtrl',
+  function($scope, $location, $routeParams, $translate, Restangular, crNotifier, crCompanyFactory, crPersonFactory, crRootFactory){
     crRootFactory.setLanguageDir('company');
 
     $scope.init = function(){

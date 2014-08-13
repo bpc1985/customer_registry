@@ -4,57 +4,48 @@ section(ng-controller="crCompanyModalCreateCtrl")
             .modal-content
                 .modal-header
                     button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-                    h4.modal-title Add New Person
+                    h4.modal-title(translate='') Add New Company
                 .modal-body
                     form.form-horizontal(name="companyForm")
-                        fieldset
-                            .form-group
-                                label.col-md-2.control-label(for="companyname") Company Name
-                                .col-md-10
-                                    input.form-control(name="companyname", type="text", ng-model="company.name")
-                            .form-group
-                                label.col-md-2.control-label(for="companycode") Company Type
-                                .col-md-5
-                                    select.form-control(ng-model="company.type")
-                                        option(value='OY') OY
-                                        option(value='KY') KY
-                                        option(value='AY') AY
-                                        option(value='OK') OK
-                                        option(value='TN') TN
-                                        option(value='KO') KO
-                                        option(value='YH') YH
-                            .form-group
-                                label.col-md-2.control-label(for="companycode") Company Code
-                                .col-md-10
-                                    input.form-control(name="companycode", type="text", ng-model="company.code")
-                            .form-group
-                                label.col-md-2.control-label(for="companyphone") Phone
-                                .col-md-10
-                                    input.form-control(name="companyphone", type="text", ng-model="company.phone")
-                            .form-group
-                                label.col-md-2.control-label(for="companyaltphone") Alt Phone
-                                .col-md-10
-                                    input.form-control(name="companyaltphone", type="text", ng-model="company.altphone")
-                            .form-group
-                                label.col-md-2.control-label(for="companyfax") Fax
-                                .col-md-10
-                                    input.form-control(name="companyfax", type="text", ng-model="company.fax")
-                            .form-group
-                                label.col-md-2.control-label(for="companyweb") Web
-                                .col-md-10
-                                    input.form-control(name="companyweb", type="text", ng-model="company.web")
-                            .form-group
-                                label.col-md-2.control-label(for="companyemail") Email
-                                .col-md-10
-                                    input.form-control(name="companyemail", type="text", ng-model="company.email")
-                            .form-group
-                                label.col-md-2.control-label(for="newsletter") Newsletter
-                                .col-md-10
-                                    input.form-control(name="newsletter", type="checkbox", ng-model="company.newsletter")
-                            .form-group
-                                label.col-md-2.control-label(for="number") Number
-                                .col-md-10
-                                    input.form-control(name="number", type="text", ng-model="company.cnumber")
+                        .form-group
+                            label.col-md-2.control-label(for="companyname", , translate='') Company Name
+                            .col-md-10
+                                input.form-control(name="companyname", type="text", ng-model="company.name")
+                        .form-group
+                            label.col-md-2.control-label(for="companycode", translate='') Company Type
+                            .col-md-5
+                                select.form-control(ng-model="company.type")
+                                    option(value='TMI', translate='') TMI
+                                    option(value='KY', translate='') KY
+                                    option(value='AY', translate='') AY
+                                    option(value='OY', translate='') OY
+                                    option(value='Osuuskunta', translate='') Osuuskunta
+                                    option(value='Oppilaitos', translate='') Oppilaitos
+                                    option(value='Muu', translate='') Muu
+                        .form-group
+                            label.col-md-2.control-label(for="companycode", translate='') Company Code
+                            .col-md-10
+                                input.form-control(name="companycode", type="text", ng-model="company.code")
+                        .form-group
+                            label.col-md-2.control-label(for="companystreet", translate='') Street
+                            .col-md-10
+                                input.form-control(name="companystreet", type="text", ng-model="company.street")
+                        .form-group
+                            label.col-md-2.control-label(for="companycity", translate='') City
+                            .col-md-10
+                                input.form-control(name="companycity", type="text", ng-model="company.city")
+                        .form-group
+                            label.col-md-2.control-label(for="companyzip", translate='') Zip
+                            .col-md-10
+                                input.form-control(name="companyzip", type="text", ng-model="company.zip")
+                        .form-group
+                            label.col-md-2.control-label(for="companyphone", translate='') Phone
+                            .col-md-10
+                                input.form-control(name="companyphone", type="text", ng-model="company.phone")
+                        .form-group
+                            label.col-md-2.control-label(for="companyemail", translate='') Email
+                            .col-md-10
+                                input.form-control(name="companyemail", type="text", ng-model="company.email")
                 .modal-footer
-                    button.btn.btn-default(type='button', data-dismiss='modal') Close
-                    button.btn.btn-primary(type='button', ng-click="createNewCompany()", data-dismiss='modal') Save
+                    button.btn.btn-default(type='button', data-dismiss='modal', translate='') Close
+                    button.btn.btn-primary(type='button', ng-click="createNewCompany()", data-dismiss='modal', translate='') Save

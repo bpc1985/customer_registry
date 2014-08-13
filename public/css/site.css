@@ -12,6 +12,21 @@ body {
 .navbar-header a.navbar-brand h6 {
   color: #ccc;
 }
+.btn {
+  padding: 6px 20px;
+}
+.btn-info,
+.btn-primary {
+  background-color: #95ba00;
+  border-color: #95ba00;
+  border-radius: 5px;
+}
+.btn-default {
+  border-radius: 5px;
+}
+span.glyphicon {
+  margin-right: 5px;
+}
 footer {
   padding-left: 15px;
   padding-right: 15px;

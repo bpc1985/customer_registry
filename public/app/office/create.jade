@@ -8,7 +8,9 @@
                     select.form-control(ng-model="office.company" ng-options="company.id as company.company_name for company in companies")
                         option(value='', translate='') Please select company
                 .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal", translate='') Add New
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add New' | translate}}
             .form-group
                 label.col-md-2.control-label(for="office_name", translate='') Office Name
                 .col-md-10
@@ -76,13 +78,6 @@
                 .col-md-10
                     input.form-control(name="office_services", type="text", ng-model="office.services", placeholder="{{'Services should be seperated with commas such as wedding, delivery, design' | translate}}")
             .form-group
-                label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
-                .col-md-7
-                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true", placeholder="{{'Contact information will not be displayed ekukka.fi search service'|translate}}")
-                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New Person
-            .form-group
                 label.col-md-2.control-label(for="office_delivery_areas", translate='') Delivery Areas
                 .col-md-7(ng-show="office.delivery_areas.length > 0")
                     .select2-container.select2-container-multi.form-control
@@ -91,8 +86,19 @@
                                 div {{zipcode}}
                                 a.select2-search-choice-close(href='#', tabindex='-1', ng-click='removeZipCode(zipcode)')
                 .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#deliveryModal", translate='') Add Delivery Areas
-
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#deliveryModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add Delivery Areas' | translate}}
+            .form-group
+                label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
+                .col-md-7
+                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true", placeholder="{{'Contact information will not be displayed ekukka.fi search service'|translate}}")
+                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
+                .col-md-1
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add New Person' | translate}}
+            hr
             legend(translate='') Open Times
             .form-group
                 label.col-md-2.control-label(translate='') Monday
@@ -168,7 +174,7 @@
             .form-group
                 .col-md-10.col-md-offset-2
                     .pull-right
-                        button.btn.btn-primary(ng-click="create()", ng-disabled="officeForm.$invalid", translate='') Submit
+                        button.btn.btn-primary(ng-click="create()", translate='') Submit
                         | &nbsp;
                         a.btn.btn-default(href="/offices", translate='') Cancel
     include ../common/company/company-modal
