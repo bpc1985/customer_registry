@@ -1,4 +1,5 @@
 var mongoose = require('mongoose'),
+    ObjectId = mongoose.Schema.ObjectId;
     encrypt = require('../utilities/encryption');
 
 var userSchema = mongoose.Schema({
@@ -7,7 +8,8 @@ var userSchema = mongoose.Schema({
     email:     {type: String, required: '{PATH} is required', unique: true},
     salt: String,
     hashed_pwd: String,
-    roles: [String]
+    roles: [String],
+    company: {type: ObjectId, ref: 'Company', default: null }
 });
 
 userSchema.methods = {
@@ -18,6 +20,19 @@ userSchema.methods = {
         return this.roles.indexOf(role) > -1;
     }
 };
+
+// Duplicate the ID field.
+userSchema.virtual('id').get(function(){
+    return this._id.toHexString();
+});
+
+// Ensure virtual fields are serialised.
+userSchema.set('toJSON', {
+    virtuals: true
+});
+
+// To see virtuals in output when using console.log(obj)
+userSchema.set('toObject', { virtuals: true })
 
 var User = mongoose.model('User', userSchema);
 

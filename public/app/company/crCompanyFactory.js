@@ -8,10 +8,10 @@ angular.module('app').factory('crCompanyFactory', function($http, $cookies, $q, 
 
             Restangular.all('companies').getList().then(function(companies){
                 _.forEach(companies, function(company){
-                    if(!_.isNull(company.contact1)){
-                        crPersonFactory.getPerson(company.contact1).then(function(person){
+                    if(!_.isNull(company.contact)){
+                        crPersonFactory.getPerson(company.contact).then(function(person){
                             if(person){
-                                company.contact1 = person.pname + " (" + person.email + ")";
+                                company.contact = person.pname + " (" + person.email + ")";
                             }
                         });
                     }

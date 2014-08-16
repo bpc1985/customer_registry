@@ -1,48 +1,48 @@
-section(ng-controller="crPersonModalCreateCtrl")
+section(ng-controller="crPersonCreateCtrl")
     #personModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
         .modal-dialog
             .modal-content
                 .modal-header
                     button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-                    h4.modal-title Add New Person
+                    h4.modal-title(translate='') Add New Person
                 .modal-body
                     form.form-horizontal(name="personForm")
                         .form-group
-                            label.col-md-2.control-label(for="personname") Name
+                            label.col-md-2.control-label(for="personname", translate='') Name
                             .col-md-10
                                 input.form-control(name="personname", type="text", ng-model="person.pname")
                         .form-group
-                            label.col-md-2.control-label(for="persontitle") Title
+                            label.col-md-2.control-label(for="persontitle", translate='') Title
                             .col-md-10
                                 input.form-control(name="persontitle", type="text", ng-model="person.title")
                         .form-group
-                            label.col-md-2.control-label(for="persontelephone") Telephone
+                            label.col-md-2.control-label(for="persontelephone", translate='') Telephone
                             .col-md-10
                                 input.form-control(name="persontelephone", type="text", ng-model="person.telephone")
                         .form-group
-                            label.col-md-2.control-label(for="personmobile") Mobile
+                            label.col-md-2.control-label(for="personmobile", translate='') Mobile
                             .col-md-10
                                 input.form-control(name="personmobile", type="text", ng-model="person.mobile")
                         .form-group
-                            label.col-md-2.control-label(for="personstreet") Street
+                            label.col-md-2.control-label(for="personstreet", translate='') Street
                             .col-md-10
                                 input.form-control(name="personstreet", type="text", ng-model="person.street")
                         .form-group
-                            label.col-md-2.control-label(for="personzipcode") Zipcode
+                            label.col-md-2.control-label(for="personzipcode", translate='') Zipcode
                             .col-md-10
                                 input.form-control(name="personzipcode", type="text", ng-model="person.zipcode")
                         .form-group
-                            label.col-md-2.control-label(for="personcity") City
+                            label.col-md-2.control-label(for="personcity", translate='') City
                             .col-md-10
                                 input.form-control(name="personcity", type="text", ng-model="person.city")
                         .form-group
-                            label.col-md-2.control-label(for="personcountry") Country
+                            label.col-md-2.control-label(for="personcountry", translate='') Country
                             .col-md-10
                                 input.form-control(name="personcountry", type="text", ng-model="person.country")
                         .form-group
-                            label.col-md-2.control-label(for="personemail") Email
+                            label.col-md-2.control-label(for="personemail", translate='') Email
                             .col-md-10
                                 input.form-control(name="personemail", type="text", ng-model="person.email")
                 .modal-footer
-                    button.btn.btn-default(type='button', data-dismiss='modal') Close
-                    button.btn.btn-primary(type='button', ng-click="createNewPerson()", data-dismiss='modal') Save
+                    button.btn.btn-default(type='button', data-dismiss='modal', translate='') Close
+                    button.btn.btn-primary(type='button', ng-click="create('modal-company')", data-dismiss='modal', translate='') Save

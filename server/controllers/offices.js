@@ -7,7 +7,15 @@ var populateQuery = [
 ];
 
 exports.getOffices = function(req, res){
-    Office.find({}).populate(populateQuery).exec(function(err, collection){
+    var queryObj = {};
+    if (req.query.company){
+        queryObj = { company: req.query.company.trim() };
+    }
+    else {
+        queryObj = { company: null };
+    }
+
+    Office.find(queryObj).populate(populateQuery).exec(function(err, collection){
         if(err) {
             res.status(400);
             return res.send({reason:err.toString()});

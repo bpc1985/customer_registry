@@ -1,5 +1,5 @@
 angular.module('app').controller('crOfficeEditCtrl',
-            function($scope, $location, $routeParams, $translate, Restangular, crNotifier, crOfficeFactory, crCompanyFactory, crRootFactory){
+            function($scope, $location, $routeParams, $translate, Restangular, crNotifier, crOfficeFactory, crCompanyFactory, crRootFactory, crPersonFactory){
 
     crRootFactory.setLanguageDir('office');
 
@@ -8,10 +8,7 @@ angular.module('app').controller('crOfficeEditCtrl',
             $scope.office = Restangular.copy(office);
             $scope.services = $scope.office.services;
             $scope.office.contact_persons = _.pluck($scope.office.contact_persons, 'id');
-
-            Restangular.all('people').getList().then(function(people){
-                $scope.persons = people;
-            });
+            $scope.persons = crPersonFactory.getPeople();
         });
     };
 

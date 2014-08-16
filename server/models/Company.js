@@ -13,7 +13,8 @@ var companySchema = mongoose.Schema({
     fax: String,
     web_url: String,
     email: String,
-    contact: [{type: ObjectId, default: null }]
+    contact: {type: ObjectId, ref: 'Person', default: null },
+    user: {type: ObjectId, ref: 'User', default: null }
 });
 
 // Duplicate the ID field.
@@ -30,29 +31,6 @@ companySchema.set('toJSON', {
 companySchema.set('toObject', { virtuals: true })
 
 var Company = mongoose.model('Company', companySchema);
-
-function createDefaultCompanies(){
-    Company.find({}).exec(function(err, collection){
-        if(collection.length === 0){
-            Company.create({
-                company_name: 'Floweb Oy',
-                company_type: 'OY',
-                company_code: '2485800-1',
-                street: 'Vanha talvitie 10',
-                city: 'Helsinki',
-                zip: '99999',
-                phone: '0504325549',
-                alt_phone: '05043255491',
-                fax: '1290381',
-                web_url: 'http://www.ekukka.fi',
-                email: 'info@ekukka.fi',
-                contact: []
-            });
-        }
-    });
-}
-
-exports.createDefaultCompanies = createDefaultCompanies;
 
 exports.CompanySchema = companySchema;
 exports.Company = Company;

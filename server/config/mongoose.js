@@ -13,5 +13,4 @@ module.exports = function(config){
     });
 
     userModel.createDefaultUsers();
-    companyModel.createDefaultCompanies();
 };

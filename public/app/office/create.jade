@@ -4,10 +4,10 @@
             legend(translate='') Office Form
             .form-group.required
                 label.col-md-2.control-label(for="office_company", translate='') Company
-                .col-md-5
-                    select.form-control(ng-model="office.company" ng-options="company.id as company.company_name for company in companies")
-                        option(value='', translate='') Please select company
-                .col-md-1
+                .col-md-5(ng-show="company.id")
+                    input.form-control(name="office_company", readonly, type="text", ng-model="company.company_name")
+                    input.hidden.form-control(name="office_company_id", type="text", ng-model="company.id")
+                .col-md-1(ng-hide="company.id")
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal")
                         span.glyphicon.glyphicon-plus
                         | {{'Add New' | translate}}
@@ -18,19 +18,19 @@
             .form-group
                 label.col-md-2.control-label(for="is_headoffice", translate='') Head Office
                 .col-md-10
-                    input.form-control(type="checkbox", ng-model="office.is_headoffice")
+                    input.form-control(type="checkbox", ng-model="office.is_headoffice", ng-change="checkHeadOffice()")
             .form-group.required
                 label.col-md-2.control-label(for="office_street", translate='') Street
                 .col-md-10
-                    input.form-control(name="office_street", type="text", ng-model="office.contact_info.street_address")
+                    input.form-control(name="office_street", type="text", ng-model="office.contact_info.street_address", ng-disabled="office.is_headoffice")
             .form-group.required
                 label.col-md-2.control-label(for="office_city", translate='') City
                 .col-md-10
-                    input.form-control(name="office_city", type="text", ng-model="office.contact_info.city")
+                    input.form-control(name="office_city", type="text", ng-model="office.contact_info.city", ng-disabled="office.is_headoffice")
             .form-group.required
                 label.col-md-2.control-label(for="office_zipcode", translate='') Zipcode
                 .col-md-10
-                    input.form-control(name="office_zipcode", type="text", ng-model="office.contact_info.zipcode")
+                    input.form-control(name="office_zipcode", type="text", ng-model="office.contact_info.zipcode", ng-disabled="office.is_headoffice")
             .form-group.hide
                 label.col-md-2.control-label(for="office_coordinates", translate='') Coordinates
                 .col-md-3
@@ -174,7 +174,7 @@
             .form-group
                 .col-md-10.col-md-offset-2
                     .pull-right
-                        button.btn.btn-primary(ng-click="create()", translate='') Submit
+                        button.btn.btn-primary(ng-click="create()", ng-disabled="company.id==undefined", translate='') Submit
                         | &nbsp;
                         a.btn.btn-default(href="/offices", translate='') Cancel
     include ../common/company/company-modal

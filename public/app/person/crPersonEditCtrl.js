@@ -4,8 +4,8 @@ angular.module('app').controller('crPersonEditCtrl', function($scope, $translate
     $scope.init = function(){
         crPersonFactory.getPerson($routeParams.id).then(function(person){
             $scope.person = Restangular.copy(person);
-            crCompanyFactory.getCompanies().then(function(companies){
-                $scope.companies = companies;
+            crCompanyFactory.getCompany(person.company).then(function(company){
+                $scope.company = Restangular.copy(company);
             });
         });
     };

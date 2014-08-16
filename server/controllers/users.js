@@ -50,6 +50,7 @@ exports.updateUser = function(req, res, next){
     req.user.firstName = userUpdates.firstName;
     req.user.lastName = userUpdates.lastName;
     req.user.email = userUpdates.email;
+    req.user.company = userUpdates.company;
 
     if(userUpdates.password && userUpdates.password.length > 0) {
         req.user.salt = encrypt.createSalt();

@@ -17,8 +17,6 @@ module.exports = function(app){
         // Pass to next layer of middleware
         next();
 
-        /*
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-        */
+        //res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     });
 };

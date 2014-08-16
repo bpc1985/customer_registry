@@ -75,7 +75,9 @@
                     select.form-control(name="office_services", ng-model="office.services", ui-select2="{ allowClear: true}", multiple, ng-required="true", placeholder="{{'Contact information will not be displayed ekukka.fi search service'|translate}}")
                         option(ng-repeat='service in services', value='{{service}}', translate='') {{ service }}
                 .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#serviceModal", translate='') New Service
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#serviceModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add Service' | translate}}
             .form-group
                 label.col-md-2.control-label(for="office_delivery_areas", translate='') Delivery Areas
                 .col-md-7(ng-show="office.delivery_areas.length > 0")

@@ -1,4 +1,4 @@
-section(ng-controller="crCompanyModalCreateCtrl")
+section(ng-controller="crCompanyCreateCtrl")
     #companyModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
         .modal-dialog
             .modal-content
@@ -48,4 +48,4 @@ section(ng-controller="crCompanyModalCreateCtrl")
                                 input.form-control(name="companyemail", type="text", ng-model="company.email")
                 .modal-footer
                     button.btn.btn-default(type='button', data-dismiss='modal', translate='') Close
-                    button.btn.btn-primary(type='button', ng-click="createNewCompany()", data-dismiss='modal', translate='') Save
+                    button.btn.btn-primary(type='button', ng-click="create(true)", data-dismiss='modal', translate='') Save

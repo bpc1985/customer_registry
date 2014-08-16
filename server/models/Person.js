@@ -11,7 +11,7 @@ var personSchema = mongoose.Schema({
     city: String,
     country: String,
     email: String,
-    company: { type: ObjectId, default: null }
+    company: { type: ObjectId, ref: 'Company', default: null }
 });
 
 // Duplicate the ID field.

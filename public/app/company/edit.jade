@@ -60,7 +60,9 @@
                     select.form-control(ng-model="company.contact" ng-options="person.id as person.pname for person in persons")
                         option(value='', translate='') Please select contact person
                 .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add New' | translate}}
             .form-group
                 .col-md-10.col-md-offset-2
                     .pull-right

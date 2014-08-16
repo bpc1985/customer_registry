@@ -41,10 +41,8 @@
             .form-group.required
                 label.col-md-2.control-label(for="personcompany", translate="") Company
                 .col-md-5
-                    select.form-control(ng-model="person.company" ng-options="company.id as company.company_name for company in companies")
-                        option(value='', translate="") Please select company
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#companyModal", translate="") Add New
+                    input.form-control(name="personcompany", readonly, type="text", ng-model="company.company_name")
+                    input.hidden.form-control(name="personcompanyid", type="text", ng-model="company.id")
             .form-group
                 .col-md-10.col-md-offset-2
                     .pull-right

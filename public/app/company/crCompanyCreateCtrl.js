@@ -1,5 +1,5 @@
 angular.module('app').controller('crCompanyCreateCtrl',
-            function($scope, $translate, $location, crNotifier, crCompanyFactory, crPersonFactory, crRootFactory){
+        function($scope, $translate, $location, crNotifier, crCompanyFactory, crPersonFactory, crRootFactory, crIdentity, crAuth){
 
     crRootFactory.setLanguageDir('company');
     //$scope.showModal = crAddPersonModalService.showModal();
@@ -8,7 +8,7 @@ angular.module('app').controller('crCompanyCreateCtrl',
         $scope.persons = crPersonFactory.getPeople();
     };
 
-    $scope.create = function(){
+    $scope.create = function(fromModal){
         var newCompanyData = {
             company_name: $scope.company.name,
             company_type: $scope.company.type,
@@ -22,11 +22,24 @@ angular.module('app').controller('crCompanyCreateCtrl',
             web_url: $scope.company.web,
             email: $scope.company.email,
             contact: $scope.company.contact,
+            user: crIdentity.currentUser.id
         };
 
-        crCompanyFactory.createCompany(newCompanyData).then(function(){
-            crNotifier.notify($translate.instant('New company has been created'));
-            $location.path('/companies');
+        crCompanyFactory.createCompany(newCompanyData).then(function(newCompany){
+            var newUserData = {
+                email: crIdentity.currentUser.email,
+                firstName: crIdentity.currentUser.firstName,
+                lastName: crIdentity.currentUser.lastName,
+                company: newCompany.id
+            };
+            crAuth.updateCurrentUser(newUserData).then(function() {
+                crNotifier.notify($translate.instant('New company has been created'));
+                if(!fromModal){
+                    $location.path('/companies');
+                } else{
+                    $scope.$parent.company = newCompany;
+                }
+            });
         }, function(reason){
             crNotifier.error(reason);
         });

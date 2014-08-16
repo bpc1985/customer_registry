@@ -55,16 +55,8 @@
                 .col-md-10
                     input.form-control(name="companyemail", type="text", ng-model="company.email")
             .form-group
-                label.col-md-2.control-label(for="contact", translate='') Contact
-                .col-md-5
-                    select.form-control(ng-model="company.contact" ng-options="person.id as person.pname for person in persons")
-                        option(value='', translate='') Please select contact person
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal", translate='') Add New
-            .form-group
                 .col-md-10.col-md-offset-2
                     .pull-right
                         button.btn.btn-primary(ng-click="create()", ng-disabled="companyForm.$invalid", translate='') Submit
                         | &nbsp;
                         a.btn.btn-default(href="/companies", translate='') Cancel
-    include ../common/person/person-modal
