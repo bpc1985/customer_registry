@@ -1,17 +1,15 @@
 var path = require('path');
-var devPath = path.normalize(__dirname + '/../../');
+var rootPath = path.normalize(__dirname + '/../../');
 
 module.exports = {
   development: {
     db: 'mongodb://localhost/customer_registry',
-    rootPath: devPath,
-    port: process.env.PORT || 3030,
-    host: process.env.HOST || 'localhost'
+    rootPath: rootPath,
+    port: process.env.PORT || 3030
   },
   production: {
-    db: 'mongodb://localhost/customer_registry',
-    rootPath: '/home/flowebadm/customerRegistry',
-    port: process.env.PORT || 80,
-    host: process.env.HOST || 'api.ekukka.fi'
+    rootPath: rootPath,
+    db: 'mongodb://bpc1985:hnh2812@ds053978.mongolab.com:53978/customer_registry',
+    port: process.env.PORT || 80
   }
 }
