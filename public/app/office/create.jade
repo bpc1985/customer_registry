@@ -16,9 +16,10 @@
                 .col-md-10
                     input.form-control(name="office_name", type="text", ng-model="office.office_name", placeholder="{{'Enter the office name, if different from the company official name' | translate }}")
             .form-group
-                label.col-md-2.control-label(for="is_headoffice", translate='') Head Office
+                label.col-md-2.control-label(for="is_headoffice", translate='')
                 .col-md-10
-                    input.form-control(type="checkbox", ng-model="office.is_headoffice", ng-change="checkHeadOffice()")
+                    input(type="checkbox", ng-model="office.is_headoffice", ng-change="checkHeadOffice()")
+                    |  {{'Office address is same as company address' | translate}}
             .form-group.required
                 label.col-md-2.control-label(for="office_street", translate='') Street
                 .col-md-10
@@ -89,15 +90,6 @@
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#deliveryModal")
                         span.glyphicon.glyphicon-plus
                         | {{'Add Delivery Areas' | translate}}
-            .form-group
-                label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
-                .col-md-7
-                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true", placeholder="{{'Contact information will not be displayed ekukka.fi search service'|translate}}")
-                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal")
-                        span.glyphicon.glyphicon-plus
-                        | {{'Add New Person' | translate}}
             hr
             legend(translate='') Open Times
             .form-group
@@ -167,10 +159,21 @@
                 label.col-md-2.control-label(translate='') Holidays
                 .col-md-6
                     textarea.form-control(type="text", ng-model="holiday")
+            hr
             .form-group
-                label.col-md-2.control-label(for="office_show", translate='') Show office on ekukka.fi website
+                label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
+                .col-md-7
+                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
+                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
+                .col-md-1
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add New Person' | translate}}
+            .form-group
+                label.col-md-2.control-label(for="office_show", translate='')
                 .col-md-10
-                    input.form-control(name="office_show", type="checkbox", ng-model="office.show_office")
+                    input(name="office_show", type="checkbox", ng-model="office.show_office")
+                    |  {{"Show office on ekukka.fi website" | translate}}
             .form-group
                 .col-md-10.col-md-offset-2
                     .pull-right

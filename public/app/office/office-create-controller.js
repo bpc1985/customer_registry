@@ -14,6 +14,7 @@ angular.module('app').controller('crOfficeCreateCtrl',
         $scope.persons = crPersonFactory.getPeople();
         $scope.weekdays = [];
         $scope.office = {
+            show_office: true,
             delivery_areas: []
         };
 

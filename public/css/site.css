@@ -44,7 +44,7 @@ footer p {
   top: 70px;
 }
 .toast-success {
-  background-color: #13987e;
+  background-color: #95ba00;
 }
 .topspace {
   margin-top: 30px;
@@ -56,14 +56,9 @@ footer p {
   width: 60px !important;
 }
 hr {
-  -moz-border-bottom-colors: none;
-  -moz-border-image: none;
-  -moz-border-left-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-top-colors: none;
-  border-color: #eee -moz-use-text-color #fff;
+  border-color: #95ba00;
   border-style: solid none;
-  border-width: 1px 0;
+  border-width: 2px 0;
   margin: 18px 0;
 }
 .form-group.required .control-label:before {

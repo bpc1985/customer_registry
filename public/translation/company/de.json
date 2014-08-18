@@ -25,12 +25,15 @@
     "Street": "Strasse",
     "City": "Ort",
     "Zip": "Postleitzahl",
+    "Company Phone": "Telefon",
     "Phone": "Telefon 1",
     "Alt Phone": "Telefon 2",
     "Fax": "Fax",
     "Web": "Internet",
+    "Company Email": "E-mail",
     "Email": "E-mail",
     "Contact": "Unternehmer/in",
+    "Office address is same as company address": "Büroadresse ist die gleiche wie Firmenadresse",
     "Please select contact person": "Bitte wählen Sie Ansprechpartner",
     "Please select company type": "Bitte wählen Sie Unternehmenstyp",
     "Add New": "Neue",
@@ -38,6 +41,7 @@
     "Submit": "Speichern",
     "Cancel": "Abbrechen",
 
+    "Add New Company": "Firmeneintrag",
     "New company has been created": "Neue Unternehmen erstellt wurde",
     "Company has been updated": "Unternehmen wurde aktualisiert",
     "Company has been deleted": "Firma gelöscht wurde"

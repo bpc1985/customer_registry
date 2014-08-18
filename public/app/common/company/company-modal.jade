@@ -7,13 +7,13 @@ section(ng-controller="crCompanyCreateCtrl")
                     h4.modal-title(translate='') Add New Company
                 .modal-body
                     form.form-horizontal(name="companyForm")
-                        .form-group
+                        .form-group.required
                             label.col-md-2.control-label(for="companyname", , translate='') Company Name
                             .col-md-10
                                 input.form-control(name="companyname", type="text", ng-model="company.name")
-                        .form-group
+                        .form-group.required
                             label.col-md-2.control-label(for="companycode", translate='') Company Type
-                            .col-md-5
+                            .col-md-5.required
                                 select.form-control(ng-model="company.type")
                                     option(value='TMI', translate='') TMI
                                     option(value='KY', translate='') KY
@@ -22,28 +22,28 @@ section(ng-controller="crCompanyCreateCtrl")
                                     option(value='Osuuskunta', translate='') Osuuskunta
                                     option(value='Oppilaitos', translate='') Oppilaitos
                                     option(value='Muu', translate='') Muu
-                        .form-group
+                        .form-group.required
                             label.col-md-2.control-label(for="companycode", translate='') Company Code
                             .col-md-10
                                 input.form-control(name="companycode", type="text", ng-model="company.code")
-                        .form-group
+                        .form-group.required
                             label.col-md-2.control-label(for="companystreet", translate='') Street
                             .col-md-10
                                 input.form-control(name="companystreet", type="text", ng-model="company.street")
-                        .form-group
+                        .form-group.required
                             label.col-md-2.control-label(for="companycity", translate='') City
                             .col-md-10
                                 input.form-control(name="companycity", type="text", ng-model="company.city")
-                        .form-group
+                        .form-group.required
                             label.col-md-2.control-label(for="companyzip", translate='') Zip
                             .col-md-10
                                 input.form-control(name="companyzip", type="text", ng-model="company.zip")
-                        .form-group
-                            label.col-md-2.control-label(for="companyphone", translate='') Phone
+                        .form-group.required
+                            label.col-md-2.control-label(for="companyphone", translate='') Company Phone
                             .col-md-10
                                 input.form-control(name="companyphone", type="text", ng-model="company.phone")
-                        .form-group
-                            label.col-md-2.control-label(for="companyemail", translate='') Email
+                        .form-group.required
+                            label.col-md-2.control-label(for="companyemail", translate='') Company Email
                             .col-md-10
                                 input.form-control(name="companyemail", type="text", ng-model="company.email")
                 .modal-footer

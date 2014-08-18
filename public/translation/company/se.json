@@ -25,12 +25,15 @@
     "Street": "Gata",
     "City": "Stad",
     "Zip": "Postnummer",
+    "Company Phone": "Telefonnummer",
     "Phone": "Telefonnummer 1",
     "Alt Phone": "Telefonnummer 2",
     "Fax": "Fax",
     "Web": "Hemsida",
+    "Company Email": "Epost",
     "Email": "Epost",
     "Contact": "Företagare",
+    "Office address is same as company address": "Besöksadress är samma som företagets adress",
     "Please select contact person": "Välj kontaktperson",
     "Please select company type": "Välj typ av företag",
     "Add New": "Ägare",
@@ -38,6 +41,7 @@
     "Submit": "Spara",
     "Cancel": "Annnulera",
 
+    "Add New Company": "Lägg till ny företaget",
     "New company has been created": "Nya företag har skapats",
     "Company has been updated": "Företag har uppdaterats",
     "Company has been deleted": "Bolaget har tagits bort"

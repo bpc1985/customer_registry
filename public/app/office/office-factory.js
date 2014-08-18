@@ -5,7 +5,10 @@ angular.module('app').factory('crOfficeFactory', function($http, $cookies, $q, R
 
     var officeFactory = {
         getOffices: function(){
-            return Restangular.all('offices').getList({company: user.company}).$object;
+            if(!_.isNull(user.company)){
+                return Restangular.all('offices').getList({company: user.company}).$object;
+            }
+            return [];
         },
 
         getOffice: function(officeId){

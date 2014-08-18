@@ -31,6 +31,7 @@
     "Web": "Web",
     "Email": "Email",
     "Contact": "Contact",
+    "Office address is same as company address": "Office address is same as company address",
     "Please select contact person": "Please select contact person",
     "Please select company type": "Please select company type",
     "Add New": "Add New",
@@ -38,6 +39,7 @@
     "Submit": "Submit",
     "Cancel": "Cancel",
 
+    "Add New Company": "Add New Company",
     "New company has been created": "New company has been created",
     "Company has been updated": "ompany has been updated",
     "Company has been deleted": "Company has been deleted"
