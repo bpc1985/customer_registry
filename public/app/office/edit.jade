@@ -7,26 +7,27 @@
                 .col-md-10
                     input.form-control(name="office_company", readonly, type="text", ng-model="office.company.company_name")
                     input.hidden.form-control(name="office_company_id", type="text", ng-model="office.company.id")
-            .form-group
+            .form-group.required(ng-class="{ 'has-error': officeForm.office_name.$invalid && officeForm.office_name.$dirty}")
                 label.col-md-2.control-label(for="office_name", translate='') Office Name
                 .col-md-10
-                    input.form-control(name="office_name", type="text", ng-model="office.office_name", placeholder="{{'Enter the office name, if different from the company official name' | translate }}")
+                    input.form-control(name="office_name", type="text", required, ng-model="office.office_name", placeholder="{{'Enter the office name, if different from the company official name' | translate }}")
             .form-group
-                label.col-md-2.control-label(for="is_headoffice", translate='') Head Office
+                label.col-md-2.control-label(for="is_headoffice", translate='')
                 .col-md-10
-                    input.form-control(type="checkbox", ng-model="office.is_headoffice")
-            .form-group.required
+                    input(type="checkbox", ng-model="office.is_headoffice")
+                    |  {{'Office address is same as company address' | translate}}
+            .form-group.required(ng-class="{ 'has-error': officeForm.office_street.$invalid && officeForm.office_street.$dirty}")
                 label.col-md-2.control-label(for="office_street", translate='') Street
                 .col-md-10
-                    input.form-control(name="office_street", type="text", ng-model="office.contact_info.street_address")
-            .form-group.required
+                    input.form-control(name="office_street", type="text", required, ng-model="office.contact_info.street_address")
+            .form-group.required(ng-class="{ 'has-error': officeForm.office_city.$invalid && officeForm.office_city.$dirty}")
                 label.col-md-2.control-label(for="office_city", translate='') City
                 .col-md-10
-                    input.form-control(name="office_city", type="text", ng-model="office.contact_info.city")
-            .form-group.required
+                    input.form-control(name="office_city", type="text", required, ng-model="office.contact_info.city")
+            .form-group.required(ng-class="{ 'has-error': officeForm.office_zipcode.$invalid && officeForm.office_zipcode.$dirty}")
                 label.col-md-2.control-label(for="office_zipcode", translate='') Zipcode
                 .col-md-10
-                    input.form-control(name="office_zipcode", type="text", ng-model="office.contact_info.zipcode")
+                    input.form-control(name="office_zipcode", type="text", required, ng-model="office.contact_info.zipcode")
             .form-group.hide
                 label.col-md-2.control-label(for="office_coordinates", translate='') Coordinates
                 .col-md-3
@@ -37,10 +38,10 @@
                 label.col-md-2.control-label(for="office_map", translate='') Map
                 .col-md-10
                     gmap(address="office.contact_info.street_address", city="office.contact_info.city", latitude="office.contact_info.coordinates.latitude", longitude="office.contact_info.coordinates.longitude")
-            .form-group.required
+            .form-group.required(ng-class="{ 'has-error': officeForm.office_phone.$invalid && officeForm.office_phone.$dirty}")
                 label.col-md-2.control-label(for="office_phone", translate='') Phone
                 .col-md-10
-                    input.form-control(name="office_phone", type="text", ng-model="office.contact_info.phone")
+                    input.form-control(name="office_phone", type="text", required, ng-model="office.contact_info.phone")
             .form-group
                 label.col-md-2.control-label(for="office_altphone", translate='') Alt Phone
                 .col-md-10
@@ -49,10 +50,10 @@
                 label.col-md-2.control-label(for="office_fax", translate='') Fax
                 .col-md-10
                     input.form-control(name="officefax", type="text", ng-model="office.contact_info.fax")
-            .form-group.required
+            .form-group.required(ng-class="{ 'has-error': officeForm.office_email.$invalid && officeForm.office_email.$dirty}")
                 label.col-md-2.control-label(for="office_email", translate='') Email
                 .col-md-10
-                    input.form-control(name="office_email", type="text", ng-model="office.contact_info.email")
+                    input.form-control(name="office_email", type="text", required, ng-model="office.contact_info.email")
             .form-group
                 label.col-md-2.control-label(for="office_web", translate='') Website
                 .col-md-10

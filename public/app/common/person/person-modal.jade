@@ -7,16 +7,16 @@ section(ng-controller="crPersonCreateCtrl")
                     h4.modal-title(translate='') Add New Person
                 .modal-body
                     form.form-horizontal(name="personForm")
-                        .form-group
-                            label.col-md-2.control-label(for="personname", translate='') Name
+                        .form-group.required(ng-class="{ 'has-error': personForm.personname.$invalid && personForm.personname.$dirty}")
+                            label.col-md-2.control-label(for="personname", translate='') Person Name
                             .col-md-10
-                                input.form-control(name="personname", type="text", ng-model="person.pname")
-                        .form-group
+                                input.form-control(name="personname", type="text", required, ng-model="person.pname")
+                        .form-group.required(ng-class="{ 'has-error': personForm.persontitle.$invalid && personForm.persontitle.$dirty}")
                             label.col-md-2.control-label(for="persontitle", translate='') Title
                             .col-md-10
-                                input.form-control(name="persontitle", type="text", ng-model="person.title")
+                                input.form-control(name="persontitle", type="text", required, ng-model="person.title")
                         .form-group
-                            label.col-md-2.control-label(for="persontelephone", translate='') Telephone
+                            label.col-md-2.control-label(for="persontelephone", translate='') Person Phone
                             .col-md-10
                                 input.form-control(name="persontelephone", type="text", ng-model="person.telephone")
                         .form-group
