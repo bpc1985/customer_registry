@@ -9,8 +9,8 @@
         table.table.table-striped
             thead
                 tr
-                    th(translate='') Name
                     th(translate='') Company
+                    th(translate='') Office
                     th(translate='') Address
                     th(translate='') Telephone
                     th(translate='') Responsible
@@ -18,7 +18,6 @@
             tbody
                 tr(ng-repeat="office in offices | orderBy:office_name")
                     td {{office.office_name}}
-                    td {{office.company.company_name}}
                     td {{office.contact_info.street_address}}, {{office.contact_info.city}}
                     td {{office.contact_info.phone}}
                     td {{office.contact_persons[0].pname}}

@@ -12,11 +12,10 @@
                     th(translate="") Name
                     th(translate="") Title
                     th(translate="") Telephone
-                    th(translate="") Phone
                     th(translate="") Email
                     th(translate="") Company
                     th
-            tbody 
+            tbody
                 tr(ng-repeat="person in people | orderBy:pname")
                     td {{person.pname}}
                     td {{person.title}}

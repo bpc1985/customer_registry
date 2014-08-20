@@ -1,9 +1,9 @@
 {
     "People List": "Henkilötiedot",
     "New Person": "Lisää uusi henkilö",
-    "Name": "Nimi",
+    "Name": "Yhteyshenkilön Nimi",
     "Title": "Asema yrityksessä",
-    "Telephone": "Puhelin",
+    "Telephone": "Yhteyshenkilön Puhelin",
     "Phone": "Matkapuhelin",
     "Email": "Sähköposti",
     "Company": "Yritys",
