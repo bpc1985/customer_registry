@@ -11,9 +11,6 @@ exports.getOffices = function(req, res){
     if (req.query.company){
         queryObj = { company: req.query.company.trim() };
     }
-    else {
-        queryObj = { company: null };
-    }
 
     Office.find(queryObj).populate(populateQuery).exec(function(err, collection){
         if(err) {
