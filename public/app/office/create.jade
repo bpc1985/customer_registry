@@ -78,8 +78,16 @@
                     textarea.form-control(name="office_long_desc", type="text", ng-model="office.description.long_info", placeholder="{{'Write concise description of the operation of shop'|translate}}")
             .form-group.required
                 label.col-md-2.control-label(for="office_services", translate='') Services
-                .col-md-10
-                    input.form-control(name="office_services", type="text", ng-model="office.services", placeholder="{{'Services should be seperated with commas such as wedding, delivery, design' | translate}}")
+                .col-md-7(ng-show="office.services.length > 0")
+                    .select2-container.select2-container-multi.form-control
+                        ul.select2-choices
+                            li.select2-search-choice(ng-repeat="service in office.services")
+                                div {{service}}
+                                a.select2-search-choice-close(href='#', tabindex='-1', ng-click='removeService(service)')
+                .col-md-1
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#serviceModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add Service' | translate}}
             .form-group
                 label.col-md-2.control-label(for="office_delivery_areas", translate='') Delivery Areas
                 .col-md-7(ng-show="office.delivery_areas.length > 0")
@@ -185,3 +193,4 @@
     include ../common/company/company-modal
     include ../common/person/person-modal
     include delivery-modal
+    include service-modal

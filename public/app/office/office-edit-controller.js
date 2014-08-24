@@ -6,8 +6,8 @@ angular.module('app').controller('crOfficeEditCtrl',
     $scope.init = function(){
         crOfficeFactory.getOffice($routeParams.id).then(function(office){
             $scope.office = Restangular.copy(office);
-            $scope.services = $scope.office.services;
             $scope.office.contact_persons = _.pluck($scope.office.contact_persons, 'id');
+            console.log("contact_persons: ", $scope.office.contact_persons);
             $scope.persons = crPersonFactory.getPeople();
         });
     };
@@ -26,6 +26,10 @@ angular.module('app').controller('crOfficeEditCtrl',
 
     $scope.removeZipCode = function(value){
         $scope.office.delivery_areas = _.without($scope.office.delivery_areas, value);
+    };
+
+    $scope.removeService = function(value){
+        $scope.office.services = _.without($scope.office.services, value);
     };
 
     $scope.init();

@@ -11,11 +11,6 @@
                 label.col-md-2.control-label(for="office_name", translate='') Office Name
                 .col-md-10
                     input.form-control(name="office_name", type="text", required, ng-model="office.office_name", placeholder="{{'Enter the office name, if different from the company official name' | translate }}")
-            .form-group
-                label.col-md-2.control-label(for="is_headoffice", translate='')
-                .col-md-10
-                    input(type="checkbox", ng-model="office.is_headoffice")
-                    |  {{'Office address is same as company address' | translate}}
             .form-group.required(ng-class="{ 'has-error': officeForm.office_street.$invalid && officeForm.office_street.$dirty}")
                 label.col-md-2.control-label(for="office_street", translate='') Street
                 .col-md-10
@@ -72,9 +67,12 @@
                     textarea.form-control(name="office_long_desc", type="text", ng-model="office.description.long_info", placeholder="{{'Write concise description of the operation of shop'|translate}}")
             .form-group.required
                 label.col-md-2.control-label(for="office_services", translate='') Services
-                .col-md-7
-                    select.form-control(name="office_services", ng-model="office.services", ui-select2="{ allowClear: true}", multiple, ng-required="true", placeholder="{{'Contact information will not be displayed ekukka.fi search service'|translate}}")
-                        option(ng-repeat='service in services', value='{{service}}', translate='') {{ service }}
+                .col-md-7(ng-show="office.services.length > 0")
+                    .select2-container.select2-container-multi.form-control
+                        ul.select2-choices
+                            li.select2-search-choice(ng-repeat="service in office.services")
+                                div {{service}}
+                                a.select2-search-choice-close(href='#', tabindex='-1', ng-click='removeService(service)')
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#serviceModal")
                         span.glyphicon.glyphicon-plus
@@ -91,15 +89,6 @@
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#deliveryModal")
                         span.glyphicon.glyphicon-plus
                         | {{'Add Delivery Areas' | translate}}
-            .form-group
-                label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
-                .col-md-7
-                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
-                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
-                .col-md-1
-                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal")
-                        span.glyphicon.glyphicon-plus
-                        | {{'Add New Person' | translate}}
             hr
             legend(translate='') Open Times
             .form-group
@@ -169,16 +158,27 @@
                 label.col-md-2.control-label(translate='') Holidays
                 .col-md-6
                     textarea.form-control(type="text", ng-model="office.open_times.holiday")
+            hr
             .form-group
-                label.col-md-2.control-label(for="office_show", translate='') Show office on ekukka.fi website
+                label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
+                .col-md-7
+                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
+                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
+                .col-md-1
+                    button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal")
+                        span.glyphicon.glyphicon-plus
+                        | {{'Add New Person' | translate}}
+            .form-group
+                label.col-md-2.control-label(for="office_show", translate='')
                 .col-md-10
-                    input.form-control(name="office_show", type="checkbox", ng-model="office.show_office")
+                    input(name="office_show", type="checkbox", ng-model="office.show_office")
+                    |  {{"Show office on ekukka.fi website" | translate}}
             .form-group
                 .col-md-10.col-md-offset-2
                     .pull-right
                         button.btn.btn-primary(ng-click="update()", translate='') Submit
                         | &nbsp;
                         a.btn.btn-default(href="/offices", translate='') Cancel
-    include ../common/service/service-modal
     include ../common/person/person-modal
     include delivery-modal
+    include service-modal

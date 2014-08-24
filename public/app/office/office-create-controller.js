@@ -15,6 +15,7 @@ angular.module('app').controller('crOfficeCreateCtrl',
         $scope.weekdays = [];
         $scope.office = {
             show_office: true,
+            services: [],
             delivery_areas: []
         };
 
@@ -52,7 +53,6 @@ angular.module('app').controller('crOfficeCreateCtrl',
             'weekdays': $scope.weekdays,
             'holiday': $scope.holiday
         };
-        $scope.office.services = $scope.office.services.split(",");
 
         crOfficeFactory.createOffice($scope.office).then(function(){
             crNotifier.notify($translate.instant('New office has been created'));
@@ -64,6 +64,10 @@ angular.module('app').controller('crOfficeCreateCtrl',
 
     $scope.removeZipCode = function(value){
         $scope.office.delivery_areas = _.without($scope.office.delivery_areas, value);
+    };
+
+    $scope.removeService = function(value){
+        $scope.office.services = _.without($scope.office.services, value);
     };
 
     $scope.init();

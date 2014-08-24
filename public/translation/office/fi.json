@@ -36,7 +36,7 @@
 	"Long Desc": "Kaupan palveluiden kuvaus",
 	"Write concise description of the operation of shop": "Kirjoita tähän tiivis ja napakka kuvaus kauppasi toiminnasta",
 	"Services": "Palvelut",
-	"New Service": "New Palvelu",
+	"Add New Service": "Lisää Uusi Palvelu",
 	"New Person": "Uusi Henkilö",
 	"Contact": "Toimipisteen Yhteyshenkilöt",
 	"Add New Person": "Lisää uusi yhteyshenkilö",
@@ -61,6 +61,7 @@
 	"Delivery Areas": "Toimitusalueet",
 	"Add Delivery Areas": "Valitse toimitusalueet",
 	"Enter new zipcode": "Anna uusi Postinumero",
+	"Enter new service": "Anna uusi Palvelu",
 	"Add": "Lisää",
 	"Save": "Tallenna",
 
