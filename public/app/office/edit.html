@@ -1,0 +1,368 @@
+
+<div class="container">
+  <div class="well">
+    <form name="officeForm" class="form-horizontal">
+      <legend translate="">Office Form</legend>
+      <div class="form-group required">
+        <label for="office_company" translate="" class="col-md-2 control-label">Company</label>
+        <div class="col-md-10">
+          <input name="office_company" readonly="readonly" type="text" ng-model="office.company.company_name" class="form-control"/>
+          <input name="office_company_id" type="text" ng-model="office.company.id" class="hidden form-control"/>
+        </div>
+      </div>
+      <div ng-class="{ 'has-error': officeForm.office_name.$invalid &amp;&amp; officeForm.office_name.$dirty}" class="form-group required">
+        <label for="office_name" translate="" class="col-md-2 control-label">Office Name</label>
+        <div class="col-md-10">
+          <input name="office_name" type="text" required="required" ng-model="office.office_name" placeholder="{{'Enter the office name, if different from the company official name' | translate }}" class="form-control"/>
+        </div>
+      </div>
+      <div ng-class="{ 'has-error': officeForm.office_street.$invalid &amp;&amp; officeForm.office_street.$dirty}" class="form-group required">
+        <label for="office_street" translate="" class="col-md-2 control-label">Street</label>
+        <div class="col-md-10">
+          <input name="office_street" type="text" required="required" ng-model="office.contact_info.street_address" class="form-control"/>
+        </div>
+      </div>
+      <div ng-class="{ 'has-error': officeForm.office_city.$invalid &amp;&amp; officeForm.office_city.$dirty}" class="form-group required">
+        <label for="office_city" translate="" class="col-md-2 control-label">City</label>
+        <div class="col-md-10">
+          <input name="office_city" type="text" required="required" ng-model="office.contact_info.city" class="form-control"/>
+        </div>
+      </div>
+      <div ng-class="{ 'has-error': officeForm.office_zipcode.$invalid &amp;&amp; officeForm.office_zipcode.$dirty}" class="form-group required">
+        <label for="office_zipcode" translate="" class="col-md-2 control-label">Zipcode</label>
+        <div class="col-md-10">
+          <input name="office_zipcode" type="text" required="required" ng-model="office.contact_info.zipcode" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group hide">
+        <label for="office_coordinates" translate="" class="col-md-2 control-label">Coordinates</label>
+        <div class="col-md-3">
+          <input name="office_coordinates" readonly="readonly" type="text" ng-model="office.contact_info.coordinates.latitude" class="form-control"/>
+        </div>
+        <div class="col-md-3">
+          <input name="office_coordinates" readonly="readonly" type="text" ng-model="office.contact_info.coordinates.longitude" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="office_map" translate="" class="col-md-2 control-label">Map</label>
+        <div class="col-md-10">
+          <gmap address="office.contact_info.street_address" city="office.contact_info.city" latitude="office.contact_info.coordinates.latitude" longitude="office.contact_info.coordinates.longitude"></gmap>
+        </div>
+      </div>
+      <div ng-class="{ 'has-error': officeForm.office_phone.$invalid &amp;&amp; officeForm.office_phone.$dirty}" class="form-group required">
+        <label for="office_phone" translate="" class="col-md-2 control-label">Phone</label>
+        <div class="col-md-10">
+          <input name="office_phone" type="text" required="required" ng-model="office.contact_info.phone" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="office_altphone" translate="" class="col-md-2 control-label">Alt Phone</label>
+        <div class="col-md-10">
+          <input name="office_altphone" type="text" ng-model="office.contact_info.alt_phone" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="office_fax" translate="" class="col-md-2 control-label">Fax</label>
+        <div class="col-md-10">
+          <input name="officefax" type="text" ng-model="office.contact_info.fax" class="form-control"/>
+        </div>
+      </div>
+      <div ng-class="{ 'has-error': officeForm.office_email.$invalid &amp;&amp; officeForm.office_email.$dirty}" class="form-group required">
+        <label for="office_email" translate="" class="col-md-2 control-label">Email</label>
+        <div class="col-md-10">
+          <input name="office_email" type="text" required="required" ng-model="office.contact_info.email" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="office_web" translate="" class="col-md-2 control-label">Website</label>
+        <div class="col-md-10">
+          <input name="office_web" type="text" ng-model="office.contact_info.website" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="office_picture" translate="" class="col-md-2 control-label">Picture</label>
+        <div class="col-md-10">
+          <input name="office_picture" type="text" ng-model="office.profile_img" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="office_short_desc" translate="" class="col-md-2 control-label">Short Desc</label>
+        <div class="col-md-10">
+          <textarea name="office_short_desc" type="text" ng-model="office.description.short_info" placeholder="{{'Enter the marketing slogan slogan max 100 characters. For example Service is our passion'|translate}}" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="office_long_desc" translate="" class="col-md-2 control-label">Long Desc</label>
+        <div class="col-md-10">
+          <textarea name="office_long_desc" type="text" ng-model="office.description.long_info" placeholder="{{'Write concise description of the operation of shop'|translate}}" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="office_services" translate="" class="col-md-2 control-label">Services</label>
+        <div ng-show="office.services.length &gt; 0" class="col-md-7">
+          <div class="select2-container select2-container-multi form-control">
+            <ul class="select2-choices">
+              <li ng-repeat="service in office.services" class="select2-search-choice">
+                <div>{{service}}</div><a href="#" tabindex="-1" ng-click="removeService(service)" class="select2-search-choice-close"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <button type="button" data-toggle="modal" data-target="#serviceModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Add Service' | translate}}</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="office_delivery_areas" translate="" class="col-md-2 control-label">Delivery Areas</label>
+        <div ng-show="office.delivery_areas.length &gt; 0" class="col-md-7">
+          <div class="select2-container select2-container-multi form-control">
+            <ul class="select2-choices">
+              <li ng-repeat="zipcode in office.delivery_areas" class="select2-search-choice">
+                <div>{{zipcode}}</div><a href="#" tabindex="-1" ng-click="removeZipCode(zipcode)" class="select2-search-choice-close"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <button type="button" data-toggle="modal" data-target="#deliveryModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Add Delivery Areas' | translate}}</button>
+        </div>
+      </div>
+      <hr/>
+      <legend translate="">Open Times</legend>
+      <div class="form-group">
+        <label translate="" class="col-md-2 control-label">Monday</label>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[0].from" disabled="disabled" show-meridian="false" description="{{'From'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[0].to" disabled="disabled" show-meridian="false" description="{{'To'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <label translate="" class="col-sm-1 control-label">Close</label>
+        <div class="col-md-2">
+          <input type="checkbox" ng-model="office.open_times.weekdays[0].is_closed" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label translate="" class="col-md-2 control-label">Tuesday</label>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[1].from" disabled="disabled" show-meridian="false" description="{{'From'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[1].to" disabled="disabled" show-meridian="false" description="{{'To'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <label translate="" class="col-sm-1 control-label">Close</label>
+        <div class="col-md-2">
+          <input type="checkbox" ng-model="office.open_times.weekdays[1].is_closed" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label translate="" class="col-md-2 control-label">Wednesday</label>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[2].from" disabled="disabled" show-meridian="false" description="{{'From'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[2].to" disabled="disabled" show-meridian="false" description="{{'To'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <label translate="" class="col-sm-1 control-label">Close</label>
+        <div class="col-md-2">
+          <input type="checkbox" ng-model="office.open_times.weekdays[2].is_closed" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label translate="" class="col-md-2 control-label">Thursday</label>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[3].from" disabled="disabled" show-meridian="false" description="{{'From'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[3].to" disabled="disabled" show-meridian="false" description="{{'To'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <label translate="" class="col-sm-1 control-label">Close</label>
+        <div class="col-md-2">
+          <input type="checkbox" ng-model="office.open_times.weekdays[3].is_closed" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label translate="" class="col-md-2 control-label">Friday</label>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[4].from" disabled="disabled" show-meridian="false" description="{{'From'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[4].to" disabled="disabled" show-meridian="false" description="{{'To'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <label translate="" class="col-sm-1 control-label">Close</label>
+        <div class="col-md-2">
+          <input type="checkbox" ng-model="office.open_times.weekdays[4].is_closed" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label translate="" class="col-md-2 control-label">Saturday</label>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[5].from" disabled="disabled" show-meridian="false" description="{{'From'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[5].to" disabled="disabled" show-meridian="false" description="{{'To'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <label translate="" class="col-sm-1 control-label">Close</label>
+        <div class="col-md-2">
+          <input type="checkbox" ng-model="office.open_times.weekdays[5].is_closed" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label translate="" class="col-md-2 control-label">Sunday</label>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[6].from" disabled="disabled" show-meridian="false" description="{{'From'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <div class="col-md-2">
+          <timepicker-pop input-time="office.open_times.weekdays[6].to" disabled="disabled" show-meridian="false" description="{{'To'|translate}}" class="input-group"></timepicker-pop>
+        </div>
+        <label translate="" class="col-sm-1 control-label">Close</label>
+        <div class="col-md-2">
+          <input type="checkbox" ng-model="office.open_times.weekdays[6].is_closed" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label translate="" class="col-md-2 control-label">Holidays</label>
+        <div class="col-md-6">
+          <textarea type="text" ng-model="office.open_times.holiday" class="form-control"></textarea>
+        </div>
+      </div>
+      <hr/>
+      <div class="form-group">
+        <label for="office_contact_persons" translate="" class="col-md-2 control-label">Contact</label>
+        <div class="col-md-7">
+          <select name="office_contact_persons" ng-model="office.contact_persons" ui-select2="{ allowClear: true}" multiple="multiple" ng-required="true" class="form-control">
+            <option ng-repeat="person in persons" value="{{person.id}}">{{person.pname}} - {{person.email}}</option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <button type="button" data-toggle="modal" data-target="#personModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Add New Person' | translate}}</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="office_show" translate="" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+          <input name="office_show" type="checkbox" ng-model="office.show_office"/> {{"Show office on ekukka.fi website" | translate}}
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+          <div class="pull-right">
+            <button ng-click="update()" translate="" class="btn btn-primary">Submit</button>&nbsp;<a href="/offices" translate="" class="btn btn-default">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <section ng-controller="crPersonCreateCtrl">
+    <div id="personModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+            <h4 translate="" class="modal-title">Add New Person</h4>
+          </div>
+          <div class="modal-body">
+            <form name="personForm" class="form-horizontal">
+              <div ng-class="{ 'has-error': personForm.personname.$invalid &amp;&amp; personForm.personname.$dirty}" class="form-group required">
+                <label for="personname" translate="" class="col-md-2 control-label">Person Name</label>
+                <div class="col-md-10">
+                  <input name="personname" type="text" required="required" ng-model="person.pname" class="form-control"/>
+                </div>
+              </div>
+              <div ng-class="{ 'has-error': personForm.persontitle.$invalid &amp;&amp; personForm.persontitle.$dirty}" class="form-group required">
+                <label for="persontitle" translate="" class="col-md-2 control-label">Title</label>
+                <div class="col-md-10">
+                  <input name="persontitle" type="text" required="required" ng-model="person.title" class="form-control"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="persontelephone" translate="" class="col-md-2 control-label">Person Phone</label>
+                <div class="col-md-10">
+                  <input name="persontelephone" type="text" ng-model="person.telephone" class="form-control"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="personemail" translate="" class="col-md-2 control-label">Email</label>
+                <div class="col-md-10">
+                  <input name="personemail" type="text" ng-model="person.email" class="form-control"/>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+            <button type="button" ng-click="create('modal-company')" data-dismiss="modal" translate="" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section ng-controller="crDeliveryModalCtrl">
+    <div id="deliveryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+            <h4 translate="" class="modal-title">Add Delivery Areas</h4>
+          </div>
+          <div class="modal-body">
+            <form name="DeliveryForm" class="form-horizontal">
+              <div ng-class="{ 'has-error': DeliveryForm.delivery_zipcode.$invalid &amp;&amp; DeliveryForm.delivery_zipcode.$dirty}" class="form-group">
+                <div class="col-md-5">
+                  <input type="text" name="delivery_zipcode" ng-model="new_zipcode" ng-maxlength="5" ng-pattern="/^[0-9]{1,5}$/" placeholder="{{'Enter new zipcode'|translate}}" required="required" class="form-control"/>
+                </div>
+                <div class="col-md-">
+                  <button type="button" ng-click="addZipCode()" translate="" class="btn btn-primary add-zipcode-btn">Add</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <ul class="zipcode-list">
+                    <li ng-repeat="zipcode in office.delivery_areas track by zipcode" class="zipcode-choice"><span>{{zipcode}}</span><a href="#" ng-click="removeZipCode(zipcode)" class="zipcode-close">x</a></li>
+                  </ul>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section ng-controller="crServiceModalCtrl">
+    <div id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+            <h4 translate="" class="modal-title">Add New Service</h4>
+          </div>
+          <div class="modal-body">
+            <form name="ServiceForm" class="form-horizontal">
+              <div ng-class="{ 'has-error': ServiceForm.service_name.$invalid &amp;&amp; ServiceForm.service_name.$dirty}" class="form-group">
+                <div class="col-md-5">
+                  <input type="text" name="service_name" ng-model="new_service" placeholder="{{'Enter new service'|translate}}" required="required" class="form-control"/>
+                </div>
+                <div class="col-md-">
+                  <button type="button" ng-click="addService()" translate="" class="btn btn-primary add-zipcode-btn">Add</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-12">
+                  <ul class="zipcode-list">
+                    <li ng-repeat="service in office.services track by service" class="zipcode-choice"><span>{{ service }}</span><a href="#" ng-click="removeService(service)" class="zipcode-close">x</a></li>
+                  </ul>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

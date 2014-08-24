@@ -1,0 +1,76 @@
+
+<div class="container">
+  <div class="well">
+    <form name="personForm" class="form-horizontal">
+      <legend translate="">Person Form</legend>
+      <div class="form-group required">
+        <label for="personname" translate="" class="col-md-2 control-label">Name</label>
+        <div class="col-md-10">
+          <input name="personname" type="text" ng-model="person.pname" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="persontitle" translate="" class="col-md-2 control-label">Title</label>
+        <div class="col-md-10">
+          <input name="persontitle" type="text" ng-model="person.title" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="persontelephone" translate="" class="col-md-2 control-label">Telephone</label>
+        <div class="col-md-10">
+          <input name="persontelephone" type="text" ng-model="person.telephone" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="personmobile" translate="" class="col-md-2 control-label">Mobile</label>
+        <div class="col-md-10">
+          <input name="personmobile" type="text" ng-model="person.mobile" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="personstreet" translate="" class="col-md-2 control-label">Street</label>
+        <div class="col-md-10">
+          <input name="personstreet" type="text" ng-model="person.street" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="personzipcode" translate="" class="col-md-2 control-label">Zipcode</label>
+        <div class="col-md-10">
+          <input name="personzipcode" type="text" ng-model="person.zipcode" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="personcity" translate="" class="col-md-2 control-label">City</label>
+        <div class="col-md-10">
+          <input name="personcity" type="text" ng-model="person.city" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="personcountry" translate="" class="col-md-2 control-label">Country</label>
+        <div class="col-md-10">
+          <input name="personcountry" type="text" ng-model="person.country" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="personemail" translate="" class="col-md-2 control-label">Email</label>
+        <div class="col-md-10">
+          <input name="personemail" type="text" ng-model="person.email" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="personcompany" translate="" class="col-md-2 control-label">Company</label>
+        <div class="col-md-5">
+          <input name="personcompany" readonly="readonly" type="text" ng-model="company.company_name" class="form-control"/>
+          <input name="personcompanyid" type="text" ng-model="company.id" class="hidden form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+          <div class="pull-right">
+            <button ng-click="create()" ng-disabled="company.id==undefined" translate="" class="btn btn-primary">Submit</button>&nbsp;<a href="/persons" translate="" class="btn btn-default">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+
+<div class="container">
+  <div class="well">
+    <form name="companyForm" class="form-horizontal">
+      <legend translate="">Company Profile</legend>
+      <div class="form-group required">
+        <label for="companyname" translate="" class="col-md-2 control-label">Company Name</label>
+        <div class="col-md-10">
+          <input name="companyname" type="text" ng-model="company.company_name" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="companycode" translate="" class="col-md-2 control-label">Company Type</label>
+        <div class="col-md-5">
+          <select ng-model="company.company_type" class="form-control">
+            <option value="TMI" translate="">TMI</option>
+            <option value="KY" translate="">KY</option>
+            <option value="AY" translate="">AY</option>
+            <option value="OY" translate="">OY</option>
+            <option value="Osuuskunta" translate="">Osuuskunta</option>
+            <option value="Oppilaitos" translate="">Oppilaitos</option>
+            <option value="Muu" translate="">Muu</option>
+            <option value="YH" translate="">YH</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="companycode" translate="" class="col-md-2 control-label">Company Code</label>
+        <div class="col-md-10">
+          <input name="companycode" type="text" ng-model="company.company_code" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="companystreet" translate="" class="col-md-2 control-label">Street</label>
+        <div class="col-md-10">
+          <input name="companystreet" type="text" ng-model="company.street" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="companycity" translate="" class="col-md-2 control-label">City</label>
+        <div class="col-md-10">
+          <input name="companycity" type="text" ng-model="company.city" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="companyzip" translate="" class="col-md-2 control-label">Zip</label>
+        <div class="col-md-10">
+          <input name="companyzip" type="text" ng-model="company.zip" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="companyphone" translate="" class="col-md-2 control-label">Phone</label>
+        <div class="col-md-10">
+          <input name="companyphone" type="text" ng-model="company.phone" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="companyaltphone" translate="" class="col-md-2 control-label">Alt Phone</label>
+        <div class="col-md-10">
+          <input name="companyaltphone" type="text" ng-model="company.alt_phone" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="companyfax" translate="" class="col-md-2 control-label">Fax</label>
+        <div class="col-md-10">
+          <input name="companyfax" type="text" ng-model="company.fax" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="companyweb" translate="" class="col-md-2 control-label">Web</label>
+        <div class="col-md-10">
+          <input name="companyweb" type="text" ng-model="company.web_url" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="companyemail" translate="" class="col-md-2 control-label">Email</label>
+        <div class="col-md-10">
+          <input name="companyemail" type="text" ng-model="company.email" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contact" translate="" class="col-md-2 control-label">Contact</label>
+        <div class="col-md-5">
+          <select ng-model="company.contact" ng-options="person.id as person.pname for person in persons" class="form-control">
+            <option value="" translate="">Please select contact person</option>
+          </select>
+        </div>
+        <div class="col-md-1">
+          <button type="button" data-toggle="modal" data-target="#personModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Add New' | translate}}</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+          <div class="pull-right">
+            <button ng-click="update()" ng-disabled="companyForm.$invalid" translate="" class="btn btn-primary">Submit</button>&nbsp;<a href="/companies" translate="" class="btn btn-default">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <section ng-controller="crPersonCreateCtrl">
+    <div id="personModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+            <h4 translate="" class="modal-title">Add New Person</h4>
+          </div>
+          <div class="modal-body">
+            <form name="personForm" class="form-horizontal">
+              <div ng-class="{ 'has-error': personForm.personname.$invalid &amp;&amp; personForm.personname.$dirty}" class="form-group required">
+                <label for="personname" translate="" class="col-md-2 control-label">Person Name</label>
+                <div class="col-md-10">
+                  <input name="personname" type="text" required="required" ng-model="person.pname" class="form-control"/>
+                </div>
+              </div>
+              <div ng-class="{ 'has-error': personForm.persontitle.$invalid &amp;&amp; personForm.persontitle.$dirty}" class="form-group required">
+                <label for="persontitle" translate="" class="col-md-2 control-label">Title</label>
+                <div class="col-md-10">
+                  <input name="persontitle" type="text" required="required" ng-model="person.title" class="form-control"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="persontelephone" translate="" class="col-md-2 control-label">Person Phone</label>
+                <div class="col-md-10">
+                  <input name="persontelephone" type="text" ng-model="person.telephone" class="form-control"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="personemail" translate="" class="col-md-2 control-label">Email</label>
+                <div class="col-md-10">
+                  <input name="personemail" type="text" ng-model="person.email" class="form-control"/>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+            <button type="button" ng-click="create('modal-company')" data-dismiss="modal" translate="" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

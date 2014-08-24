@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="well">
+    <form name="profileForm" class="form-horizontal">
+      <legend translate="">User Profile</legend>
+      <div class="form-group">
+        <label for="email" translate="" class="col-md-2 control-label">Email</label>
+        <div class="col-md-10">
+          <input name="email" type="email" disabled="disabled" placeholder="Email" ng-model="email" required="required" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fname" translate="" class="col-md-2 control-label">First Name</label>
+        <div class="col-md-10">
+          <input name="fname" type="text" placeholder="First Name" ng-model="fname" required="required" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lname" translate="" class="col-md-2 control-label">Last Name</label>
+        <div class="col-md-10">
+          <input name="lname" type="text" placeholder="Last Name" ng-model="lname" required="required" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password" translate="" class="col-md-2 control-label">Password</label>
+        <div class="col-md-10">
+          <input name="password" type="password" placeholder="Password" ng-model="password" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+          <div class="pull-right">
+            <button ng-click="update()" ng-disabled="profileForm.$invalid" translate="" class="btn btn-primary">Submit</button>&nbsp;<a href="/" translate="" class="btn btn-default">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

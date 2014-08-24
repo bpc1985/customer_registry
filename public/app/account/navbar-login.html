@@ -1,0 +1,32 @@
+
+<div ng-controller="crNavBarLoginCtrl" class="navbar-collapse collapse">
+  <ul ng-show="identity.isAuthenticated()" class="nav navbar-nav">
+    <li id="home"><a href="/" translate="">Home</a></li>
+    <li id="companies"><a href="/companies" translate="">Companies</a></li>
+    <li id="persons"><a href="/persons" translate="">Persons</a></li>
+    <li id="offices"><a href="/offices" translate="">Offices</a></li>
+  </ul>
+  <div class="navbar-right">
+    <form ng-hide="identity.isAuthenticated()" class="navbar-form">
+      <ul class="nav navbar-nav">
+        <li><a href="/signup" translate="">Sign up</a></li>
+      </ul>
+      <div class="form-group">
+        <input placeholder="{{'Email'|translate}}" ng-model="email" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="{{'Password'|translate}}" ng-model="password" class="form-control"/>
+      </div>
+      <button ng-click="signin(email, password)" translate="" class="btn btn-primary">Sign in</button>
+    </form>
+    <ul ng-show="identity.isAuthenticated()" class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a href="" data-toggle="dropdown" class="dropdown-toggle">{{identity.currentUser.firstName + " " + identity.currentUser.lastName}}</a>
+        <ul class="dropdown-menu">
+          <li ng-show="identity.currentUser.isAdmin()"><a href="/admin/users" translate="">User Admin</a></li>
+          <li><a href="/profile" translate="">Profile</a></li>
+          <li><a href="" ng-click="signout()" translate="">Sign Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

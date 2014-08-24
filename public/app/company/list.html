@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="well">
+    <div class="row">
+      <div class="col-md-10">
+        <h2 translate="">Companies</h2>
+      </div>
+      <div ng-hide="companies.length==1" class="col-md-2 topspace"><a href="/companies/create" translate="">New Company</a></div>
+    </div>
+    <div class="table-reponsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th translate="">Name</th>
+            <th translate="">Type</th>
+            <th translate="">Code</th>
+            <th translate="">Address</th>
+            <th translate="">Telephone</th>
+            <th translate="">Email</th>
+            <th translate="">Contact</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="company in companies | orderBy:name">
+            <td>{{company.company_name}}</td>
+            <td>{{company.company_type}}</td>
+            <td>{{company.company_code}}</td>
+            <td>{{company.street}}, {{company.city}}</td>
+            <td>{{company.phone}}</td>
+            <td>{{company.email}}</td>
+            <td>{{company.contact}}</td>
+            <td><a href="/companies/{{company.id}}" translate="">Edit</a><span ng-hide="companies.length==1">&nbsp;|&nbsp;</span><a href="" ng-hide="companies.length==1" ng-click="delete(company)" translate="">Delete</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

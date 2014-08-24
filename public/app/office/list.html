@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="well">
+    <div class="row">
+      <div class="col-md-10">
+        <h2 translate="">Offices</h2>
+      </div>
+      <div class="col-md-2 topspace"><a href="/offices/create" translate="">New Office</a></div>
+    </div>
+    <div class="table-reponsive"></div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th translate="">Company</th>
+          <th translate="">Office</th>
+          <th translate="">Address</th>
+          <th translate="">Telephone</th>
+          <th translate="">Responsible</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="office in offices | orderBy:office_name">
+          <td>{{office.office_name}}</td>
+          <td>{{office.contact_info.street_address}}, {{office.contact_info.city}}</td>
+          <td>{{office.contact_info.phone}}</td>
+          <td>{{office.contact_persons[0].pname}}</td>
+          <td><a href="/offices/{{office.id}}" translate="">Edit</a>&nbsp;|&nbsp;<a href="" ng-click="delete(office)" translate="">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

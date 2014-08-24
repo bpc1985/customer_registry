@@ -1,0 +1,77 @@
+
+<section ng-controller="crCompanyCreateCtrl">
+  <div id="companyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+          <h4 translate="" class="modal-title">Add New Company</h4>
+        </div>
+        <div class="modal-body">
+          <form name="companyForm" class="form-horizontal">
+            <div class="form-group required">
+              <label for="companyname" ,="," translate="" class="col-md-2 control-label">Company Name</label>
+              <div class="col-md-10">
+                <input name="companyname" type="text" ng-model="company.name" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <label for="companycode" translate="" class="col-md-2 control-label">Company Type</label>
+              <div class="col-md-5 required">
+                <select ng-model="company.type" class="form-control">
+                  <option value="TMI" translate="">TMI</option>
+                  <option value="KY" translate="">KY</option>
+                  <option value="AY" translate="">AY</option>
+                  <option value="OY" translate="">OY</option>
+                  <option value="Osuuskunta" translate="">Osuuskunta</option>
+                  <option value="Oppilaitos" translate="">Oppilaitos</option>
+                  <option value="Muu" translate="">Muu</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group required">
+              <label for="companycode" translate="" class="col-md-2 control-label">Company Code</label>
+              <div class="col-md-10">
+                <input name="companycode" type="text" ng-model="company.code" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <label for="companystreet" translate="" class="col-md-2 control-label">Street</label>
+              <div class="col-md-10">
+                <input name="companystreet" type="text" ng-model="company.street" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <label for="companycity" translate="" class="col-md-2 control-label">City</label>
+              <div class="col-md-10">
+                <input name="companycity" type="text" ng-model="company.city" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <label for="companyzip" translate="" class="col-md-2 control-label">Zip</label>
+              <div class="col-md-10">
+                <input name="companyzip" type="text" ng-model="company.zip" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <label for="companyphone" translate="" class="col-md-2 control-label">Company Phone</label>
+              <div class="col-md-10">
+                <input name="companyphone" type="text" ng-model="company.phone" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group required">
+              <label for="companyemail" translate="" class="col-md-2 control-label">Company Email</label>
+              <div class="col-md-10">
+                <input name="companyemail" type="text" ng-model="company.email" class="form-control"/>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+          <button type="button" ng-click="create(true)" data-dismiss="modal" translate="" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

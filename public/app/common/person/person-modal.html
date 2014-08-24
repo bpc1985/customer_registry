@@ -1,0 +1,45 @@
+
+<section ng-controller="crPersonCreateCtrl">
+  <div id="personModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+          <h4 translate="" class="modal-title">Add New Person</h4>
+        </div>
+        <div class="modal-body">
+          <form name="personForm" class="form-horizontal">
+            <div ng-class="{ 'has-error': personForm.personname.$invalid &amp;&amp; personForm.personname.$dirty}" class="form-group required">
+              <label for="personname" translate="" class="col-md-2 control-label">Person Name</label>
+              <div class="col-md-10">
+                <input name="personname" type="text" required="required" ng-model="person.pname" class="form-control"/>
+              </div>
+            </div>
+            <div ng-class="{ 'has-error': personForm.persontitle.$invalid &amp;&amp; personForm.persontitle.$dirty}" class="form-group required">
+              <label for="persontitle" translate="" class="col-md-2 control-label">Title</label>
+              <div class="col-md-10">
+                <input name="persontitle" type="text" required="required" ng-model="person.title" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="persontelephone" translate="" class="col-md-2 control-label">Person Phone</label>
+              <div class="col-md-10">
+                <input name="persontelephone" type="text" ng-model="person.telephone" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="personemail" translate="" class="col-md-2 control-label">Email</label>
+              <div class="col-md-10">
+                <input name="personemail" type="text" ng-model="person.email" class="form-control"/>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+          <button type="button" ng-click="create('modal-company')" data-dismiss="modal" translate="" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
