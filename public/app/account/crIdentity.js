@@ -1,9 +1,10 @@
 angular.module('app').factory('crIdentity', function($window, crUser){
     var currentUser;
+    var userInfo = $window.localStorage["userInfo"];
 
-    if(!!$window.bootstrappedUserObject){
+    if (!_.isUndefined(userInfo) && !_.isEmpty(userInfo)) {
         currentUser = new crUser();
-        angular.extend(currentUser, $window.bootstrappedUserObject);
+        angular.extend(currentUser, JSON.parse(userInfo));
     }
 
     return {

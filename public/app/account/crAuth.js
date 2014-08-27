@@ -1,4 +1,4 @@
-angular.module('app').factory('crAuth', function($http, $q, crIdentity, crUser){
+angular.module('app').factory('crAuth', function($window, $http, $q, crIdentity, crUser){
     return {
         authenticateUser: function(email, password){
             var deferred = $q.defer();
@@ -6,6 +6,7 @@ angular.module('app').factory('crAuth', function($http, $q, crIdentity, crUser){
                 if(response.data.success){
                     var user = new crUser();
                     angular.extend(user, response.data.user);
+                    $window.localStorage["userInfo"] = JSON.stringify(user);
                     crIdentity.currentUser = user;
                     deferred.resolve(true);
                 }
@@ -50,6 +51,7 @@ angular.module('app').factory('crAuth', function($http, $q, crIdentity, crUser){
             var deferred = $q.defer();
             $http.post("/logout", {logout: true}).then(function(){
                 crIdentity.currentUser = undefined;
+                $window.localStorage["userInfo"] = '';
                 deferred.resolve();
             });
             return deferred.promise;
