@@ -1,10 +1,10 @@
 angular.module('app').factory('crOfficeFactory', function($http, $cookies, $q, Restangular, crIdentity){
 
     var csrftoken = {"X-CSRFToken": $cookies.csrftoken};
-    var user = crIdentity.currentUser;
 
     var officeFactory = {
         getOffices: function(){
+            var user = crIdentity.currentUser;
             if(!_.isNull(user.company)){
                 return Restangular.all('offices').getList({company: user.company}).$object;
             }

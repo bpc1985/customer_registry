@@ -1,4 +1,10 @@
 var Person = require('mongoose').model('Person');
+var Company = require('mongoose').model('Company');
+var Office = require('mongoose').model('Office');
+
+var populateQuery = [
+    { path:'company', select:'company_name company_type company_code phone email web_url' }
+];
 
 exports.getPeople = function(req, res){
     var queryObj = {};
@@ -9,7 +15,7 @@ exports.getPeople = function(req, res){
         queryObj = { company: null };
     }
 
-    Person.find(queryObj).exec(function(err, collection){
+    Person.find(queryObj).populate(populateQuery).exec(function(err, collection){
         if(err) { res.status(400); return res.send({reason:err.toString()});}
         res.send(collection);
     });

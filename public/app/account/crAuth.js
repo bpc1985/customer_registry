@@ -23,7 +23,8 @@ angular.module('app').factory('crAuth', function($window, $http, $q, crIdentity,
 
             newUser.$save().then(function(){
                 crIdentity.currentUser = newUser;
-                deferred.resolve();
+                $window.localStorage["userInfo"] = JSON.stringify(newUser);
+                deferred.resolve(newUser);
             }, function(response){
                 deferred.reject(response.data.reason);
             });
@@ -39,6 +40,7 @@ angular.module('app').factory('crAuth', function($window, $http, $q, crIdentity,
 
             clone.$update().then(function() {
                 crIdentity.currentUser = clone;
+                $window.localStorage["userInfo"] = JSON.stringify(clone);
                 dfd.resolve();
             }, function(response) {
                 dfd.reject(response.data.reason);

@@ -21,7 +21,7 @@ angular.module('app').controller('crPersonCreateCtrl', function($scope, $transla
             city: $scope.person.city,
             country: $scope.person.country,
             email: $scope.person.email,
-            company: crIdentity.currentUser.company
+            company: [crIdentity.currentUser.company]
         };
 
         crPersonFactory.createPerson(newPersonData).then(function(newPerson){

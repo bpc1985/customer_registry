@@ -1,11 +1,14 @@
 angular.module('app').factory('crPersonFactory', function($http, $cookies, $q, Restangular, crIdentity){
 
     var csrftoken = {"X-CSRFToken": $cookies.csrftoken};
-    var user = crIdentity.currentUser;
 
     var personFactory = {
         getPeople: function(){
-            return Restangular.all('people').getList({company: user.company}).$object;
+            var user = crIdentity.currentUser;
+            if(!_.isNull(user.company)){
+                return Restangular.all('people').getList({company: user.company}).$object;
+            }
+            return [];
         },
 
         getPerson: function(personId){

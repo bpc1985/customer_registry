@@ -1,4 +1,6 @@
-angular.module('app').controller('crPersonListCtrl', function($scope, $translate, $location, crNotifier, crPersonFactory, crRootFactory){
+angular.module('app').controller('crPersonListCtrl',
+    function($scope, $translate, $location, crNotifier, crIdentity, crPersonFactory, crRootFactory){
+
     crRootFactory.setLanguageDir('person');
 
     $scope.list = function(){

@@ -11,7 +11,8 @@ var personSchema = mongoose.Schema({
     city: String,
     country: String,
     email: String,
-    company: { type: ObjectId, ref: 'Company', default: null }
+    company: { type: ObjectId, ref: 'Company', default: null },
+    office: { type: ObjectId, ref: 'Office', default: null }
 });
 
 // Duplicate the ID field.
@@ -25,7 +26,7 @@ personSchema.set('toJSON', {
 });
 
 // To see virtuals in output when using console.log(obj)
-personSchema.set('toObject', { virtuals: true })
+personSchema.set('toObject', { virtuals: true });
 
 var Person = mongoose.model('Person', personSchema);
 
