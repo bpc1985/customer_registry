@@ -5,8 +5,8 @@ angular.module('app').factory('crPersonFactory', function($http, $cookies, $q, R
     var personFactory = {
         getPeople: function(){
             var user = crIdentity.currentUser;
-            if(!_.isNull(user.company)){
-                return Restangular.all('people').getList({company: user.company}).$object;
+            if(user.id){
+                return Restangular.all('people').getList({user: user.id}).$object;
             }
             return [];
         },

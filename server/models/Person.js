@@ -12,7 +12,8 @@ var personSchema = mongoose.Schema({
     country: String,
     email: String,
     company: { type: ObjectId, ref: 'Company', default: null },
-    office: { type: ObjectId, ref: 'Office', default: null }
+    office: { type: ObjectId, ref: 'Office', default: null },
+    user: { type: ObjectId, ref: 'User', default: null }
 });
 
 // Duplicate the ID field.
@@ -32,4 +33,3 @@ var Person = mongoose.model('Person', personSchema);
 
 exports.PersonSchema = personSchema;
 exports.Person = Person;
-

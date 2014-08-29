@@ -41,24 +41,29 @@ exports.createUser = function(req, res, next){
 // update user by put data to API
 exports.updateUser = function(req, res, next){
     var userUpdates = req.body;
+    var _id = req.param('id');
 
-    if(req.user._id != userUpdates._id && !req.user.hasRole('admin')) {
-        res.status(403);
-        return res.end();
-    }
+    User.findById(_id, function (err, user) {
+        if (err) throw err;
 
-    req.user.firstName = userUpdates.firstName;
-    req.user.lastName = userUpdates.lastName;
-    req.user.email = userUpdates.email;
-    req.user.company = userUpdates.company;
+        if(user.id != userUpdates.id) {
+            res.status(403);
+            return res.end();
+        }
 
-    if(userUpdates.password && userUpdates.password.length > 0) {
-        req.user.salt = encrypt.createSalt();
-        req.user.hashed_pwd = encrypt.hashPwd(req.user.salt, userUpdates.password);
-    }
+        user.firstName = userUpdates.firstName;
+        user.lastName  = userUpdates.lastName;
+        user.email     = userUpdates.email;
+        user.company   = userUpdates.company;
 
-    req.user.save(function(err) {
-        if(err) { res.status(400); return res.send({reason:err.toString()});}
-        res.send(req.user);
+        if(userUpdates.password && userUpdates.password.length > 0) {
+            user.salt = encrypt.createSalt();
+            user.hashed_pwd = encrypt.hashPwd(user.salt, userUpdates.password);
+        }
+
+        user.save(function (err) {
+            if(err) { res.status(400); return res.send({reason:err.toString()});}
+            return res.send(user);
+        });
     });
 };

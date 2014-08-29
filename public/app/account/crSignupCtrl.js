@@ -1,4 +1,4 @@
-angular.module('app').controller('crSignupCtrl', function($scope, $location, $rootScope, crNotifier, crIdentity, crAuth){
+angular.module('app').controller('crSignupCtrl', function($scope, $location, $rootScope, crNotifier, crIdentity, crAuth, crPersonFactory){
     $scope.signup = function(){
         var newUserData = {
             password: $scope.password,
@@ -9,8 +9,17 @@ angular.module('app').controller('crSignupCtrl', function($scope, $location, $ro
 
         crAuth.createUser(newUserData).then(function(newUser){
             $rootScope.$broadcast('signup');
-            crNotifier.notify('User account has been created');
-            $location.path('/');
+
+            var newPersonData = {
+                pname: $scope.fname + " " + $scope.lname,
+                email: $scope.email,
+                user: newUser.id
+            };
+
+            crPersonFactory.createPerson(newPersonData).then(function(newPerson){
+                crNotifier.notify('User account has been created');
+                $location.path('/');
+            });
         }, function(reason){
             crNotifier.error(reason);
         });

@@ -1,6 +1,7 @@
 var Person = require('mongoose').model('Person');
 var Company = require('mongoose').model('Company');
 var Office = require('mongoose').model('Office');
+var User = require('mongoose').model('User');
 
 var populateQuery = [
     { path:'company', select:'company_name company_type company_code phone email web_url' }
@@ -10,6 +11,9 @@ exports.getPeople = function(req, res){
     var queryObj = {};
     if (req.query.company){
         queryObj = { company: req.query.company.trim() };
+    }
+    else if (req.query.user){
+        queryObj = { user: req.query.user.trim() };
     }
     else {
         queryObj = { company: null };
