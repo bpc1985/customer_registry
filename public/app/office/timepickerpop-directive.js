@@ -8,9 +8,20 @@ angular.module('app').factory('timepickerState', function() {
             for (var i=0; i<pickers.length; i++) {
                 pickers[i].close();
             }
+        },
+        setDefaultTime: function(inputTime){
+            if(inputTime === "8:00"){
+                inputTime = new Date();
+                inputTime.setHours(8, 0);
+            }
+            else if(inputTime === "17:00"){
+                inputTime = new Date();
+                inputTime.setHours(17, 0);
+            }
+            return inputTime;
         }
     };
-})
+});
 
 angular.module('app').directive("timeFormat", function($filter) {
     return {
@@ -109,6 +120,7 @@ angular.module('app').directive('timepickerPop', function($document, timepickerS
             }
             timepickerState.addPicker(picker);
 
+            scope.inputTime = timepickerState.setDefaultTime(scope.inputTime);
             scope.open = picker.open;
             scope.close = picker.close;
 

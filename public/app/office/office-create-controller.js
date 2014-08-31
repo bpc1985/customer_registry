@@ -21,8 +21,8 @@ angular.module('app').controller('crOfficeCreateCtrl',
 
         for (var i = 0; i < 7; i++) {
             $scope.weekdays[i] = {
-                from: '',
-                to: '',
+                from: '8:00',
+                to: '17:00',
                 is_closed: false
             };
         }
