@@ -7,14 +7,25 @@ angular.module('app').controller('crOfficeEditCtrl',
         crOfficeFactory.getOffice($routeParams.id).then(function(office){
             $scope.office = Restangular.copy(office);
             $scope.office.contact_persons = _.pluck($scope.office.contact_persons, 'id');
-            console.log("contact_persons: ", $scope.office.contact_persons);
             $scope.persons = crPersonFactory.getPeople();
         });
     };
 
+    $scope.checkedPersons = function(personId){
+        return $scope.office.contact_persons.indexOf(personId) > -1 ? true : false;
+    };
+
+    $scope.toggleSelectedPersons = function(personId){
+        var idx = $scope.office.contact_persons.indexOf(personId);
+        if (idx > -1) {
+            $scope.office.contact_persons.splice(idx, 1);
+        } else {
+            $scope.office.contact_persons.push(personId);
+        }
+    };
+
     $scope.update = function(){
         $scope.office.company = $scope.office.company.id;
-        console.log("$scope.office: ", $scope.office);
 
         crOfficeFactory.updateOffice($scope.office).then(function(){
             crNotifier.notify($translate.instant('Office has been updated'));

@@ -2,7 +2,7 @@
     .well
         form.form-horizontal(name="officeForm")
             legend(translate='') Office Form
-            .form-groupsoa
+            .form-group
                 label.col-md-2.control-label(for="office_company", translate='') Company
                 .col-md-5(ng-show="company.id")
                     input.form-control(name="office_company", readonly, type="text", ng-model="company.company_name")
@@ -172,9 +172,14 @@
             hr
             .form-group
                 label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
-                .col-md-7
-                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
-                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
+                .col-md-5(ng-if="persons.length > 0")
+                    ul.list-group
+                        li.list-group-item
+                            input(type="checkbox", name="selectedPersons[]", value="{{persons[0].id}}", checked="checked", ng-click="toggleSelectedPersons(persons[0].id)")
+                            |  {{persons[0].pname}} - {{persons[0].email}}
+                        li.list-group-item(ng-repeat="person in persons", ng-if="$index > 0")
+                            input(type="checkbox", name="selectedPersons[]", value="{{person.id}}", ng-click="toggleSelectedPersons(person.id)")
+                            |  {{person.pname}} - {{person.email}}
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal")
                         span.glyphicon.glyphicon-plus

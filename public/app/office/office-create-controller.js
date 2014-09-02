@@ -16,7 +16,8 @@ angular.module('app').controller('crOfficeCreateCtrl',
         $scope.office = {
             show_office: true,
             services: [],
-            delivery_areas: []
+            delivery_areas: [],
+            contact_persons: []
         };
 
         for (var i = 0; i < 7; i++) {
@@ -25,6 +26,15 @@ angular.module('app').controller('crOfficeCreateCtrl',
                 to: '17:00',
                 is_closed: false
             };
+        }
+    };
+
+    $scope.toggleSelectedPersons = function(personId){
+        var idx = $scope.office.contact_persons.indexOf(personId);
+        if (idx > -1) {
+            $scope.office.contact_persons.splice(idx, 1);
+        } else {
+            $scope.office.contact_persons.push(personId);
         }
     };
 
@@ -69,6 +79,12 @@ angular.module('app').controller('crOfficeCreateCtrl',
     $scope.removeService = function(value){
         $scope.office.services = _.without($scope.office.services, value);
     };
+
+    $scope.$watchCollection('persons', function () {
+        if($scope.persons.length > 0){
+            $scope.office.contact_persons.push(_.first($scope.persons).id);
+        }
+    }, true);
 
     $scope.init();
 });

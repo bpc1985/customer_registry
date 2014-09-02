@@ -161,9 +161,11 @@
             hr
             .form-group
                 label.col-md-2.control-label(for="office_contact_persons", translate='') Contact
-                .col-md-7
-                    select.form-control(name="office_contact_persons", ng-model="office.contact_persons", ui-select2="{ allowClear: true}", multiple, ng-required="true")
-                        option(ng-repeat='person in persons', value='{{person.id}}') {{person.pname}} - {{person.email}}
+                .col-md-5(ng-if="office.contact_persons.length > 0")
+                    ul.list-group
+                        li.list-group-item(ng-repeat="person in persons")
+                            input(type="checkbox", name="selectedPersons[]", value="{{person.id}}", ng-checked="checkedPersons(person.id)", ng-click="toggleSelectedPersons(person.id)")
+                            |  {{person.pname}} - {{person.email}}
                 .col-md-1
                     button.btn.btn-info(type="button" data-toggle="modal" data-target="#personModal")
                         span.glyphicon.glyphicon-plus
