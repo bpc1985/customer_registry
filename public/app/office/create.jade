@@ -2,7 +2,7 @@
     .well
         form.form-horizontal(name="officeForm")
             legend(translate='') Office Form
-            .form-group.required
+            .form-groupsoa
                 label.col-md-2.control-label(for="office_company", translate='') Company
                 .col-md-5(ng-show="company.id")
                     input.form-control(name="office_company", readonly, type="text", ng-model="company.company_name")

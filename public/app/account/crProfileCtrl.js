@@ -10,7 +10,7 @@ angular.module('app').controller('crProfileCtrl', function($scope, crNotifier, c
             lastName: $scope.lname
         };
 
-        if($scope.password && $scope.password.length > 0) {
+        if($scope.password && $scope.password.length > 0 && ($scope.password === $scope.confirm_password)) {
             newUserData.password = $scope.password;
         }
 
