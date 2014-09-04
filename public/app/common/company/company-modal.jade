@@ -7,14 +7,17 @@ section(ng-controller="crCompanyCreateCtrl")
                     h4.modal-title(translate='') Add New Company
                 .modal-body
                     form.form-horizontal(name="companyForm")
-                        .form-group.required
+                        .form-group.required(ng-class="{'has-error': (companyForm.companyname | shouldDisplayError:companyForm)}")
                             label.col-md-2.control-label(for="companyname", , translate='') Company Name
                             .col-md-10
-                                input.form-control(name="companyname", type="text", ng-model="company.name")
-                        .form-group.required
-                            label.col-md-2.control-label(for="companycode", translate='') Company Type
+                                input.form-control(name="companyname", type="text", required, ng-model="company.name")
+                                p.help-block(ng-show='companyForm.companyname | shouldDisplayError:companyForm', translate='') Company name is required
+
+                        .form-group.required(ng-class="{'has-error': (companyForm.companytype | shouldDisplayError:companyForm)}")
+                            label.col-md-2.control-label(for="companytype", translate='') Company Type
                             .col-md-5.required
-                                select.form-control(ng-model="company.type")
+                                select.form-control(name="companytype", required, ng-model="company.type")
+                                    option(value='', translate='') Please select company type
                                     option(value='TMI', translate='') TMI
                                     option(value='KY', translate='') KY
                                     option(value='AY', translate='') AY
@@ -22,30 +25,43 @@ section(ng-controller="crCompanyCreateCtrl")
                                     option(value='Osuuskunta', translate='') Osuuskunta
                                     option(value='Oppilaitos', translate='') Oppilaitos
                                     option(value='Muu', translate='') Muu
-                        .form-group.required
+
+                        .form-group.required(ng-class="{'has-error': (companyForm.companycode | shouldDisplayError:companyForm)}")
                             label.col-md-2.control-label(for="companycode", translate='') Company Code
                             .col-md-10
-                                input.form-control(name="companycode", type="text", ng-model="company.code")
-                        .form-group.required
+                                input.form-control(name="companycode", type="text", required, ng-maxlength="9", ng-pattern="/^[0-9]{6,7}-[0-9]{1}$/", ng-model="company.code")
+                                p.help-block(ng-show='companyForm.companycode | shouldDisplayError:companyForm', translate='') Company code should be formatted as '1234567-8'
+
+                        .form-group.required(ng-class="{'has-error': (companyForm.companystreet | shouldDisplayError:companyForm)}")
                             label.col-md-2.control-label(for="companystreet", translate='') Street
                             .col-md-10
-                                input.form-control(name="companystreet", type="text", ng-model="company.street")
-                        .form-group.required
+                                input.form-control(name="companystreet", type="text", required, ng-model="company.street")
+                                p.help-block(ng-show='companyForm.companystreet | shouldDisplayError:companyForm', translate='') Company street is required
+
+                        .form-group.required(ng-class="{'has-error': (companyForm.companycity | shouldDisplayError:companyForm)}")
                             label.col-md-2.control-label(for="companycity", translate='') City
                             .col-md-10
-                                input.form-control(name="companycity", type="text", ng-model="company.city")
-                        .form-group.required
+                                input.form-control(name="companycity", type="text", required, ng-model="company.city")
+                                p.help-block(ng-show='companyForm.companycity | shouldDisplayError:companyForm', translate='') Company city is required
+
+                        .form-group.required(ng-class="{'has-error': (companyForm.companyzip | shouldDisplayError:companyForm)}")
                             label.col-md-2.control-label(for="companyzip", translate='') Zip
                             .col-md-10
-                                input.form-control(name="companyzip", type="text", ng-model="company.zip")
-                        .form-group.required
+                                input.form-control(name="companyzip", type="text", required, ng-model="company.zip")
+                                p.help-block(ng-show='companyForm.companyzip | shouldDisplayError:companyForm', translate='') Company zipcode is required
+
+                        .form-group.required(ng-class="{'has-error': (companyForm.companyphone | shouldDisplayError:companyForm)}")
                             label.col-md-2.control-label(for="companyphone", translate='') Company Phone
                             .col-md-10
-                                input.form-control(name="companyphone", type="text", ng-model="company.phone")
-                        .form-group.required
+                                input.form-control(name="companyphone", type="text", required, ng-model="company.phone")
+                                p.help-block(ng-show='companyForm.companyphone | shouldDisplayError:companyForm', translate='') Company phone is required
+
+                        .form-group.required(ng-class="{'has-error': (companyForm.companyemail | shouldDisplayError:companyForm)}")
                             label.col-md-2.control-label(for="companyemail", translate='') Company Email
                             .col-md-10
-                                input.form-control(name="companyemail", type="text", ng-model="company.email")
+                                input.form-control(name="companyemail", type="email", required, ng-model="company.email")
+                                p.help-block(ng-show='companyForm.companyemail | shouldDisplayError:companyForm', translate='') Company email is required
+
                 .modal-footer
                     button.btn.btn-default(type='button', data-dismiss='modal', translate='') Close
-                    button.btn.btn-primary(type='button', ng-click="create(true)", data-dismiss='modal', translate='') Save
+                    button.btn.btn-primary(type='button', ng-disabled="companyForm.$invalid", ng-click="create(true)", data-dismiss='modal', translate='') Save

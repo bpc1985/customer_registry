@@ -2,47 +2,61 @@
     .well
         form.form-horizontal(name="personForm")
             legend(translate="") Person Form
-            .form-group.required
+            .form-group.required(ng-class="{'has-error': (personForm.personname | shouldDisplayError:personForm)}")
                 label.col-md-2.control-label(for="personname", translate="") Name
                 .col-md-10
-                    input.form-control(name="personname", type="text", ng-model="person.pname")
-            .form-group.required
+                    input.form-control(name="personname", type="text", required, ng-model="person.pname")
+                    p.help-block(ng-show='personForm.personname | shouldDisplayError:personForm', translate='') Name field is required
+
+            .form-group.required(ng-class="{'has-error': (personForm.persontitle | shouldDisplayError:personForm)}")
                 label.col-md-2.control-label(for="persontitle", translate="") Title
                 .col-md-10
-                    input.form-control(name="persontitle", type="text", ng-model="person.title")
-            .form-group.required
+                    input.form-control(name="persontitle", type="text", required, ng-model="person.title")
+                    p.help-block(ng-show='personForm.persontitle | shouldDisplayError:personForm', translate='') Title field is required
+
+            .form-group.required(ng-class="{'has-error': (personForm.persontelephone | shouldDisplayError:personForm)}")
                 label.col-md-2.control-label(for="persontelephone", translate="") Telephone
                 .col-md-10
-                    input.form-control(name="persontelephone", type="text", ng-model="person.telephone")
+                    input.form-control(name="persontelephone", type="text", required, ng-model="person.telephone")
+                    p.help-block(ng-show='personForm.persontelephone | shouldDisplayError:personForm', translate='') Telephone field is required
+
             .form-group
                 label.col-md-2.control-label(for="personmobile", translate="") Mobile
                 .col-md-10
                     input.form-control(name="personmobile", type="text", ng-model="person.mobile")
+
             .form-group
                 label.col-md-2.control-label(for="personstreet", translate="") Street
                 .col-md-10
                     input.form-control(name="personstreet", type="text", ng-model="person.street")
+
             .form-group
                 label.col-md-2.control-label(for="personzipcode", translate="") Zipcode
                 .col-md-10
                     input.form-control(name="personzipcode", type="text", ng-model="person.zipcode")
+
             .form-group
                 label.col-md-2.control-label(for="personcity", translate="") City
                 .col-md-10
                     input.form-control(name="personcity", type="text", ng-model="person.city")
+
             .form-group
                 label.col-md-2.control-label(for="personcountry", translate="") Country
                 .col-md-10
                     input.form-control(name="personcountry", type="text", ng-model="person.country")
-            .form-group.required
+
+            .form-group.required(ng-class="{'has-error': (personForm.personemail | shouldDisplayError:personForm)}")
                 label.col-md-2.control-label(for="personemail", translate="") Email
                 .col-md-10
-                    input.form-control(name="personemail", type="text", ng-model="person.email")
+                    input.form-control(name="personemail", type="email", required, ng-model="person.email")
+                    p.help-block(ng-show='personForm.personemail | shouldDisplayError:personForm', translate='') Email field is required
+
             .form-group.required
                 label.col-md-2.control-label(for="personcompany", translate="") Company
                 .col-md-5
                     input.form-control(name="personcompany", readonly, type="text", ng-model="company.company_name")
                     input.hidden.form-control(name="personcompanyid", type="text", ng-model="company.id")
+
             .form-group
                 .col-md-10.col-md-offset-2
                     .pull-right

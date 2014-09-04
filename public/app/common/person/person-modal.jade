@@ -7,22 +7,28 @@ section(ng-controller="crPersonCreateCtrl")
                     h4.modal-title(translate='') Add New Person
                 .modal-body
                     form.form-horizontal(name="personForm")
-                        .form-group.required(ng-class="{ 'has-error': personForm.personname.$invalid && personForm.personname.$dirty}")
+                        .form-group.required(ng-class="{ 'has-error': (personForm.personname | shouldDisplayError:personForm)}")
                             label.col-md-2.control-label(for="personname", translate='') Person Name
                             .col-md-10
                                 input.form-control(name="personname", type="text", required, ng-model="person.pname")
-                        .form-group.required(ng-class="{ 'has-error': personForm.persontitle.$invalid && personForm.persontitle.$dirty}")
+                                p.help-block(ng-show='personForm.personname | shouldDisplayError:personForm', translate='') Person name is required
+
+                        .form-group.required(ng-class="{ 'has-error': (personForm.persontitle | shouldDisplayError:personForm)}")
                             label.col-md-2.control-label(for="persontitle", translate='') Title
                             .col-md-10
                                 input.form-control(name="persontitle", type="text", required, ng-model="person.title")
+                                p.help-block(ng-show='personForm.persontitle | shouldDisplayError:personForm', translate='') Person title is required
+
                         .form-group
                             label.col-md-2.control-label(for="persontelephone", translate='') Person Phone
                             .col-md-10
                                 input.form-control(name="persontelephone", type="text", ng-model="person.telephone")
+
                         .form-group
                             label.col-md-2.control-label(for="personemail", translate='') Email
                             .col-md-10
                                 input.form-control(name="personemail", type="text", ng-model="person.email")
+
                 .modal-footer
                     button.btn.btn-default(type='button', data-dismiss='modal', translate='') Close
-                    button.btn.btn-primary(type='button', ng-click="create('modal-company')", data-dismiss='modal', translate='') Save
+                    button.btn.btn-primary(type='button', ng-disabled="personForm.$invalid", ng-click="create('modal-company')", data-dismiss='modal', translate='') Save
