@@ -1,0 +1,129 @@
+<legend translate="">Office Form</legend>
+
+<div class="form-group">
+  <label for="office_company" translate="" class="col-md-2 control-label">Company</label>
+  <div ng-show="company.id" class="col-md-5">
+    <input name="office_company" readonly="readonly" type="text" ng-model="company.company_name" class="form-control"/>
+    <input name="office_company_id" type="text" ng-model="company.id" class="hidden form-control"/>
+  </div>
+  <div ng-hide="company.id" class="col-md-1">
+    <button type="button" data-toggle="modal" data-target="#companyModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Add New' | translate}}</button>
+  </div>
+</div>
+
+<div ng-class="{'has-error': (officeForm.office_name | shouldDisplayError:officeForm)}" class="form-group required">
+  <label for="office_name" translate="" class="col-md-2 control-label">Office Name</label>
+  <div class="col-md-10">
+    <input name="office_name" type="text" required="required" ng-model="office.office_name" placeholder="{{'Enter the office name, if different from the company official name' | translate }}" class="form-control"/>
+    <p ng-show="officeForm.office_name | shouldDisplayError:officeForm" translate="" class="help-block">Office name is required</p>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="is_headoffice" translate="" class="col-md-2 control-label"></label>
+  <div class="col-md-10">
+    <input type="checkbox" ng-model="office.is_headoffice" ng-change="checkHeadOffice()"/> {{'Office address is same as company address' | translate}}
+  </div>
+</div>
+
+<div ng-class="{ 'has-error': (officeForm.office_street | shouldDisplayError:officeForm)}" class="form-group required">
+  <label for="office_street" translate="" class="col-md-2 control-label">Street</label>
+  <div class="col-md-10">
+    <input name="office_street" type="text" required="required" ng-model="office.contact_info.street_address" ng-disabled="office.is_headoffice" class="form-control"/>
+    <p ng-show="officeForm.office_street | shouldDisplayError:officeForm" translate="" class="help-block">Office street is required</p>
+  </div>
+</div>
+
+<div ng-class="{ 'has-error': (officeForm.office_city | shouldDisplayError:officeForm)}" class="form-group required">
+  <label for="office_city" translate="" class="col-md-2 control-label">City</label>
+  <div class="col-md-10">
+    <input name="office_city" type="text" required="required" ng-model="office.contact_info.city" ng-disabled="office.is_headoffice" class="form-control"/>
+    <p ng-show="officeForm.office_city | shouldDisplayError:officeForm" translate="" class="help-block">Office city is required</p>
+  </div>
+</div>
+
+<div ng-class="{ 'has-error': (officeForm.office_zipcode | shouldDisplayError:officeForm)}" class="form-group required">
+  <label for="office_zipcode" translate="" class="col-md-2 control-label">Zipcode</label>
+  <div class="col-md-10">
+    <input name="office_zipcode" type="text" required="required" ng-model="office.contact_info.zipcode" ng-disabled="office.is_headoffice" class="form-control"/>
+    <p ng-show="officeForm.office_zipcode | shouldDisplayError:officeForm" translate="" class="help-block">Office zip code is required</p>
+  </div>
+</div>
+
+<div class="form-group hide">
+  <label for="office_coordinates" translate="" class="col-md-2 control-label">Coordinates</label>
+  <div class="col-md-3">
+    <input name="office_coordinates" readonly="readonly" type="text" ng-model="office.contact_info.coordinates.latitude" placeholder="Latitude" class="form-control"/>
+  </div>
+  <div class="col-md-3">
+    <input name="office_coordinates" readonly="readonly" type="text" ng-model="office.contact_info.coordinates.longitude" placeholder="Longitude" class="form-control"/>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="office_map" translate="" class="col-md-2 control-label">Map</label>
+  <div class="col-md-10">
+    <div translate="">If pin is not right place, you can move it</div><br/>
+    <gmap address="office.contact_info.street_address" city="office.contact_info.city" latitude="office.contact_info.coordinates.latitude" longitude="office.contact_info.coordinates.longitude"></gmap>
+  </div>
+</div>
+
+<div ng-class="{ 'has-error': (officeForm.office_phone | shouldDisplayError:officeForm)}" class="form-group required">
+  <label for="office_phone" translate="" class="col-md-2 control-label">Phone</label>
+  <div class="col-md-10">
+    <input name="office_phone" type="text" required="required" ng-model="office.contact_info.phone" class="form-control"/>
+    <p ng-show="officeForm.office_phone | shouldDisplayError:officeForm" translate="" class="help-block">Office phone is required</p>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="office_altphone" translate="" class="col-md-2 control-label">Alt Phone</label>
+  <div class="col-md-10">
+    <input name="office_altphone" type="text" ng-model="office.contact_info.alt_phone" class="form-control"/>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="office_fax" translate="" class="col-md-2 control-label">Fax</label>
+  <div class="col-md-10">
+    <input name="officefax" type="text" ng-model="office.contact_info.fax" class="form-control"/>
+  </div>
+</div>
+<div ng-class="{ 'has-error': (officeForm.office_email | shouldDisplayError:officeForm)}" class="form-group required">
+  <label for="office_email" translate="" class="col-md-2 control-label">Email</label>
+  <div class="col-md-10">
+    <input name="office_email" type="email" required="required" ng-model="office.contact_info.email" class="form-control"/>
+    <p ng-show="officeForm.office_email | shouldDisplayError:officeForm" translate="" class="help-block">Office email is required</p>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="office_web" translate="" class="col-md-2 control-label">Website</label>
+  <div class="col-md-10">
+    <input name="office_web" type="text" ng-model="office.contact_info.website" class="form-control"/>
+  </div>
+</div>
+
+<div ng-class="{ 'has-error': (officeForm.office_picture | shouldDisplayError:officeForm)}" class="form-group required">
+  <label for="office_picture" translate="" class="col-md-2 control-label">Picture</label>
+  <div class="col-md-10">
+    <input name="office_picture" type="text" required="required" ng-model="office.profile_img" class="form-control"/>
+    <p ng-show="officeForm.office_picture | shouldDisplayError:officeForm" translate="" class="help-block">Office picture is required</p>
+  </div>
+</div>
+
+<div ng-class="{ 'has-error': (officeForm.office_short_desc | shouldDisplayError:officeForm)}" class="form-group required">
+  <label for="office_short_desc" translate="" class="col-md-2 control-label">Short Desc</label>
+  <div class="col-md-10">
+    <textarea name="office_short_desc" type="text" required="required" ng-model="office.description.short_info" placeholder="{{'Enter the marketing slogan slogan max 100 characters. For example Service is our passion'|translate}}" class="form-control"></textarea>
+    <p ng-show="officeForm.office_short_desc | shouldDisplayError:officeForm" translate="" class="help-block">Office short description is required</p>
+  </div>
+</div>
+
+<div ng-class="{ 'has-error': (officeForm.office_long_desc | shouldDisplayError:officeForm)}" class="form-group required">
+  <label for="office_long_desc" translate="" class="col-md-2 control-label">Long Desc</label>
+  <div class="col-md-10">
+    <textarea name="office_long_desc" type="text" required="required" ng-model="office.description.long_info" placeholder="{{'Write concise description of the operation of shop'|translate}}" class="form-control"></textarea>
+    <p ng-show="officeForm.office_long_desc | shouldDisplayError:officeForm" translate="" class="help-block">Office long description is required</p>
+  </div>
+</div>

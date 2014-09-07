@@ -31,14 +31,20 @@ var officeSchema = mongoose.Schema({
     open_times: {
         weekdays: [
             {
-                from:      { type: String },
-                to:        { type: String },
-                is_closed: { type: Boolean, default: false }
+                day_of_week: { type: String },
+                from:        { type: String },
+                to:          { type: String },
+                is_closed:   { type: Boolean, default: false }
             }
         ],
         holiday: { type: String, require: false }
     },
-    delivery_areas: [{ type: String }]
+    delivery_areas: [
+        {
+            price: String,
+            areas: [{ type: String }]
+        }
+    ]
 });
 
 // Duplicate the ID field.

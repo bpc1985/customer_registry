@@ -9,16 +9,18 @@
         </div>
         <div class="modal-body">
           <form name="personForm" class="form-horizontal">
-            <div ng-class="{ 'has-error': personForm.personname.$invalid &amp;&amp; personForm.personname.$dirty}" class="form-group required">
+            <div ng-class="{ 'has-error': (personForm.personname | shouldDisplayError:personForm)}" class="form-group required">
               <label for="personname" translate="" class="col-md-2 control-label">Person Name</label>
               <div class="col-md-10">
                 <input name="personname" type="text" required="required" ng-model="person.pname" class="form-control"/>
+                <p ng-show="personForm.personname | shouldDisplayError:personForm" translate="" class="help-block">Person name is required</p>
               </div>
             </div>
-            <div ng-class="{ 'has-error': personForm.persontitle.$invalid &amp;&amp; personForm.persontitle.$dirty}" class="form-group required">
+            <div ng-class="{ 'has-error': (personForm.persontitle | shouldDisplayError:personForm)}" class="form-group required">
               <label for="persontitle" translate="" class="col-md-2 control-label">Title</label>
               <div class="col-md-10">
                 <input name="persontitle" type="text" required="required" ng-model="person.title" class="form-control"/>
+                <p ng-show="personForm.persontitle | shouldDisplayError:personForm" translate="" class="help-block">Person title is required</p>
               </div>
             </div>
             <div class="form-group">
@@ -37,7 +39,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
-          <button type="button" ng-click="create('modal-company')" data-dismiss="modal" translate="" class="btn btn-primary">Save</button>
+          <button type="button" ng-disabled="personForm.$invalid" ng-click="create('modal-company')" data-dismiss="modal" translate="" class="btn btn-primary">Save</button>
         </div>
       </div>
     </div>

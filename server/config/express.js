@@ -9,7 +9,8 @@ module.exports = function(app, config){
 
     app.configure(function(){
         app.set('views', config.rootPath + '/server/views');
-        app.set('view engine', 'jade');
+        app.engine('html', require('ejs').renderFile);
+        app.set('view engine', 'html');
         app.use(express.logger('dev'));
         app.use(express.cookieParser());
         app.use(express.bodyParser());

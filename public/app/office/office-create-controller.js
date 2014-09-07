@@ -4,13 +4,6 @@ angular.module('app').controller('crOfficeCreateCtrl',
 
     $scope.init = function(){
         $scope.company = {};
-
-        if(crIdentity.currentUser.company){
-            crCompanyFactory.getCompany(crIdentity.currentUser.company).then(function(company){
-                $scope.company = company;
-            });
-        }
-
         $scope.persons = crPersonFactory.getPeople();
         $scope.weekdays = [];
         $scope.office = {
@@ -20,21 +13,10 @@ angular.module('app').controller('crOfficeCreateCtrl',
             contact_persons: []
         };
 
-        for (var i = 0; i < 7; i++) {
-            $scope.weekdays[i] = {
-                from: '8:00',
-                to: '17:00',
-                is_closed: false
-            };
-        }
-    };
-
-    $scope.toggleSelectedPersons = function(personId){
-        var idx = $scope.office.contact_persons.indexOf(personId);
-        if (idx > -1) {
-            $scope.office.contact_persons.splice(idx, 1);
-        } else {
-            $scope.office.contact_persons.push(personId);
+        if(crIdentity.currentUser.company){
+            crCompanyFactory.getCompany(crIdentity.currentUser.company).then(function(company){
+                $scope.company = company;
+            });
         }
     };
 
@@ -70,14 +52,6 @@ angular.module('app').controller('crOfficeCreateCtrl',
         }, function(reason){
             crNotifier.error(reason);
         });
-    };
-
-    $scope.removeZipCode = function(value){
-        $scope.office.delivery_areas = _.without($scope.office.delivery_areas, value);
-    };
-
-    $scope.removeService = function(value){
-        $scope.office.services = _.without($scope.office.services, value);
     };
 
     $scope.$watchCollection('persons', function () {

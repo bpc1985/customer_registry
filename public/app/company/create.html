@@ -3,16 +3,17 @@
   <div class="well">
     <form name="companyForm" class="form-horizontal">
       <legend translate="">Company Profile</legend>
-      <div ng-class="{ 'has-error': companyForm.companyname.$invalid &amp;&amp; companyForm.companyname.$dirty}" class="form-group required">
+      <div ng-class="{ 'has-error': (companyForm.companyname | shouldDisplayError:companyForm)}" class="form-group required">
         <label for="companyname" translate="" class="col-md-2 control-label">Company Name</label>
         <div class="col-md-10">
           <input name="companyname" type="text" required="required" ng-model="company.name" class="form-control"/>
+          <p ng-show="companyForm.companyname | shouldDisplayError:companyForm" translate="" class="help-block">Company name field is required</p>
         </div>
       </div>
-      <div class="form-group required">
+      <div ng-class="{ 'has-error': (companyForm.companytype | shouldDisplayError:companyForm)}" class="form-group required">
         <label for="companycode" translate="" class="col-md-2 control-label">Company Type</label>
         <div class="col-md-5">
-          <select ng-model="company.type" class="form-control">
+          <select name="companytype" required="required" ng-model="company.type" class="form-control">
             <option value="" translate="">Please select company type</option>
             <option value="TMI" translate="">TMI</option>
             <option value="KY" translate="">KY</option>
@@ -24,10 +25,11 @@
           </select>
         </div>
       </div>
-      <div ng-class="{ 'has-error': companyForm.companycode.$invalid &amp;&amp; companyForm.companycode.$dirty}" class="form-group required">
+      <div ng-class="{ 'has-error': (companyForm.companycode | shouldDisplayError:companyForm)}" class="form-group required">
         <label for="companycode" translate="" class="col-md-2 control-label">Company Code</label>
         <div class="col-md-10">
           <input name="companycode" type="text" required="required" ng-maxlength="9" ng-pattern="/^[0-9]{6,7}-[0-9]{1}$/" ng-model="company.code" class="form-control"/>
+          <p ng-show="companyForm.companycode | shouldDisplayError:companyForm" translate="" class="help-block">Company code field is required</p>
         </div>
       </div>
       <div class="form-group">
@@ -48,10 +50,11 @@
           <input name="companyzip" type="text" ng-model="company.zip" class="form-control"/>
         </div>
       </div>
-      <div class="form-group required">
+      <div ng-class="{ 'has-error': (companyForm.companyphone | shouldDisplayError:companyForm)}" class="form-group required">
         <label for="companyphone" translate="" class="col-md-2 control-label">Phone</label>
         <div class="col-md-10">
           <input name="companyphone" type="text" ng-model="company.phone" class="form-control"/>
+          <p ng-show="companyForm.companyphone | shouldDisplayError:companyForm" translate="" class="help-block">Company phone field is required</p>
         </div>
       </div>
       <div class="form-group">
@@ -72,10 +75,11 @@
           <input name="companyweb" type="text" ng-model="company.web" class="form-control"/>
         </div>
       </div>
-      <div ng-class="{ 'has-error': companyForm.companyemail.$invalid &amp;&amp; companyForm.companyemail.$dirty}" class="form-group required">
+      <div ng-class="{ 'has-error': (companyForm.companyemail | shouldDisplayError:companyForm)}" class="form-group required">
         <label for="companyemail" translate="" class="col-md-2 control-label">Email</label>
         <div class="col-md-10">
           <input name="companyemail" type="text" required="required" ng-model="company.email" class="form-control"/>
+          <p ng-show="companyForm.companyemail | shouldDisplayError:companyForm" translate="" class="help-block">Company email field is required</p>
         </div>
       </div>
       <div class="form-group">

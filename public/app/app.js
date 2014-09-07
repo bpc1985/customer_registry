@@ -14,20 +14,20 @@ app.config(function(RestangularProvider, $routeProvider, $locationProvider, $tra
     RestangularProvider.setBaseUrl("/api");
     $locationProvider.html5Mode(true);
     $routeProvider
-        .when('/', { templateUrl: '/partials/main/main', controller: 'crMainCtrl' })
-        .when('/admin/users', { templateUrl: '/partials/admin/user-list', controller: 'crUserListCtrl', resolve: routeRoleChecks.admin })
-        .when('/signup', { templateUrl: '/partials/account/signup', controller: 'crSignupCtrl' })
-        .when('/profile', { templateUrl: '/partials/account/profile', controller: 'crProfileCtrl', resolve: routeRoleChecks.user })
-        .when('/register', { templateUrl: '/partials/person/register', controller: 'crPersonRegisterCtrl', resolve: routeRoleChecks.user })
-        .when('/companies', { templateUrl: '/partials/company/list', controller: 'crCompanyListCtrl', resolve: routeRoleChecks.user })
-        .when('/companies/create', { templateUrl: '/partials/company/create', controller: 'crCompanyCreateCtrl', resolve: routeRoleChecks.user })
-        .when('/companies/:id', { templateUrl: '/partials/company/edit', controller: 'crCompanyEditCtrl', resolve: routeRoleChecks.user })
-        .when('/persons', { templateUrl: '/partials/person/list', controller: 'crPersonListCtrl', resolve: routeRoleChecks.user })
-        .when('/persons/create', { templateUrl: '/partials/person/create', controller: 'crPersonCreateCtrl', resolve: routeRoleChecks.user })
-        .when('/persons/:id', { templateUrl: '/partials/person/edit', controller: 'crPersonEditCtrl', resolve: routeRoleChecks.user })
-        .when('/offices', { templateUrl: '/partials/office/list', controller: 'crOfficeListCtrl', resolve: routeRoleChecks.user })
-        .when('/offices/create', { templateUrl: '/partials/office/create', controller: 'crOfficeCreateCtrl', resolve: routeRoleChecks.user })
-        .when('/offices/:id', { templateUrl: '/partials/office/edit', controller: 'crOfficeEditCtrl', resolve: routeRoleChecks.user })
+        .when('/', { templateUrl: '/app/main/main.html', controller: 'crMainCtrl' })
+        .when('/admin/users', { templateUrl: '/app/admin/user-list.html', controller: 'crUserListCtrl', resolve: routeRoleChecks.admin })
+        .when('/signup', { templateUrl: '/app/account/signup.html', controller: 'crSignupCtrl' })
+        .when('/profile', { templateUrl: '/app/account/profile.html', controller: 'crProfileCtrl', resolve: routeRoleChecks.user })
+        .when('/register', { templateUrl: '/app/person/register.html', controller: 'crPersonRegisterCtrl', resolve: routeRoleChecks.user })
+        .when('/companies', { templateUrl: '/app/company/list.html', controller: 'crCompanyListCtrl', resolve: routeRoleChecks.user })
+        .when('/companies/create', { templateUrl: '/app/company/create.html', controller: 'crCompanyCreateCtrl', resolve: routeRoleChecks.user })
+        .when('/companies/:id', { templateUrl: '/app/company/edit.html', controller: 'crCompanyEditCtrl', resolve: routeRoleChecks.user })
+        .when('/persons', { templateUrl: '/app/person/list.html', controller: 'crPersonListCtrl', resolve: routeRoleChecks.user })
+        .when('/persons/create', { templateUrl: '/app/person/create.html', controller: 'crPersonCreateCtrl', resolve: routeRoleChecks.user })
+        .when('/persons/:id', { templateUrl: '/app/person/edit.html', controller: 'crPersonEditCtrl', resolve: routeRoleChecks.user })
+        .when('/offices', { templateUrl: '/app/office/list.html', controller: 'crOfficeListCtrl', resolve: routeRoleChecks.user })
+        .when('/offices/create', { templateUrl: '/app/office/create.html', controller: 'crOfficeCreateCtrl', resolve: routeRoleChecks.user })
+        .when('/offices/:id', { templateUrl: '/app/office/edit.html', controller: 'crOfficeEditCtrl', resolve: routeRoleChecks.user })
         .otherwise({ redirectTo: "/" });
 
     $translateProvider.useLoader('$translatePartialLoader', {
