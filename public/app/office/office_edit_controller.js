@@ -47,5 +47,6 @@ angular.module('app').controller('crOfficeEditCtrl',
         });
     };
 
+    $scope.isEditOffice = true;
     $scope.init();
 });

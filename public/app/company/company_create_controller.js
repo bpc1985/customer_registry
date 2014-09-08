@@ -2,7 +2,6 @@ angular.module('app').controller('crCompanyCreateCtrl',
         function($scope, $translate, $location, crNotifier, crCompanyFactory, crPersonFactory, crRootFactory, crIdentity, crAuth){
 
     crRootFactory.setLanguageDir('company');
-    //$scope.showModal = crAddPersonModalService.showModal();
 
     $scope.init = function(){
         $scope.persons = crPersonFactory.getPeople();

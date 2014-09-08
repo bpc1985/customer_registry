@@ -3,12 +3,18 @@
   <label for="office_contact_persons" translate="" class="col-md-2 control-label">Contact</label>
 
   <div ng-if="persons.length > 0" class="col-md-5">
-    <ul class="list-group">
+    <ul class="list-group" ng-if="!isEditOffice">
       <li class="list-group-item">
         <input type="checkbox" name="selectedPersons[]" value="{{persons[0].id}}" checked="checked" ng-click="toggleSelectedPersons(persons[0].id)"/> {{persons[0].pname}} - {{persons[0].email}}
       </li>
       <li ng-repeat="person in persons" ng-if="$index > 0" class="list-group-item">
         <input type="checkbox" name="selectedPersons[]" value="{{person.id}}" ng-click="toggleSelectedPersons(person.id)"/> {{person.pname}} - {{person.email}}
+      </li>
+    </ul>
+
+    <ul class="list-group" ng-if="isEditOffice">
+      <li ng-repeat="person in persons" class="list-group-item">
+        <input type="checkbox" name="selectedPersons[]" value="{{person.id}}" ng-checked="checkedPersons(person.id)" ng-click="toggleSelectedPersons(person.id)"/> {{person.pname}} - {{person.email}}
       </li>
     </ul>
   </div>
