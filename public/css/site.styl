@@ -1,15 +1,53 @@
 body
-    padding-top 61px
+    padding-top 111px
 
 .navbar-inverse
-    background-color: #95ba00;
-    border-color: #95ba00;
+    background-color #fff
+    border-bottom 2px solid #95ba00
+
+.navbar-nav
+    padding-top 35px
+
+.navbar-inverse .navbar-nav > li > a
+    color #95ba00 !important
+    text-transform uppercase
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > li > a:hover
+    color #fff !important
+    background-color #95ba00 !important
+
+.navbar-inverse .dropdown-menu > li > a
+    color #fff
+    background-color #95ba00
+
+.navbar-inverse .dropdown-menu > li > a:hover
+    background-color #fff
+    color #95ba00
+
+.navbar-inverse .dropdown-menu 
+    background-color #95ba00
 
 .navbar-header a.navbar-brand
     margin-top -15px
     margin-bottom -20px
     h6
         color #ccc
+.navbar-fixed-top
+    min-height 111px
+
+a.btn-navbar
+    display none
+    float right
+
+.content
+    margin-top 30px
+
+.container .jumbotron
+    background url('../images/account_banner.jpg') top center no-repeat
+    background-size 100%
+    height 450px
 
 .btn
     padding: 6px 20px
@@ -22,8 +60,56 @@ body
 .btn-default
     border-radius: 5px;
 
+a.btn
+    background-color #95ba00
+    color #fff
+    padding 10px 30px
+    border-radius 5px
+    -webkit-border-radius 5px
+    -moz-border-radius 5px
+    -o-border-radius 5px
+    margin-bottom 20px
+
+a.btn:hover
+    background #5bc0de
+    color #fff
+
+.btn-submit
+    vertical-align top
+    padding 10px 25px
+
+.btn-addnew
+    color #fff
+    background-color #95ba00
+    padding 10px 25px
+    border-radius 5px
+    margin-bottom 20px
+
+.btn-addnew:hover
+    color #fff
+    background-color #0079a1
+
 span.glyphicon
     margin-right 5px;
+
+.checkButton span
+    color #fff
+    border-radius 5px
+    padding 10px 25px
+    cursor pointer
+    text-transform uppercase
+    margin-right 10px
+    margin-top 20px
+
+.checkButton span.yes
+    background-color: #95ba00
+
+.checkButton span.no
+    background-color #525252
+
+.checkButton input 
+    position absolute
+    z-index -999
 
 footer
     padding-left 15px
@@ -83,3 +169,35 @@ li.zipcode-choice
     a.zipcode-close
         color: black
         margin-left: 5px;
+@media screen and (max-width:991px)
+
+    .form-horizontal .control-label
+        text-align left !important
+        
+    .btn-info
+        margin-top 10px
+
+@media screen and (max-width:768px)
+
+    a.btn-navbar
+        display block
+        padding 7px
+        margin 20px 10px 0 0
+        height 30px
+        width 38px
+
+    a.btn-navbar span.icon-bar
+        display block
+        background-color #fff
+        height 3px
+        width 22px
+        margin-bottom 3px
+
+    .navbar-collapse
+        margin-top 99px
+
+    .navbar-nav
+        padding-top 0
+
+    .checkButton
+        padding-top 10px

@@ -24,9 +24,16 @@
       </div>
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
-          <div class="pull-right">
-            <button ng-click="create()" ng-disabled="company.id==undefined" translate="" class="btn btn-primary">Submit</button>&nbsp;<a href="/offices" translate="" class="btn btn-default">Cancel</a>
+          <div class="row">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+              <button ng-click="create()" ng-disabled="company.id==undefined" translate="" class="btn btn-primary btn-submit">Submit</button>&nbsp;<a href="/offices" translate="" class="btn btn-default">Cancel</a>
+            </div>
           </div>
+          
+          <!--<div class="pull-right">
+            
+          </div>-->
         </div>
       </div>
     </form>
