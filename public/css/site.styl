@@ -1,6 +1,9 @@
 body
     padding-top 111px
 
+.container
+    position relative
+
 .navbar-inverse
     background-color #fff
     border-bottom 2px solid #95ba00
@@ -37,6 +40,21 @@ body
 .navbar-fixed-top
     min-height 111px
 
+.navbar-top
+    position absolute
+    top 0
+    right 0
+    z-index 999
+    height 50px
+    li
+        float left
+        a
+            color #000
+            text-transform capitalize
+        a:hover
+            text-decoration underline
+            background-color #fff
+
 a.btn-navbar
     display none
     float right
@@ -45,9 +63,7 @@ a.btn-navbar
     margin-top 30px
 
 .container .jumbotron
-    background url('../images/account_banner.jpg') top center no-repeat
-    background-size 100%
-    height 450px
+    background none
 
 .btn
     padding: 6px 20px
@@ -111,13 +127,9 @@ span.glyphicon
     position absolute
     z-index -999
 
-footer
-    padding-left 15px
-    padding-right 15px
-    p
-        border-top 1px solid #d7e0e2
 
 .navbar-form
+    float right
     .form-group
         margin-left 10px
     button
@@ -144,8 +156,8 @@ hr
     margin: 18px 0
 
 .form-group.required .control-label:before
-    content: "*"
-    color: red
+    content "*"
+    color red
 
 .add-zipcode-btn
     padding: 6px 12px
@@ -156,19 +168,72 @@ ul.zipcode-list
     padding: 0
 
 li.zipcode-choice
-    border: 1px solid #aaaaaa
-    border-radius: 3px
-    height: 30px
-    width: 75px
-    margin-bottom: 10px
-    margin-right: 5px;
-    padding-top: 4px
-    text-align: center
-    color: #6f6f6f
-    float: left
+    border 1px solid #aaaaaa
+    border-radius 3px
+    height 30px
+    width 75px
+    margin-bottom 10px
+    margin-right 5px
+    padding-top 4px
+    text-align center
+    color #6f6f6f
+    float left
     a.zipcode-close
-        color: black
-        margin-left: 5px;
+        color black
+        margin-left 5px
+
+/*------Front page------*/
+
+.frontpage-content
+    background url('../images/account_banner.jpg') top center no-repeat
+    background-size cover
+    min-height 650px
+
+
+h1.frontpage-title
+    text-transform uppercase
+    margin-top -10px
+
+ul.frontpage-links li
+    color #95ba00
+    list-style-type none
+
+ul.frontpage-links li a 
+    color #95ba00
+    text-transform uppercase
+    font-size 24px
+    font-family Open Sans, sans-serif
+
+ul.frontpage-links li a:hover
+    text-decoration none
+    color #006687
+
+.jumbotron p 
+    font-size 30px
+
+
+/*----- Footer ------*/
+
+.footer-top
+    background-color #575757
+    color #767b6f
+    padding 40px 0
+
+.footer-top h5
+    color #fff
+    text-transform uppercase
+
+.footer-top a
+    color #767b6f
+
+.footer-top a:hover
+    text-decoration underline
+
+.footer-bottom
+    background-color: #1b1b1b
+    color #767b6f
+    padding 10px 0
+
 @media screen and (max-width:991px)
 
     .form-horizontal .control-label
@@ -178,6 +243,10 @@ li.zipcode-choice
         margin-top 10px
 
 @media screen and (max-width:768px)
+
+    h1.frontpage-title
+        font-size 52px
+        margin-top 10px
 
     a.btn-navbar
         display block
@@ -198,6 +267,15 @@ li.zipcode-choice
 
     .navbar-nav
         padding-top 0
+        float right
+        margin-top -60px
+
+    .navbar-form
+        margin-top -60px
 
     .checkButton
         padding-top 10px
+
+@media screen and (max-width:400px)
+    .navbar-top
+        padding 10px

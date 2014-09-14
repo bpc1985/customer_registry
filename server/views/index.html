@@ -9,25 +9,53 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header"><a href="/" class="navbar-brand"><img src="/images/eKukka_header.png" alt="ekukka"></a></div>
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
         <div ng-include="'/app/account/navbar-login.html'"></div>
       </div>
     </div>
     <section class="content">
       <div ng-view></div>
     </section>
-    <footer class="container text-center">
-      <p>&copy; 2014 Floweb Ltd.<span class="pull-right">
-          <select ng-model="language" ng-change="changeLanguage(language)">
-            <option value="en" translate>English</option>
-            <option value="fi" translate>Finnish</option>
-            <option value="se" translate>Swedish</option>
-            <option value="de" translate>German</option>
-          </select></span></p>
+    <footer>
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <h5>Yhteystiedot</h5>
+              <img src="/images/footer_logo.png" alt="eKukka logo">
+              <p>eKukka.fi - Kukkien koti</p>
+              <p>Floweb Oy</p>
+              <p>Email. info@ekukka.fi</p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <h5>Vimmeisimmät uutiset</h5>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <h5>Pitkalinkki</h5>
+              <p><a href="">Ota yhtettä</a></p>
+              <p><a href="">Käyttötehdot</a></p>
+              <p><a href="">Medialle</a></p>
+              <p><a href="">Tietoa meistä</a></p>
+              <p><a href="">Kukkakauppiaalle</a></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <h5>Kukkakauppat kartlla</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container text-center">
+          <div class="row">
+            <p>&copy; 2014 Floweb Ltd.<span class="pull-right">
+              <select ng-model="language" ng-change="changeLanguage(language)">
+                <option value="en" translate>English</option>
+                <option value="fi" translate>Finnish</option>
+                <option value="se" translate>Swedish</option>
+                <option value="de" translate>German</option>
+              </select></span></p>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <% include ../includes/javascripts.html %>
