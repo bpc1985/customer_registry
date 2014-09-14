@@ -34,6 +34,8 @@ module.exports = function(app){
         res.render('../../public/app/' + req.params);
     });
 
+    app.post('/forgot_password', users.forgotPassword);
+    app.get('/reset/:token', users.resetPassword);
     app.post('/login', auth.authenticate);
 
     app.post('/logout', function(req, res){

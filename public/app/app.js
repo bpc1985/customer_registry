@@ -18,6 +18,8 @@ app.config(function(RestangularProvider, $routeProvider, $locationProvider, $tra
         .when('/admin/users', { templateUrl: '/app/admin/user-list.html', controller: 'crUserListCtrl', resolve: routeRoleChecks.admin })
         .when('/signup', { templateUrl: '/app/account/signup.html', controller: 'crSignupCtrl' })
         .when('/profile', { templateUrl: '/app/account/profile.html', controller: 'crProfileCtrl', resolve: routeRoleChecks.user })
+        .when('/forgot_password', { templateUrl: '/app/account/forgot_password.html', controller: 'crForgotPasswordCtrl'})
+        .when('/forgot_password/:token', { templateUrl: '/app/account/forgot_password.html', controller: 'crResetPasswordCtrl'})
         .when('/register', { templateUrl: '/app/person/register.html', controller: 'crPersonRegisterCtrl', resolve: routeRoleChecks.user })
         .when('/companies', { templateUrl: '/app/company/list.html', controller: 'crCompanyListCtrl', resolve: routeRoleChecks.user })
         .when('/companies/create', { templateUrl: '/app/company/create.html', controller: 'crCompanyCreateCtrl', resolve: routeRoleChecks.user })

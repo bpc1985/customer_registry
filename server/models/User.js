@@ -9,7 +9,9 @@ var userSchema = mongoose.Schema({
     salt: String,
     hashed_pwd: String,
     roles: [String],
-    company: {type: ObjectId, ref: 'Company', default: null }
+    company: {type: ObjectId, ref: 'Company', default: null },
+    resetPasswordToken: String,
+    resetPasswordExpires: Date
 });
 
 userSchema.methods = {
