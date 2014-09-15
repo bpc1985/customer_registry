@@ -11,23 +11,21 @@
   </div>
 </div>
 
-<!--<div ng-class="{'has-error': (officeForm.office_name | shouldDisplayError:officeForm)}" class="form-group required">
+<div ng-class="{'has-error': (officeForm.office_name | shouldDisplayError:officeForm)}" class="form-group required">
   <label for="office_name" translate="" class="col-md-2 control-label">Office Name</label>
   <div class="col-md-10">
     <input name="office_name" type="text" required="required" ng-model="office.office_name" placeholder="{{'Enter the office name, if different from the company official name' | translate }}" class="form-control"/>
     <p ng-show="officeForm.office_name | shouldDisplayError:officeForm" translate="" class="help-block">Office name is required</p>
   </div>
-</div>-->
+</div>
 
 <div class="form-group">
   <label for="is_headoffice" translate="" class="col-lg-2 col-md-2 col-sm-0 col-xs-12 control-label"></label>
   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">{{'Office address is same as company address' | translate}}</div>
-        <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12 checkButton">
-          <!--<input type="checkbox" ng-model="office.is_headoffice" ng-change="checkHeadOffice()"/>-->
-          <span class="yes">Yes</span>
-          <span class="no">No</span>
+        <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
+          <input type="checkbox" ng-model="office.is_headoffice" ng-change="checkHeadOffice()"/>
+          {{'Office address is same as company address' | translate}}
         </div>
       </div>
   </div>
