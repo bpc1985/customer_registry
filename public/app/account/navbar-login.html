@@ -1,35 +1,60 @@
-<div ng-controller="crNavBarLoginCtrl" class="navbar-collapse collapse">
-  <form ng-hide="identity.isAuthenticated()" class="navbar-form">
-    <div class="form-group">
-      <input placeholder="{{'Email'|translate}}" ng-model="email" class="form-control"/>
+<div ng-controller="crNavBarLoginCtrl" class="">
+  <div class="navbar-top">
+    <div class="container">
+      <ul ng-hide="identity.isAuthenticated()">
+        <li>Contact info@ekukka.fi</li>
+        <li><a href="/signup" translate="">REGISTER</a></li>
+        <li>
+          <label for="">CHOOSE LANGUAGE</label>
+          <select ng-model="language" ng-change="changeLanguage(language)">
+            <option value="en" translate>English</option>
+            <option value="fi" translate>Finnish</option>
+            <option value="se" translate>Swedish</option>
+            <option value="de" translate>German</option>
+          </select>
+        </li>
+      </ul>
     </div>
-    <div class="form-group">
-      <input type="password" placeholder="{{'Password'|translate}}" ng-model="password" class="form-control"/>
-    </div>
-    <button ng-click="signin(email, password)" translate="" class="btn btn-primary">Sign in</button>
-  </form>
+  </div>
 
-
-  <a ng-show="identity.isAuthenticated()" class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-collapse" style="display:none;">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </a>
-
-  <ul ng-show="identity.isAuthenticated()" class="nav navbar-nav">
-    <li id="home"><a href="/" translate="">Main</a></li>
-    <li id="companies"><a href="/companies" translate="">Companies</a></li>
-    <li id="persons"><a href="/persons" translate="">Persons</a></li>
-    <li id="offices"><a href="/offices" translate="">Offices</a></li>
-  </ul>
+  <div class="container">
+    <form ng-hide="identity.isAuthenticated()" class="navbar-form">
+      <div class="form-group">
+        <input placeholder="{{'Email'|translate}}" ng-model="email" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="{{'Password'|translate}}" ng-model="password" class="form-control"/>
+      </div>
+      <button ng-click="signin(email, password)" translate="" class="btn btn-primary">Sign in</button>
+    </form>
+  </div>
 
   <div class="navbar-top">
-    <ul ng-show="identity.isAuthenticated()" class="nav">
-      <li><a href="">{{identity.currentUser.firstName + " " + identity.currentUser.lastName}}</a>
-      <li ng-show="identity.currentUser.isAdmin()"><a href="/admin/users" translate="">User Admin</a></li>
-      <li><a href="/profile" translate="">Profile</a></li>
-      <li><a href="" ng-click="signout()" translate="">Sign Out</a></li>
-      </li>
-    </ul>
+    <div class="container">
+      <ul ng-show="identity.isAuthenticated()">
+        <li><a href="">{{identity.currentUser.firstName + " " + identity.currentUser.lastName}}</a>
+        <li ng-show="identity.currentUser.isAdmin()"><a href="/admin/users" translate="">User Admin</a></li>
+        <li><a href="/profile" translate="">Profile</a></li>
+        <li><a href="" ng-click="signout()" translate="">Sign Out</a></li>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <a ng-show="identity.isAuthenticated()" class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </a>
+  </div>
+
+  <div class="navbar-collapse collapse">
+      <ul ng-show="identity.isAuthenticated()" class="nav navbar-nav">
+        <li id="home"><a href="/" translate="">Main</a></li>
+        <li id="companies"><a href="/companies" translate="">Companies</a></li>
+        <li id="persons"><a href="/persons" translate="">Persons</a></li>
+        <li id="offices"><a href="/offices" translate="">Offices</a></li>
+      </ul>
   </div>
 </div> <!--.navbar-collapse-->
