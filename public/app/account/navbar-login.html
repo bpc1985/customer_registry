@@ -1,11 +1,10 @@
-<div ng-controller="crNavBarLoginCtrl" class="">
+<div ng-controller="crNavBarLoginCtrl">
   <div class="navbar-top">
     <div class="container">
       <ul ng-hide="identity.isAuthenticated()">
         <li>Contact info@ekukka.fi</li>
         <li><a href="/signup" translate="">Register</a></li>
         <li>
-          <label for="">Choose Language</label>
           <select ng-model="language" ng-change="changeLanguage(language)">
             <option value="en" translate>English</option>
             <option value="fi" translate>Finnish</option>
@@ -32,10 +31,17 @@
   <div class="navbar-top">
     <div class="container">
       <ul ng-show="identity.isAuthenticated()">
-        <li><a href="">{{identity.currentUser.firstName + " " + identity.currentUser.lastName}}</a>
+        <li><a href="">{{identity.currentUser.firstName + " " + identity.currentUser.lastName}}</a></li>
         <li ng-show="identity.currentUser.isAdmin()"><a href="/admin/users" translate="">User Admin</a></li>
         <li><a href="/profile" translate="">Profile</a></li>
         <li><a href="" ng-click="signout()" translate="">Sign Out</a></li>
+        <li>
+          <select ng-model="language" ng-change="changeLanguage(language)">
+            <option value="en" translate>English</option>
+            <option value="fi" translate>Finnish</option>
+            <option value="se" translate>Swedish</option>
+            <option value="de" translate>German</option>
+          </select>
         </li>
       </ul>
     </div>

@@ -1,4 +1,5 @@
 body {
+  font-family: 'Open Sans', sans-serif;
   padding-top: 151px;
 }
 .container {
@@ -9,11 +10,14 @@ body {
   border-bottom: 1px solid #efefef;
 }
 .navbar-nav {
+  position: relative;
+  left: 38%;
   padding-top: 26px;
-  float: right;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #95ba00 !important;
+  color: #000 !important;
+  font-weight: 400;
+  font-size: 14px;
   text-transform: uppercase;
 }
 .navbar-inverse .navbar-nav > .open > a,
@@ -254,6 +258,7 @@ ul.frontpage-links li a:hover {
   color: #767b6f;
   padding: 10px 0;
 }
+/*----- Responsive ------*/
 @media screen and (max-width:991px) {
   .form-horizontal .control-label {
     text-align: left !important;
@@ -281,10 +286,6 @@ ul.frontpage-links li a:hover {
   }
   .navbar-nav {
     padding-top: 0;
-    float: right;
-    margin-top: -60px;
-  }
-  .navbar-nav {
     margin-top: 20px;
   }
   .checkButton {
