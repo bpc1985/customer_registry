@@ -1,0 +1,30 @@
+<div class="form-group required">
+  <label for="office_picture" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Picture</label>
+  <div class="col-lg-2 col-md-1 col-xs-2">
+    <button type="button" data-toggle="modal" data-target="#thumbnailModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Choose Picture' | translate}}</button>
+  </div>
+
+  <div id="thumbnailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+          <h4 translate="" class="modal-title">Choose Picture</h4>
+        </div>
+        <div class="modal-body">
+          <select id="selectImage" class="image-picker">
+            <option data-img-src='http://png.findicons.com/files/icons/2689/kitchen/128/4.png' value='4.jpg'>4.jpg</option>
+            <option data-img-src='http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/058/06/0010580607.jpg&w=348&h=348' value='5.jpg'>5.jpg</option>
+            <option data-img-src='http://im1.book.com.tw/image/getImage?i=http://www.books.com.tw/img/001/061/38/0010613865.jpg&w=348&h=348' value='6.jpg'>6.jpg</option>
+            <option data-img-src='http://media-cache-ec0.pinimg.com/originals/3c/3d/47/3c3d4740527f0c341dbf336b7b763479.jpg' value='aom.jpg'>aom.jpg</option>
+            <option data-img-src='http://media-cache-ak0.pinimg.com/736x/ea/84/02/ea8402384ac6dc1cd77dd89793902eb2.jpg' value='aom2.jpg'>aom2.jpg</option>
+            <option data-img-src='http://media-cache-ak0.pinimg.com/736x/9e/ff/56/9eff5665d5706d2f31a599f21e4791e6.jpg' value='aom3.jpg'>aom3.jpg</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
