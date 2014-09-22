@@ -109,15 +109,7 @@
   </div>
 </div>
 
-<!--div ng-class="{ 'has-error': (officeForm.office_picture | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_picture" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Picture</label>
-  <div class="col-lg-10 col-md-10 col-xs-12">
-    <input name="office_picture" type="text" required="required" ng-model="office.profile_img" class="form-control"/>
-    <p ng-show="officeForm.office_picture | shouldDisplayError:officeForm" translate="" class="help-block">Office picture is required</p>
-  </div>
-</div-->
-
-<thumbnail></thumbnail>
+<thumbnail selected-image="office.profile_img"></thumbnail>
 
 <div ng-class="{ 'has-error': (officeForm.office_short_desc | shouldDisplayError:officeForm)}" class="form-group required">
   <label for="office_short_desc" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Short Desc</label>
