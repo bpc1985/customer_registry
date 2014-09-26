@@ -1,4 +1,4 @@
-<div class="frontpage-content">
+<div class="frontpage-content" ng-if="!currentUser">
     <div class="container">
       <div class="jumbotron">
         <h1 class="frontpage-title">Kauppias liity mukaan</h1>
@@ -12,7 +12,24 @@
       </div>
       <div class="row">
         <h1></h1>
-        <!--<h2>{{myVar | translate}}</h2>-->
+      </div>
+    </div>
+</div>
+
+<div class="frontpage-content" ng-if="currentUser">
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="frontpage-title">Kauppias liity mukaan</h1>
+        <p>Näin liityty eKukka.fi - hakupalveluun</p>
+        <ul class="frontpage-links">
+            <li><a href="/signup" translate="">1. Mot</a></li>
+            <li><a href="">2. Hai</a></li>
+            <li><a href="">3. Ba</a></li>
+        </ul>
+        <p>Liittyminen on ilmaista!</p>
+      </div>
+      <div class="row">
+        <h1></h1>
       </div>
     </div>
 </div>

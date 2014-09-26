@@ -1,5 +1,13 @@
-angular.module('app').controller('crMainCtrl', function($scope, crRootFactory){
+angular.module('app').controller('crMainCtrl', function($scope, $rootScope, crIdentity, crRootFactory){
     crRootFactory.setLanguageDir('main');
 
-    $scope.myVar = "Hello World";
+    $rootScope.$on('loggedin', function(){
+        $scope.currentUser = crIdentity.currentUser;
+    });
+
+    $rootScope.$on('loggedout', function(){
+        $scope.currentUser = undefined;
+    });
+
+    $scope.currentUser = crIdentity.currentUser;
 });
