@@ -40,18 +40,20 @@ angular.module('app').controller('crOfficeCreateCtrl',
     }
 
     $scope.create = function(){
-        $scope.office.company = $scope.company.id;
-        $scope.office.open_times = {
-            'weekdays': $scope.weekdays,
-            'holiday': $scope.holiday
-        };
+        if($scope.officeForm.$valid){
+            $scope.office.company = $scope.company.id;
+            $scope.office.open_times = {
+                'weekdays': $scope.weekdays,
+                'holiday': $scope.holiday
+            };
 
-        crOfficeFactory.createOffice($scope.office).then(function(){
-            crNotifier.notify($translate.instant('New office has been created'));
-            $location.path('/offices');
-        }, function(reason){
-            crNotifier.error(reason);
-        });
+            crOfficeFactory.createOffice($scope.office).then(function(){
+                crNotifier.notify($translate.instant('New office has been created'));
+                $location.path('/offices');
+            }, function(reason){
+                crNotifier.error(reason);
+            });
+        }
     };
 
     $scope.$watchCollection('persons', function () {

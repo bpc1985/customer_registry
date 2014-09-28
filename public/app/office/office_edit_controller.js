@@ -37,14 +37,19 @@ angular.module('app').controller('crOfficeEditCtrl',
     }
 
     $scope.update = function(){
-        $scope.office.company = $scope.office.company.id;
+        console.log("valid: ", $scope.officeForm);
+        
+        //if($scope.officeForm.$valid){
+            $scope.office.company = $scope.office.company.id;
 
-        crOfficeFactory.updateOffice($scope.office).then(function(){
-            crNotifier.notify($translate.instant('Office has been updated'));
-            $location.path('/offices');
-        }, function(reason){
-            crNotifier.error(reason);
-        });
+            crOfficeFactory.updateOffice($scope.office).then(function(){
+                crNotifier.notify($translate.instant('Office has been updated'));
+                //$location.path('/offices');
+            }, function(reason){
+                crNotifier.error(reason);
+            });
+        //}
+        //
     };
 
     $scope.isEditOffice = true;

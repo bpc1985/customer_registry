@@ -32,6 +32,7 @@ angular.module('app').directive("timeFormat", function($filter) {
         },
         link : function(scope, element, attrs, ngModel) {
             var parseTime = function(viewValue) {
+                viewValue = new Date(viewValue);
                 if (!viewValue) {
                     ngModel.$setValidity('time', true);
                     return null;

@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="well">
-    <form name="personForm" class="form-horizontal">
+    <form name="personForm" class="form-horizontal" ng-submit="update()" novalidate>
       <legend translate="">Person Form</legend>
       <div class="form-group required">
         <label for="personname" translate="" class="col-md-2 control-label">Name</label>
@@ -67,7 +67,7 @@
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
           <div class="pull-right">
-            <button ng-click="update()" ng-disabled="personForm.$invalid" translate="" class="btn btn-primary btn-submit">Submit</button>
+            <button ng-disabled="personForm.$invalid" translate="" class="btn btn-primary btn-submit">Submit</button>
             <a href="/persons" translate="" class="btn btn-default">Cancel</a>
           </div>
         </div>

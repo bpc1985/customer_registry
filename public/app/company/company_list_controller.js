@@ -4,10 +4,10 @@ angular.module('app').controller('crCompanyListCtrl',
     crRootFactory.setLanguageDir('company');
 
     $scope.list = function(){
-        var user = crIdentity.currentUser;
-        if(_.isEmpty(user.roles)){
-            if(user.company){
-                crCompanyFactory.getCompany(user.company).then(function(company){
+        $scope.user = crIdentity.currentUser;
+        if(_.isEmpty($scope.user.roles)){
+            if($scope.user.company){
+                crCompanyFactory.getCompany($scope.user.company).then(function(company){
                     if(company.contact){
                         crPersonFactory.getPerson(company.contact).then(function(person){
                             company.contact = person.pname + " (" + person.email + ")";

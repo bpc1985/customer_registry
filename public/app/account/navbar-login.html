@@ -31,7 +31,7 @@
   <div class="navbar-top">
     <div class="container">
       <ul ng-show="identity.isAuthenticated()">
-        <li><a href="">{{identity.currentUser.firstName + " " + identity.currentUser.lastName}}</a></li>
+        <li>{{identity.currentUser.firstName + " " + identity.currentUser.lastName}}</li>
         <li ng-show="identity.currentUser.isAdmin()"><a href="/admin/users" translate="">User Admin</a></li>
         <li><a href="/profile" translate="">Profile</a></li>
         <li><a href="" ng-click="signout()" translate="">Sign Out</a></li>
@@ -56,7 +56,7 @@
   </div>
 
   <div class="navbar-collapse collapse">
-      <ul ng-show="identity.isAuthenticated()" class="nav navbar-nav">
+      <ul ng-show="identity.isAuthenticated()" active-menu="active" class="nav navbar-nav">
         <li id="home"><a href="/" translate="">Main</a></li>
         <li id="companies"><a href="/companies" translate="">Companies</a></li>
         <li id="persons"><a href="/persons" translate="">Persons</a></li>

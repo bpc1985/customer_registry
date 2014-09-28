@@ -1,6 +1,6 @@
 <div class="container">
   <div class="well">
-    <form name="officeForm" class="form-horizontal">
+    <form name="officeForm" class="form-horizontal" ng-submit="create()" novalidate>
       <div ng-include="'/app/office/office_basic_form.html'"></div>
 
       <service-list services="office.services"></service-list>
@@ -27,14 +27,10 @@
           <div class="row">
             <div class="col-md-8"></div>
             <div class="col-md-4">
-              <button ng-click="create()" ng-disabled="company.id==undefined" translate="" class="btn btn-primary btn-submit">Submit</button>
+              <button type="submit" ng-disabled="company.id==undefined || office.services==0 || officeForm.$invalid" translate="" class="btn btn-primary btn-submit">Submit</button>
               <a href="/offices" translate="" class="btn btn-default">Cancel</a>
             </div>
           </div>
-
-          <!--<div class="pull-right">
-
-          </div>-->
         </div>
       </div>
     </form>
