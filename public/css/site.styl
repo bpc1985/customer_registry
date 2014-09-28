@@ -15,10 +15,13 @@ body
     padding-top 26px
 
 .navbar-inverse .navbar-nav > li > a
-    color #000000 !important
+    color #000 !important
     font-weight 400
     font-size 14px
     text-transform uppercase
+    &.active
+        background-color #95ba00
+        color #fff !important
 
 
 .navbar-inverse .navbar-nav > .open > a,
@@ -102,7 +105,8 @@ a.btn
     -webkit-border-radius 5px
     -moz-border-radius 5px
     -o-border-radius 5px
-    margin-bottom 20px
+    &.btn-link
+        margin 10px 5px
 
 a.btn:hover
     background #5bc0de
@@ -126,9 +130,6 @@ a.btn:hover
 .btn-primary
     border-radius 0
 
-span.glyphicon
-    margin-right 5px;
-
 .checkButton span
     color #fff
     border-radius 5px
@@ -147,7 +148,6 @@ span.glyphicon
 .checkButton input
     position absolute
     z-index -999
-
 
 .navbar-form
     float right

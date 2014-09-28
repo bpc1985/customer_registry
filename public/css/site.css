@@ -20,6 +20,10 @@ body {
   font-size: 14px;
   text-transform: uppercase;
 }
+.navbar-inverse .navbar-nav > li > a.active {
+  background-color: #95ba00;
+  color: #fff !important;
+}
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > li > a:hover {
   color: #fff !important;
@@ -105,7 +109,9 @@ a.btn {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -o-border-radius: 5px;
-  margin-bottom: 20px;
+}
+a.btn.btn-link {
+  margin: 10px 5px;
 }
 a.btn:hover {
   background: #5bc0de;
@@ -128,9 +134,6 @@ a.btn:hover {
 }
 .btn-primary {
   border-radius: 0;
-}
-span.glyphicon {
-  margin-right: 5px;
 }
 .checkButton span {
   color: #fff;
