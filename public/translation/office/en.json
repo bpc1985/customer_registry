@@ -38,7 +38,7 @@
 	"New Person": "New Person",
 	"Contact information will not be displayed ekukka.fi search service": "Contact information will not be displayed ekukka.fi search service",
 	"Add New Person": "Add New Person",
-	"Show office on ekukka.fi website": "Show office on ekukka.fi website",
+	"Show office on ekukka.fi website": "I have read and accepted <a href='#' data-toggle='modal' data-target='#termModal'>terms of use</a> and want that office be published eKukka.fi search service",
 	"Services should be seperated with commas such as wedding, delivery, design": "Services should be seperated with commas such as wedding, delivery, design",
 	"Open Times": "Open Times",
 	"Close": "Close",

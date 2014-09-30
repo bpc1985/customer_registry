@@ -15,13 +15,8 @@
       <contact-list persons="persons" contact-persons="office.contact_persons" is-edit-office="isEditOffice"></contact-list>
 
       <hr/>
-      <legend translate="">Accept and save</legend>
-      <div class="form-group">
-        <label for="office_show" translate="" class="col-md-2 control-label"></label>
-        <div class="col-md-10">
-          <input name="office_show" type="checkbox" ng-model="office.show_office"/> {{"Show office on ekukka.fi website" | translate}}
-        </div>
-      </div>
+      <div ng-include="'/app/office/term_of_service.html'"></div>
+
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
           <div class="pull-right">

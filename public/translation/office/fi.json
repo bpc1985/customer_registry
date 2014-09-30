@@ -40,7 +40,7 @@
 	"New Person": "Uusi Henkilö",
 	"Contact": "Toimipisteen Yhteyshenkilöt",
 	"Add New Person": "Lisää uusi yhteyshenkilö",
-	"Show office on ekukka.fi website": "Olen lukenut ja hyväksynyt käyttöehdot ja haluan, että toimipiste julkaistaan eKukka.fi hakupalvelussa",
+	"Show office on ekukka.fi website": "Olen lukenut ja hyväksynyt <a href='#' data-toggle='modal' data-target='#termModal'>käyttöehdot</a> ja haluan, että toimipiste julkaistaan eKukka.fi hakupalvelussa",
 	"Services should be seperated with commas such as wedding, delivery, design": "Kirjoita tähän toimipisteesi tuotteet ja palvelut. Eroita kuvaukset pilkulla: esim. kukkasidonta, hääkimput, lahjatavarat, jne...",
 	"Open Times": "Aukioloajat",
 	"Close": "Suljettu",
