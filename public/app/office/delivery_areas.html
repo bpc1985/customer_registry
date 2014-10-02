@@ -1,8 +1,8 @@
-<legend translate="">Delivery prices and areas</legend>
+<legend>{{'_delivery_prices_and_areas_' | translate}}</legend>
 
 <div class="form-group" ng-repeat="location in locations">
 
-  <label for="office_delivery_areas" translate="" class="col-md-2 control-label">Delivery price {{$index + 1}}</label>
+  <label for="office_delivery_areas" class="col-md-2 control-label">{{'_delivery_price_' | translate}} {{$index + 1}}</label>
   <div class="col-md-1">
     <input type="text" ng-model="location.price" class="form-control" name="office_delivery_areas"/>
   </div>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="col-md-1">
-    <button type="button" data-toggle="modal" data-target="#deliveryModal{{$index + 1}}" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Add Delivery Areas' | translate}}</button>
+    <button type="button" data-toggle="modal" data-target="#deliveryModal{{$index + 1}}" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'_add_delivery_areas_' | translate}}</button>
   </div>
 
   <div id="deliveryModal{{$index + 1}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
@@ -26,7 +26,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-          <h4 translate="" class="modal-title">Add Delivery Areas</h4>
+          <h4 class="modal-title">{{'_add_delivery_areas_' | translate}}</h4>
         </div>
         <div class="modal-body">
           <form name="DeliveryForm" class="form-horizontal">
@@ -35,7 +35,7 @@
                 <input type="text" name="delivery_zipcode" ng-model="location.new_zipcode" placeholder="{{'Enter new zipcode'|translate}}" class="form-control"/>
               </div>
               <div class="col-md-">
-                <button type="button" ng-click="addZipCode(location)" translate="" class="btn btn-primary add-zipcode-btn">Add</button>
+                <button type="button" ng-click="addZipCode(location)" class="btn btn-primary add-zipcode-btn">{{'_add_' | translate}}</button>
               </div>
             </div>
             <div class="form-group">
@@ -48,7 +48,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-default">{{'_close_' | translate}}</button>
         </div>
       </div>
     </div>

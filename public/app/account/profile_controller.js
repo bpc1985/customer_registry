@@ -15,7 +15,7 @@ angular.module('app').controller('crProfileCtrl', function($scope, crNotifier, c
         }
 
         crAuth.updateCurrentUser(newUserData).then(function() {
-            crNotifier.notify('Your user account has been updated');
+            crNotifier.notify('_your_user_account_has_been_updated_');
         }, function(reason) {
             crNotifier.error(reason);
         })

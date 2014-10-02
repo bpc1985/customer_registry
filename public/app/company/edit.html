@@ -1,15 +1,15 @@
 <div class="container">
   <div class="well">
     <form name="companyForm" class="form-horizontal" ng-submit="update()">
-      <legend translate="">Company Profile</legend>
+      <legend>{{ '_company_profile_' | translate }}</legend>
 
       <div ng-include="'/app/company/company_basic_form.html'"></div>
 
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
           <div class="pull-right">
-            <button type="submit" ng-disabled="companyForm.$invalid" translate="" class="btn btn-primary btn-submit">Submit</button>
-            <a href="/companies" translate="" class="btn btn-default">Cancel</a>
+            <button type="submit" ng-disabled="companyForm.$invalid" class="btn btn-primary btn-submit">{{ '_submit_' | translate }}</button>
+            <a href="/companies" class="btn btn-default">{{ '_cancel_' | translate }}</a>
           </div>
         </div>
       </div>
@@ -23,32 +23,32 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-          <h4 translate="" class="modal-title">Add New Person</h4>
+          <h4 class="modal-title">{{ '_add_new_person_' | translate }}</h4>
         </div>
         <div class="modal-body">
           <form name="personForm" class="form-horizontal">
             <div ng-class="{ 'has-error': (personForm.personname | shouldDisplayError:personForm)}" class="form-group required">
-              <label for="personname" translate="" class="col-md-2 control-label">Person Name</label>
+              <label for="personname" class="col-md-2 control-label">{{ '_person_name_' | translate }}</label>
               <div class="col-md-10">
                 <input name="personname" type="text" required="required" ng-model="person.pname" class="form-control"/>
-                <p ng-show="personForm.personname | shouldDisplayError:personForm" translate="" class="help-block">Person name is required</p>
+                <p ng-show="personForm.personname | shouldDisplayError:personForm" class="help-block">{{ '_person_name_is_required_' | translate }}</p>
               </div>
             </div>
             <div ng-class="{ 'has-error': (personForm.persontitle | shouldDisplayError:personForm)}" class="form-group required">
-              <label for="persontitle" translate="" class="col-md-2 control-label">Title</label>
+              <label for="persontitle" class="col-md-2 control-label">{{ '_title_' | translate }}</label>
               <div class="col-md-10">
                 <input name="persontitle" type="text" required="required" ng-model="person.title" class="form-control"/>
-                <p ng-show="personForm.persontitle | shouldDisplayError:personForm" translate="" class="help-block">Person title is required</p>
+                <p ng-show="personForm.persontitle | shouldDisplayError:personForm" class="help-block">{{ '_person_title_is_required_' | translate }}</p>
               </div>
             </div>
             <div class="form-group">
-              <label for="persontelephone" translate="" class="col-md-2 control-label">Person Phone</label>
+              <label for="persontelephone" class="col-md-2 control-label">{{ '_person_phone_' | translate }}</label>
               <div class="col-md-10">
                 <input name="persontelephone" type="text" ng-model="person.telephone" class="form-control"/>
               </div>
             </div>
             <div class="form-group">
-              <label for="personemail" translate="" class="col-md-2 control-label">Email</label>
+              <label for="personemail" class="col-md-2 control-label">{{ '_email_' | translate }}</label>
               <div class="col-md-10">
                 <input name="personemail" type="text" ng-model="person.email" class="form-control"/>
               </div>
@@ -56,8 +56,8 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
-          <button type="button" ng-disabled="personForm.$invalid" ng-click="create('modal-company')" data-dismiss="modal" translate="" class="btn btn-primary">Save</button>
+          <button type="button" data-dismiss="modal" class="btn btn-default">{{ '_close_' | translate }}</button>
+          <button type="button" ng-disabled="personForm.$invalid" ng-click="create('modal-company')" data-dismiss="modal" class="btn btn-primary">{{ '_save_' | translate }}</button>
         </div>
       </div>
     </div>

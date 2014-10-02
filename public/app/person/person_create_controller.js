@@ -26,7 +26,7 @@ angular.module('app').controller('crPersonCreateCtrl', function($scope, $transla
         };
 
         crPersonFactory.createPerson(newPersonData).then(function(newPerson){
-            crNotifier.notify($translate.instant('New person has been created'));
+            crNotifier.notify($translate.instant('_new_person_has_been_created_'));
             if(from === 'modal-company'){
                 $scope.$parent.persons.push(newPerson);
             }

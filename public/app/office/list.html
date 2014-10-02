@@ -1,22 +1,22 @@
 <div class="container">
   <a href="/offices/create" class="btn btn-addnew">
     <i class="glyphicon glyphicon-plus"></i>
-    <span translate>Add New Office</span>
+    <span>{{ '_add_new_office_' | translate }}</span>
   </a>
   <div class="well">
     <div class="row">
       <div class="col-lg-10 col-md-10 col-xs-12">
-        <h2 translate="">Offices</h2>
+        <h2>{{ '_offices_' | translate }}</h2>
       </div>
     </div>
     <div class="table-reponsive"></div>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th translate="">Office</th>
-          <th translate="">Address</th>
-          <th translate="">Telephone</th>
-          <th translate="">Responsible</th>
+          <th>{{ '_office_' | translate }}</th>
+          <th>{{ '_address_' | translate }}</th>
+          <th>{{ '_telephone_' | translate }}</th>
+          <th>{{ '_responsible_' | translate }}</th>
           <th></th>
         </tr>
       </thead>
@@ -26,7 +26,10 @@
           <td>{{office.contact_info.street_address}}, {{office.contact_info.city}}</td>
           <td>{{office.contact_info.phone}}</td>
           <td>{{office.contact_persons[0].pname}}</td>
-          <td><a href="/offices/{{office.id}}" translate="">Edit</a>&nbsp;|&nbsp;<a href="" ng-click="delete(office)" translate="">Delete</a></td>
+          <td>
+            <a href="/offices/{{office.id}}">{{ '_edit_' | translate }}</a>
+            &nbsp;|&nbsp;
+            <a href="" ng-click="delete(office)">{{ '_delete_' | translate }}</a></td>
         </tr>
       </tbody>
     </table>

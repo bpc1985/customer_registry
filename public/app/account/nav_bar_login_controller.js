@@ -16,9 +16,9 @@ angular.module('app').controller('crNavBarLoginCtrl', function($scope, $rootScop
             if(success) {
                 $rootScope.$broadcast('loggedin');
                 $scope.identity = crIdentity;
-                crNotifier.notify($translate.instant('You have successfully signed in'));
+                crNotifier.notify($translate.instant('_you_have_successfully_signed_in_'));
             } else {
-                crNotifier.error($translate.instant('Email/Password combination incorrect'));
+                crNotifier.error($translate.instant('_email_password_combination_incorrect_'));
             }
         });
     };
@@ -29,7 +29,7 @@ angular.module('app').controller('crNavBarLoginCtrl', function($scope, $rootScop
             $scope.email = "";
             $scope.password = "";
             crIdentity.currentUser = undefined;
-            crNotifier.notify($translate.instant("You have successfully signed out"));
+            crNotifier.notify($translate.instant("_you_have_successfully_signed_out_"));
             $location.path('/');
         });
     };

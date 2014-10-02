@@ -8,7 +8,7 @@ angular.module('app').controller('crOfficeListCtrl', function($scope, $http, $tr
     $scope.delete = function(office){
         _.remove($scope.offices, {'id': office.id});
         crOfficeFactory.deleteOffice(office).then(function(){
-            crNotifier.notify($translate.instant('Office has been deleted'));
+            crNotifier.notify($translate.instant('_office_has_been_deleted_'));
         }, function(reason){
             crNotifier.error(reason);
         });

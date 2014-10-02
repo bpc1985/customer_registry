@@ -17,7 +17,7 @@ angular.module('app').controller('crSignupCtrl', function($scope, $location, $ro
             };
 
             crPersonFactory.createPerson(newPersonData).then(function(newPerson){
-                crNotifier.notify('User account has been created');
+                crNotifier.notify('_user_account_has_been_created_');
                 $location.path('/');
             });
         }, function(reason){

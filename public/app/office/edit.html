@@ -20,8 +20,8 @@
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
           <div class="pull-right">
-            <button type="submit" ng-disabled="company.id==undefined || office.services==0 || officeForm.$invalid" translate="" class="btn btn-primary btn-submit">Update</button>
-            <a href="/offices" translate="" class="btn btn-default">Cancel</a>
+            <button type="submit" ng-disabled="company.id==undefined || office.services==0 || officeForm.$invalid" class="btn btn-primary btn-submit">{{'_update_' | translate}}</button>
+            <a href="/offices" class="btn btn-default">{{'_cancel_' | translate}}</a>
           </div>
         </div>
       </div>
@@ -34,79 +34,79 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-            <h4 translate="" class="modal-title">Add New Company</h4>
+            <h4 class="modal-title">{{'_add_new_company_' | translate}}</h4>
           </div>
           <div class="modal-body">
             <form name="companyForm" class="form-horizontal">
               <div ng-class="{'has-error': (companyForm.companyname | shouldDisplayError:companyForm)}" class="form-group required">
-                <label for="companyname" ,="," translate="" class="col-md-2 control-label">Company Name</label>
+                <label for="companyname" ,="," class="col-md-2 control-label">{{'_company_name_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="companyname" type="text" required="required" ng-model="company.name" class="form-control"/>
-                  <p ng-show="companyForm.companyname | shouldDisplayError:companyForm" translate="" class="help-block">Company name is required</p>
+                  <p ng-show="companyForm.companyname | shouldDisplayError:companyForm" class="help-block">{{'_company_name_is_required_' | translate}}</p>
                 </div>
               </div>
               <div ng-class="{'has-error': (companyForm.companytype | shouldDisplayError:companyForm)}" class="form-group required">
-                <label for="companytype" translate="" class="col-md-2 control-label">Company Type</label>
+                <label for="companytype" class="col-md-2 control-label">{{'_company_type_' | translate}}</label>
                 <div class="col-md-5 required">
                   <select name="companytype" required="required" ng-model="company.type" class="form-control">
-                    <option value="" translate="">Please select company type</option>
-                    <option value="TMI" translate="">TMI</option>
-                    <option value="KY" translate="">KY</option>
-                    <option value="AY" translate="">AY</option>
-                    <option value="OY" translate="">OY</option>
-                    <option value="Osuuskunta" translate="">Osuuskunta</option>
-                    <option value="Oppilaitos" translate="">Oppilaitos</option>
-                    <option value="Muu" translate="">Muu</option>
+                    <option value="">{{'_please_select_company type_' | translate}}</option>
+                    <option value="TMI">{{'_TMI_' | translate}}</option>
+                    <option value="KY">{{'_KY_' | translate}}</option>
+                    <option value="AY">{{'_AY_' | translate}}</option>
+                    <option value="OY">{{'_OY_' | translate}}</option>
+                    <option value="Osuuskunta">{{'_Osuuskunta_' | translate}}</option>
+                    <option value="Oppilaitos">{{'_Oppilaitos_' | translate}}</option>
+                    <option value="Muu">{{'_Muu_' | translate}}</option>
                   </select>
                 </div>
               </div>
               <div ng-class="{'has-error': (companyForm.companycode | shouldDisplayError:companyForm)}" class="form-group required">
-                <label for="companycode" translate="" class="col-md-2 control-label">Company Code</label>
+                <label for="companycode" class="col-md-2 control-label">{{'_company_code_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="companycode" type="text" required="required" ng-maxlength="9" ng-pattern="/^[0-9]{6,7}-[0-9]{1}$/" ng-model="company.code" class="form-control"/>
-                  <p ng-show="companyForm.companycode | shouldDisplayError:companyForm" translate="" class="help-block">Company code should be formatted as '1234567-8'</p>
+                  <p ng-show="companyForm.companycode | shouldDisplayError:companyForm" class="help-block">{{'_company_code_should_be_formatted_as_1234567-8_' | translate}}</p>
                 </div>
               </div>
               <div ng-class="{'has-error': (companyForm.companystreet | shouldDisplayError:companyForm)}" class="form-group required">
-                <label for="companystreet" translate="" class="col-md-2 control-label">Street</label>
+                <label for="companystreet" class="col-md-2 control-label">{{'_street_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="companystreet" type="text" required="required" ng-model="company.street" class="form-control"/>
-                  <p ng-show="companyForm.companystreet | shouldDisplayError:companyForm" translate="" class="help-block">Company street is required</p>
+                  <p ng-show="companyForm.companystreet | shouldDisplayError:companyForm" class="help-block">{{'_company_street_is_required_' | translate}}</p>
                 </div>
               </div>
               <div ng-class="{'has-error': (companyForm.companycity | shouldDisplayError:companyForm)}" class="form-group required">
-                <label for="companycity" translate="" class="col-md-2 control-label">City</label>
+                <label for="companycity" class="col-md-2 control-label">{{'_city_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="companycity" type="text" required="required" ng-model="company.city" class="form-control"/>
-                  <p ng-show="companyForm.companycity | shouldDisplayError:companyForm" translate="" class="help-block">Company city is required</p>
+                  <p ng-show="companyForm.companycity | shouldDisplayError:companyForm" class="help-block">{{'_company_city_is_required_' | translate}}</p>
                 </div>
               </div>
               <div ng-class="{'has-error': (companyForm.companyzip | shouldDisplayError:companyForm)}" class="form-group required">
-                <label for="companyzip" translate="" class="col-md-2 control-label">Zip</label>
+                <label for="companyzip" class="col-md-2 control-label">{{'_zip_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="companyzip" type="text" required="required" ng-model="company.zip" class="form-control"/>
-                  <p ng-show="companyForm.companyzip | shouldDisplayError:companyForm" translate="" class="help-block">Company zipcode is required</p>
+                  <p ng-show="companyForm.companyzip | shouldDisplayError:companyForm" class="help-block">{{'_company_zipcode_is_required_' | translate}}</p>
                 </div>
               </div>
               <div ng-class="{'has-error': (companyForm.companyphone | shouldDisplayError:companyForm)}" class="form-group required">
-                <label for="companyphone" translate="" class="col-md-2 control-label">Company Phone</label>
+                <label for="companyphone" class="col-md-2 control-label">{{'_company_phone_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="companyphone" type="text" required="required" ng-model="company.phone" class="form-control"/>
-                  <p ng-show="companyForm.companyphone | shouldDisplayError:companyForm" translate="" class="help-block">Company phone is required</p>
+                  <p ng-show="companyForm.companyphone | shouldDisplayError:companyForm" class="help-block">{{'_company_phone_is_required_' | translate}}</p>
                 </div>
               </div>
               <div ng-class="{'has-error': (companyForm.companyemail | shouldDisplayError:companyForm)}" class="form-group required">
-                <label for="companyemail" translate="" class="col-md-2 control-label">Company Email</label>
+                <label for="companyemail" class="col-md-2 control-label">{{'_company_email_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="companyemail" type="email" required="required" ng-model="company.email" class="form-control"/>
-                  <p ng-show="companyForm.companyemail | shouldDisplayError:companyForm" translate="" class="help-block">Company email is required</p>
+                  <p ng-show="companyForm.companyemail | shouldDisplayError:companyForm" class="help-block">{{'_company_email_is_required_' | translate}}</p>
                 </div>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
-            <button type="button" ng-disabled="companyForm.$invalid" ng-click="create(true)" data-dismiss="modal" translate="" class="btn btn-primary">Save</button>
+            <button type="button" data-dismiss="modal" class="btn btn-default">{{'_close_' | translate}}</button>
+            <button type="button" ng-disabled="companyForm.$invalid" ng-click="create(true)" data-dismiss="modal" class="btn btn-primary">{{'_save_' | translate}}</button>
           </div>
         </div>
       </div>
@@ -118,32 +118,32 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-            <h4 translate="" class="modal-title">Add New Person</h4>
+            <h4 class="modal-title">{{'_add_new_person_' | translate}}</h4>
           </div>
           <div class="modal-body">
             <form name="personForm" class="form-horizontal">
               <div ng-class="{ 'has-error': (personForm.personname | shouldDisplayError:personForm)}" class="form-group required">
-                <label for="personname" translate="" class="col-md-2 control-label">Person Name</label>
+                <label for="personname" class="col-md-2 control-label">{{'_person_name_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="personname" type="text" required="required" ng-model="person.pname" class="form-control"/>
-                  <p ng-show="personForm.personname | shouldDisplayError:personForm" translate="" class="help-block">Person name is required</p>
+                  <p ng-show="personForm.personname | shouldDisplayError:personForm" class="help-block">{{'_person_name_is_required_' | translate}}</p>
                 </div>
               </div>
               <div ng-class="{ 'has-error': (personForm.persontitle | shouldDisplayError:personForm)}" class="form-group required">
-                <label for="persontitle" translate="" class="col-md-2 control-label">Title</label>
+                <label for="persontitle" class="col-md-2 control-label">{{'_title_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="persontitle" type="text" required="required" ng-model="person.title" class="form-control"/>
-                  <p ng-show="personForm.persontitle | shouldDisplayError:personForm" translate="" class="help-block">Person title is required</p>
+                  <p ng-show="personForm.persontitle | shouldDisplayError:personForm" class="help-block">{{'_person_title_is_required_' | translate}}</p>
                 </div>
               </div>
               <div class="form-group">
-                <label for="persontelephone" translate="" class="col-md-2 control-label">Person Phone</label>
+                <label for="persontelephone" class="col-md-2 control-label">{{'_person_phone_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="persontelephone" type="text" ng-model="person.telephone" class="form-control"/>
                 </div>
               </div>
               <div class="form-group">
-                <label for="personemail" translate="" class="col-md-2 control-label">Email</label>
+                <label for="personemail" class="col-md-2 control-label">{{'_email_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="personemail" type="text" ng-model="person.email" class="form-control"/>
                 </div>
@@ -151,8 +151,8 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
-            <button type="button" ng-disabled="personForm.$invalid" ng-click="create('modal-company')" data-dismiss="modal" translate="" class="btn btn-primary">Save</button>
+            <button type="button" data-dismiss="modal" class="btn btn-default">{{'_close_' | translate}}</button>
+            <button type="button" ng-disabled="personForm.$invalid" ng-click="create('modal-company')" data-dismiss="modal" class="btn btn-primary">{{'_save_' | translate}}</button>
           </div>
         </div>
       </div>

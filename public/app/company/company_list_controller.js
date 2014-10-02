@@ -36,7 +36,7 @@ angular.module('app').controller('crCompanyListCtrl',
                 company: null
             };
             crAuth.updateCurrentUser(newUserData).then(function() {
-                crNotifier.notify($translate.instant('Company has been deleted'));
+                crNotifier.notify($translate.instant('_company_has_been_deleted_'));
             });
         }, function(reason){
             crNotifier.error(reason);

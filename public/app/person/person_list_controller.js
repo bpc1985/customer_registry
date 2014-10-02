@@ -11,7 +11,7 @@ angular.module('app').controller('crPersonListCtrl',
         _.remove($scope.people, {'id': person.id});
 
         crPersonFactory.deletePerson(person).then(function(){
-            crNotifier.notify($translate.instant('Person has been deleted'));
+            crNotifier.notify($translate.instant('_person_has_been_deleted_'));
         }, function(reason){
             crNotifier.error(reason);
         });;

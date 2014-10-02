@@ -1,6 +1,6 @@
-<legend translate="">Contact</legend>
+<legend>{{'_contact_' | translate}}</legend>
 <div class="form-group">
-  <label for="office_contact_persons" translate="" class="col-md-2 control-label">Contact</label>
+  <label for="office_contact_persons" class="col-md-2 control-label">{{'_contact_' | translate}}</label>
 
   <div ng-if="persons.length > 0" class="col-md-5">
     <ul class="list-group" ng-if="!isEditOffice">
@@ -20,6 +20,6 @@
   </div>
 
   <div class="col-md-1">
-    <button type="button" data-toggle="modal" data-target="#personModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Add New Person' | translate}}</button>
+    <button type="button" data-toggle="modal" data-target="#personModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'_add_new_person_' | translate}}</button>
   </div>
 </div>

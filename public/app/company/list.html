@@ -1,25 +1,25 @@
 <div class="container">
   <a href="/companies/create" class="btn btn-addnew" ng-if="!user.company">
     <i class="glyphicon glyphicon-plus"></i>
-    <span translate>New Company</span>
+    <span>{{ '_new_company_' | translate }}</span>
   </a>
   <div class="well">
     <div class="row">
       <div class="col-md-10">
-        <h2 translate="">Companies</h2>
+        <h2>{{ '_companies_' | translate }}</h2>
       </div>
     </div>
     <div class="table-reponsive">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th translate="">Name</th>
-            <th translate="">Type</th>
-            <th translate="">Code</th>
-            <th translate="">Address</th>
-            <th translate="">Telephone</th>
-            <th translate="">Email</th>
-            <th translate="">Contact</th>
+            <th>{{ '_name_' | translate }}</th>
+            <th>{{ '_type_' | translate }}</th>
+            <th>{{ '_code_' | translate }}</th>
+            <th>{{ '_address_' | translate }}</th>
+            <th>{{ '_telephone_' | translate }}</th>
+            <th>{{ '_email_' | translate }}</th>
+            <th>{{ '_contact_' | translate }}</th>
             <th></th>
           </tr>
         </thead>
@@ -32,7 +32,10 @@
             <td>{{company.phone}}</td>
             <td>{{company.email}}</td>
             <td>{{company.contact}}</td>
-            <td><a href="/companies/{{company.id}}" translate="">Edit</a><span ng-hide="companies.length==1">&nbsp;|&nbsp;</span><a href="" ng-hide="companies.length==1" ng-click="delete(company)" translate="">Delete</a></td>
+            <td>
+              <a href="/companies/{{company.id}}">{{ '_edit_' | translate }}</a><span ng-hide="companies.length==1">&nbsp;|&nbsp;</span>
+              <a href="" ng-hide="companies.length==1" ng-click="delete(company)">{{ '_delete_' | translate }}</a>
+            </td>
           </tr>
         </tbody>
       </table>

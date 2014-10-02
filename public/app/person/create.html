@@ -1,15 +1,15 @@
 <div class="container">
   <div class="well">
     <form name="personForm" class="form-horizontal" ng-submit="create()" novalidate>
-      <legend translate="">Person Form</legend>
+    <legend>{{ '_new_person_' | translate}}</legend>
 
       <div ng-include="'/app/person/person_basic_form.html'"></div>
 
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
           <div class="pull-right">
-            <button type="submit" ng-disabled="company.id==undefined || personForm.$invalid" translate="" class="btn btn-primary btn-submit">Submit</button>
-            <a href="/persons" translate="" class="btn btn-default">Cancel</a>
+            <button type="submit" ng-disabled="company.id==undefined || personForm.$invalid" class="btn btn-primary btn-submit">{{ '_submit_' | translate}}</button>
+            <a href="/persons" class="btn btn-default">{{'_cancel_' | translate}}</a>
           </div>
         </div>
       </div>

@@ -2,14 +2,14 @@
   <div class="navbar-top">
     <div class="container">
       <ul ng-hide="identity.isAuthenticated()">
-        <li>Contact info@ekukka.fi</li>
-        <li><a href="/signup" translate="">Register</a></li>
+        <li>{{ '_contact_email_' | translate }} info@ekukka.fi</li>
+        <li><a href="/signup">{{ '_register_' | translate }}</a></li>
         <li>
           <select ng-model="language" ng-change="changeLanguage(language)">
-            <option value="en" translate>English</option>
-            <option value="fi" translate>Finnish</option>
-            <option value="se" translate>Swedish</option>
-            <option value="de" translate>German</option>
+            <option value="en">{{ '_english_' | translate }}</option>
+            <option value="fi">{{ '_finnish_' | translate }}</option>
+            <option value="se">{{ '_swedish_' | translate }}</option>
+            <option value="de">{{ '_german_' | translate }}</option>
           </select>
         </li>
       </ul>
@@ -19,12 +19,12 @@
   <div class="container">
     <form ng-hide="identity.isAuthenticated()" class="navbar-form">
       <div class="form-group">
-        <input placeholder="{{'Email'|translate}}" ng-model="email" class="form-control"/>
+        <input placeholder="{{ '_email_' | translate }}" ng-model="email" class="form-control"/>
       </div>
       <div class="form-group">
-        <input type="password" placeholder="{{'Password'|translate}}" ng-model="password" class="form-control"/>
+        <input type="password" placeholder="{{ '_password_' | translate }}" ng-model="password" class="form-control"/>
       </div>
-      <button ng-click="signin(email, password)" translate="" class="btn btn-primary">Sign in</button>
+      <button ng-click="signin(email, password)" class="btn btn-primary">{{ '_sign_in_' | translate }}</button>
     </form>
   </div>
 
@@ -32,15 +32,15 @@
     <div class="container">
       <ul ng-show="identity.isAuthenticated()">
         <li>{{identity.currentUser.firstName + " " + identity.currentUser.lastName}}</li>
-        <li ng-show="identity.currentUser.isAdmin()"><a href="/admin/users" translate="">User Admin</a></li>
-        <li><a href="/profile" translate="">Profile</a></li>
-        <li><a href="" ng-click="signout()" translate="">Sign Out</a></li>
+        <li ng-show="identity.currentUser.isAdmin()"><a href="/admin/users">{{ '_user_admin_' | translate }}</a></li>
+        <li><a href="/profile">{{ '_profile_' | translate }}</a></li>
+        <li><a href="" ng-click="signout()">{{ '_sign_out_' | translate }}</a></li>
         <li>
           <select ng-model="language" ng-change="changeLanguage(language)">
-            <option value="en" translate>English</option>
-            <option value="fi" translate>Finnish</option>
-            <option value="se" translate>Swedish</option>
-            <option value="de" translate>German</option>
+            <option value="en">{{ '_english_' | translate }}</option>
+            <option value="fi">{{ '_finnish_' | translate }}</option>
+            <option value="se">{{ '_swedish_' | translate }}</option>
+            <option value="de">{{ '_german_' | translate }}</option>
           </select>
         </li>
       </ul>
@@ -57,10 +57,10 @@
 
   <div class="navbar-collapse collapse">
       <ul ng-show="identity.isAuthenticated()" active-menu="active" class="nav navbar-nav">
-        <li id="home"><a href="/" translate="">Main</a></li>
-        <li id="companies"><a href="/companies" translate="">Companies</a></li>
-        <li id="persons"><a href="/persons" translate="">Persons</a></li>
-        <li id="offices"><a href="/offices" translate="">Offices</a></li>
+        <li id="home"><a href="/">{{ '_main_' | translate }}</a></li>
+        <li id="companies"><a href="/companies">{{ '_companies_' | translate }}</a></li>
+        <li id="persons"><a href="/persons">{{ '_persons_' | translate }}</a></li>
+        <li id="offices"><a href="/offices">{{ '_offices_' | translate }}</a></li>
       </ul>
   </div>
 </div> <!--.navbar-collapse-->

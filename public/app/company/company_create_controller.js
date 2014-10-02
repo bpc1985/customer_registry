@@ -32,7 +32,7 @@ angular.module('app').controller('crCompanyCreateCtrl',
                 company: newCompany.id
             };
             crAuth.updateCurrentUser(newUserData).then(function() {
-                crNotifier.notify($translate.instant('New company has been created'));
+                crNotifier.notify($translate.instant('_new_company_has_been_created_'));
                 if(!fromModal){
                     $location.path('/companies');
                 } else{

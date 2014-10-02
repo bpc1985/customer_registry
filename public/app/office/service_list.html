@@ -1,5 +1,5 @@
 <div class="form-group required">
-  <label for="office_services" translate="" class="col-md-2 control-label">Services</label>
+  <label for="office_services" class="col-md-2 control-label">{{'_services_' | translate}}</label>
   <div ng-show="services.length > 0" class="col-md-7">
     <div class="select2-container select2-container-multi form-control">
       <ul class="select2-choices">
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="col-md-1">
-    <button type="button" data-toggle="modal" data-target="#serviceModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Add Service' | translate}}</button>
+    <button type="button" data-toggle="modal" data-target="#serviceModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'_add_service_' | translate}}</button>
   </div>
 
   <div id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
@@ -18,7 +18,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-          <h4 translate="" class="modal-title">Add New Service</h4>
+          <h4 class="modal-title">{{'_add_new_service_' | translate}}</h4>
         </div>
         <div class="modal-body">
           <form name="ServiceForm" class="form-horizontal">
@@ -27,7 +27,7 @@
                 <input type="text" name="service_name" ng-model="new_service" placeholder="{{'Enter new service'|translate}}" class="form-control"/>
               </div>
               <div class="col-md-">
-                <button type="button" ng-click="addService()" translate="" class="btn btn-primary add-zipcode-btn">Add</button>
+                <button type="button" ng-click="addService()" class="btn btn-primary add-zipcode-btn">{{'_add_' | translate}}</button>
               </div>
             </div>
             <div class="form-group">
@@ -40,7 +40,7 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-default">{{'_close_' | translate}}</button>
         </div>
       </div>
     </div>

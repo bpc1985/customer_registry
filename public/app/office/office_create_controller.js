@@ -48,7 +48,7 @@ angular.module('app').controller('crOfficeCreateCtrl',
             };
 
             crOfficeFactory.createOffice($scope.office).then(function(){
-                crNotifier.notify($translate.instant('New office has been created'));
+                crNotifier.notify($translate.instant('_new_office_has_been_created_'));
                 $location.path('/offices');
             }, function(reason){
                 crNotifier.error(reason);

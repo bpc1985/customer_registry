@@ -1,62 +1,62 @@
-<legend translate="">Office Form</legend>
+<legend>{{'_office_form_' | translate}}</legend>
 
 <div class="form-group">
-  <label for="office_company" translate="" class="col-lg-2 col-md-2 col-sm-2 col-xs-12 control-label">Company</label>
+  <label for="office_company" class="col-lg-2 col-md-2 col-sm-2 col-xs-12 control-label">{{'_company_' | translate}}</label>
   <div ng-show="company.id" class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
     <input name="office_company" readonly="readonly" type="text" ng-model="$parent.company.company_name" class="form-control"/>
     <input name="office_company_id" type="text" ng-model="$parent.company.id" class="hidden form-control"/>
   </div>
   <div ng-hide="company.id" class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
-    <button type="button" data-toggle="modal" data-target="#companyModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Add New' | translate}}</button>
+    <button type="button" data-toggle="modal" data-target="#companyModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'_add_new_' | translate}}</button>
   </div>
 </div>
 
 <div ng-class="{'has-error': (officeForm.office_name | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_name" translate="" class="col-md-2 control-label">Office Name</label>
+  <label for="office_name" class="col-md-2 control-label">{{'_office_name_' | translate}}</label>
   <div class="col-md-10">
-    <input name="office_name" type="text" required="required" ng-model="$parent.office.office_name" placeholder="{{'Enter the office name, if different from the company official name' | translate }}" class="form-control"/>
-    <p ng-show="officeForm.office_name | shouldDisplayError:officeForm" translate="" class="help-block">Office name is required</p>
+    <input name="office_name" type="text" required="required" ng-model="$parent.office.office_name" placeholder="{{'_enter_the_office_name_if_different_from_the_company_official_name_' | translate }}" class="form-control"/>
+    <p ng-show="officeForm.office_name | shouldDisplayError:officeForm" class="help-block">{{'_office_name_is_required_' | translate}}</p>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="is_headoffice" translate="" class="col-lg-2 col-md-2 col-sm-0 col-xs-12 control-label"></label>
+  <label for="is_headoffice" class="col-lg-2 col-md-2 col-sm-0 col-xs-12 control-label"></label>
   <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
           <input type="checkbox" ng-model="$parent.office.is_headoffice" ng-change="checkHeadOffice()"/>
-          {{'Office address is same as company address' | translate}}
+          {{'_office_address_is_same_as_company_address_' | translate}}
         </div>
       </div>
   </div>
 </div>
 
 <div ng-class="{ 'has-error': (officeForm.office_street | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_street" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Street</label>
+  <label for="office_street" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_street_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_street" type="text" required="required" ng-model="$parent.office.contact_info.street_address" ng-disabled="$parent.office.is_headoffice" class="form-control"/>
-    <p ng-show="officeForm.office_street | shouldDisplayError:officeForm" translate="" class="help-block">Office street is required</p>
+    <p ng-show="officeForm.office_street | shouldDisplayError:officeForm" class="help-block">{{'_office_street_is_required_' | translate}}</p>
   </div>
 </div>
 
 <div ng-class="{ 'has-error': (officeForm.office_city | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_city" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">City</label>
+  <label for="office_city" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_city_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_city" type="text" required="required" ng-model="$parent.office.contact_info.city" ng-disabled="$parent.office.is_headoffice" class="form-control"/>
-    <p ng-show="officeForm.office_city | shouldDisplayError:officeForm" translate="" class="help-block">Office city is required</p>
+    <p ng-show="officeForm.office_city | shouldDisplayError:officeForm" class="help-block">{{'_office_city_is_required_' | translate}}</p>
   </div>
 </div>
 
 <div ng-class="{ 'has-error': (officeForm.office_zipcode | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_zipcode" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Zipcode</label>
+  <label for="office_zipcode" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_zipcode_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_zipcode" type="text" required="required" ng-model="$parent.office.contact_info.zipcode" ng-disabled="$parent.office.is_headoffice" class="form-control"/>
-    <p ng-show="officeForm.office_zipcode | shouldDisplayError:officeForm" translate="" class="help-block">Office zip code is required</p>
+    <p ng-show="officeForm.office_zipcode | shouldDisplayError:officeForm" class="help-block">{{'_office_zip_code_is_required_' | translate}}</p>
   </div>
 </div>
 
 <div class="form-group hide">
-  <label for="office_coordinates" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Coordinates</label>
+  <label for="office_coordinates" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_coordinates_' | translate}}</label>
   <div class="col-lg-3 col-md-3 col-xs-12">
     <input name="office_coordinates" readonly="readonly" type="text" ng-model="$parent.office.contact_info.coordinates.latitude" placeholder="Latitude" class="form-control"/>
   </div>
@@ -66,44 +66,44 @@
 </div>
 
 <div class="form-group">
-  <label for="office_map" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Map</label>
+  <label for="office_map" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_map_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
-    <div translate="">If pin is not right place, you can move it</div><br/>
+    <div>{{'_if_pin_is_not_right_place_you_can_move_it_' | translate}}</div><br/>
     <gmap address="$parent.office.contact_info.street_address" city="$parent.office.contact_info.city" latitude="$parent.office.contact_info.coordinates.latitude" longitude="$parent.office.contact_info.coordinates.longitude"></gmap>
   </div>
 </div>
 
 <div ng-class="{ 'has-error': (officeForm.office_phone | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_phone" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Phone</label>
+  <label for="office_phone" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_phone_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_phone" type="text" required="required" ng-model="$parent.office.contact_info.phone" class="form-control"/>
-    <p ng-show="officeForm.office_phone | shouldDisplayError:officeForm" translate="" class="help-block">Office phone is required</p>
+    <p ng-show="officeForm.office_phone | shouldDisplayError:officeForm" class="help-block">{{'_office_phone_is_required_' | translate}}</p>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="office_altphone" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Alt Phone</label>
+  <label for="office_altphone" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_alt_phone_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_altphone" type="text" ng-model="$parent.office.contact_info.alt_phone" class="form-control"/>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="office_fax" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Fax</label>
+  <label for="office_fax" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_fax_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="officefax" type="text" ng-model="$parent.office.contact_info.fax" class="form-control"/>
   </div>
 </div>
 <div ng-class="{ 'has-error': (officeForm.office_email | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_email" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Email</label>
+  <label for="office_email" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_email_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_email" type="email" required="required" ng-model="$parent.office.contact_info.email" class="form-control"/>
-    <p ng-show="officeForm.office_email | shouldDisplayError:officeForm" translate="" class="help-block">Office email is required</p>
+    <p ng-show="officeForm.office_email | shouldDisplayError:officeForm" class="help-block">{{'_office_email_is_required_' | translate}}</p>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="office_web" translate="" class="col-lg-2 col-lg-2 col-md-2 col-xs-12 col-xs-12 control-label">Website</label>
+  <label for="office_web" class="col-lg-2 col-lg-2 col-md-2 col-xs-12 col-xs-12 control-label">{{'_website_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_web" type="text" ng-model="$parent.office.contact_info.website" class="form-control"/>
   </div>
@@ -112,17 +112,17 @@
 <thumbnail selected-image="$parent.office.profile_img"></thumbnail>
 
 <div ng-class="{ 'has-error': (officeForm.office_short_desc | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_short_desc" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Short Desc</label>
+  <label for="office_short_desc" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_short_desc_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
-    <textarea name="office_short_desc" type="text" required="required" ng-model="$parent.office.description.short_info" placeholder="{{'Enter the marketing slogan slogan max 100 characters. For example Service is our passion'|translate}}" class="form-control"></textarea>
-    <p ng-show="officeForm.office_short_desc | shouldDisplayError:officeForm" translate="" class="help-block">Office short description is required</p>
+    <textarea name="office_short_desc" type="text" required="required" ng-model="$parent.office.description.short_info" placeholder="{{'_enter_the_marketing_slogan_max_100_characters_for_example_service_is_our_passion_' | translate}}" class="form-control"></textarea>
+    <p ng-show="officeForm.office_short_desc | shouldDisplayError:officeForm" class="help-block">{{'_office_short_description_is_required_' | translate}}</p>
   </div>
 </div>
 
 <div ng-class="{ 'has-error': (officeForm.office_long_desc | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_long_desc" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Long Desc</label>
+  <label for="office_long_desc" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_long_desc_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
-    <textarea name="office_long_desc" type="text" required="required" ng-model="$parent.office.description.long_info" placeholder="{{'Write concise description of the operation of shop'|translate}}" class="form-control"></textarea>
-    <p ng-show="officeForm.office_long_desc | shouldDisplayError:officeForm" translate="" class="help-block">Office long description is required</p>
+    <textarea name="office_long_desc" type="text" required="required" ng-model="$parent.office.description.long_info" placeholder="{{'_write_concise_description_of_the_operation_of_shop_' | translate}}" class="form-control"></textarea>
+    <p ng-show="officeForm.office_long_desc | shouldDisplayError:officeForm" class="help-block">{{'_office_long_description_is_required_' | translate}}</p>
   </div>
 </div>

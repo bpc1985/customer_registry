@@ -2,39 +2,40 @@
 <div class="container">
   <div class="well">
     <form name="signupForm" class="form-horizontal">
-      <legend translate="">New User Information</legend>
+      <legend>{{ '_new_user_information_' | translate }}</legend>
       <div ng-class="{'has-error': (signupForm.email | shouldDisplayError:signupForm)}" class="form-group required">
-        <label for="email" translate="" class="col-md-2 control-label">Email</label>
+        <label for="email" class="col-md-2 control-label">{{ '_email_' | translate }}</label>
         <div class="col-md-10">
-          <input name="email" type="email" placeholder="{{'Email'|translate}}" ng-model="email" required="required" class="form-control"/>
-          <p ng-show="signupForm.email | shouldDisplayError:signupForm" translate="" class="help-block">You should input correct email format</p>
+          <input name="email" type="email" placeholder="{{'_email_' | translate}}" ng-model="email" required="required" class="form-control"/>
+          <p ng-show="signupForm.email | shouldDisplayError:signupForm" class="help-block">{{ '_you_should_input_correct_email_format_' | translate }}</p>
         </div>
       </div>
       <div ng-class="{'has-error': (signupForm.password | shouldDisplayError:signupForm)}" class="form-group required">
-        <label for="password" translate="" class="col-md-2 control-label">Password</label>
+        <label for="password" class="col-md-2 control-label">{{ '_password_' | translate }}</label>
         <div class="col-md-10">
-          <input name="password" type="password" placeholder="{{'Password'|translate}}" ng-minlength="4" ng-model="password" required="required" class="form-control"/>
-          <p ng-show="signupForm.password | shouldDisplayError:signupForm" translate="" class="help-block">Password should have at least 4 characters</p>
+          <input name="password" type="password" placeholder="{{'_password_' | translate}}" ng-minlength="4" ng-model="password" required="required" class="form-control"/>
+          <p ng-show="signupForm.password | shouldDisplayError:signupForm" class="help-block">{{ '_password_should_have_at_least_4_characters_' | translate }}</p>
         </div>
       </div>
       <div ng-class="{'has-error': (signupForm.fname | shouldDisplayError:signupForm)}" class="form-group required">
-        <label for="fname" translate="" class="col-md-2 control-label">First Name</label>
+        <label for="fname" class="col-md-2 control-label">{{ '_first_name_' | translate }}</label>
         <div class="col-md-10">
-          <input name="fname" type="text" placeholder="{{'First Name'|translate}}" ng-model="fname" required="required" class="form-control"/>
-          <p ng-show="signupForm.fname | shouldDisplayError:signupForm" translate="" class="help-block">You first name is required</p>
+          <input name="fname" type="text" placeholder="{{'_first_name_' | translate}}" ng-model="fname" required="required" class="form-control"/>
+          <p ng-show="signupForm.fname | shouldDisplayError:signupForm" class="help-block">{{ '_first_name_is_required_' | translate }}</p>
         </div>
       </div>
       <div ng-class="{'has-error': (signupForm.lname | shouldDisplayError:signupForm)}" class="form-group required">
-        <label for="lname" translate="" class="col-md-2 control-label">Last Name</label>
+        <label for="lname" class="col-md-2 control-label">{{ '_last_name_' | translate }}</label>
         <div class="col-md-10">
-          <input name="lname" type="text" placeholder="{{'Last Name'|translate}}" ng-model="lname" required="required" class="form-control"/>
-          <p ng-show="signupForm.lname | shouldDisplayError:signupForm" translate="" class="help-block">You last name is required</p>
+          <input name="lname" type="text" placeholder="{{'_last_name_' | translate}}" ng-model="lname" required="required" class="form-control"/>
+          <p ng-show="signupForm.lname | shouldDisplayError:signupForm" class="help-block">{{ '_last_name_is_required_' | translate }}</p>
         </div>
       </div>
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
           <div class="pull-right">
-            <button ng-click="signup()" ng-disabled="signupForm.$invalid" translate="" class="btn btn-primary btn-submit">Submit</button>&nbsp;<a href="/" translate="" class="btn btn-default">Cancel</a>
+            <button ng-click="signup()" ng-disabled="signupForm.$invalid" class="btn btn-primary btn-submit">{{ '_submit_' | translate }}</button>
+            <a href="/" translate="" class="btn btn-default">{{ '_cancel_' | translate }}</a>
           </div>
         </div>
       </div>

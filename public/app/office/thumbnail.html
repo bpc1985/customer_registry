@@ -1,10 +1,10 @@
 <div class="form-group required">
-  <label for="office_picture" translate="" class="col-lg-2 col-md-2 col-xs-12 control-label">Picture</label>
+  <label for="office_picture" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_picture_' | translate}}</label>
   <div class="col-lg-2 col-md-1 col-xs-5">
     <img ng-src="{{selectedImage}}" alt="thumbnail" width="128" height="128">
   </div>
   <div class="col-lg-2 col-md-1 col-xs-2">
-    <button type="button" data-toggle="modal" data-target="#thumbnailModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'Choose Picture' | translate}}</button>
+    <button type="button" data-toggle="modal" data-target="#thumbnailModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'_choose_picture_' | translate}}</button>
   </div>
 
   <div id="thumbnailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
@@ -12,7 +12,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
-          <h4 translate="" class="modal-title">Choose Picture</h4>
+          <h4 class="modal-title">{{'_choose_picture_' | translate}}</h4>
         </div>
         <div class="modal-body">
           <select id="selectImage" class="image-picker" ng-model="selectedImage">
@@ -20,7 +20,7 @@
           </select>
         </div>
         <div class="modal-footer">
-          <button type="button" data-dismiss="modal" translate="" class="btn btn-default">Close</button>
+          <button type="button" data-dismiss="modal" class="btn btn-default">{{'_close_' | translate}}</button>
         </div>
       </div>
     </div>

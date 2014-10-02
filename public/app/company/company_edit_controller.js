@@ -11,7 +11,7 @@ angular.module('app').controller('crCompanyEditCtrl',
 
     $scope.update = function(){
         crCompanyFactory.updateCompany($scope.company).then(function(){
-            crNotifier.notify($translate.instant('Company has been updated'));
+            crNotifier.notify($translate.instant('_company_has_been_updated_'));
             $location.path('/companies');
         }, function(reason){
             crNotifier.error(reason);

@@ -1,72 +1,72 @@
 <div ng-class="{ 'has-error': (personForm.personname | shouldDisplayError:personForm)}" class="form-group required">
-  <label for="personname" translate="" class="col-md-2 control-label">Name</label>
+  <label for="personname" class="col-md-2 control-label">{{ '_name_' | translate }}</label>
   <div class="col-md-10">
     <input name="personname" type="text" required="required" ng-model="person.pname" class="form-control"/>
-    <p ng-show="personForm.personname | shouldDisplayError:personForm" translate="" class="help-block">Person name field is required</p>
+    <p ng-show="personForm.personname | shouldDisplayError:personForm" class="help-block">{{ '_person_name_field_is_required_' | translate}}</p>
   </div>
 </div>
 
 <div ng-class="{ 'has-error': (personForm.persontitle | shouldDisplayError:personForm)}" class="form-group required">
-  <label for="persontitle" translate="" class="col-md-2 control-label">Title</label>
+  <label for="persontitle" class="col-md-2 control-label">{{ '_title_' | translate }}</label>
   <div class="col-md-10">
     <input name="persontitle" type="text" required="required" ng-model="person.title" class="form-control"/>
-    <p ng-show="personForm.persontitle | shouldDisplayError:personForm" translate="" class="help-block">Person title field is required</p>
+    <p ng-show="personForm.persontitle | shouldDisplayError:personForm" class="help-block">{{ '_person_title_field_is_required_' | translate }}</p>
   </div>
 </div>
 
 <div ng-class="{ 'has-error': (personForm.persontelephone | shouldDisplayError:personForm)}" class="form-group required">
-  <label for="persontelephone" translate="" class="col-md-2 control-label">Telephone</label>
+  <label for="persontelephone" class="col-md-2 control-label">{{ '_telephone_' | translate }}</label>
   <div class="col-md-10">
     <input name="persontelephone" type="number" required="required" ng-model="person.telephone" class="form-control"/>
-    <p ng-show="personForm.persontelephone | shouldDisplayError:personForm" translate="" class="help-block">Person telephone field is required</p>
+    <p ng-show="personForm.persontelephone | shouldDisplayError:personForm" class="help-block">{{ '_person_telephone_field_is_required_' | translate }}</p>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="personmobile" translate="" class="col-md-2 control-label">Mobile</label>
+  <label for="personmobile" class="col-md-2 control-label">{{ '_mobile_' | translate }}</label>
   <div class="col-md-10">
     <input name="personmobile" type="text" ng-model="person.mobile" class="form-control"/>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="personstreet" translate="" class="col-md-2 control-label">Street</label>
+  <label for="personstreet" class="col-md-2 control-label">{{ 'street' | translate }}</label>
   <div class="col-md-10">
     <input name="personstreet" type="text" ng-model="person.street" class="form-control"/>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="personzipcode" translate="" class="col-md-2 control-label">Zipcode</label>
+  <label for="personzipcode" class="col-md-2 control-label">{{ '_zipcode_' | translate }}</label>
   <div class="col-md-10">
     <input name="personzipcode" type="text" ng-model="person.zipcode" class="form-control"/>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="personcity" translate="" class="col-md-2 control-label">City</label>
+  <label for="personcity" class="col-md-2 control-label">{{ '_city_' | translate }}</label>
   <div class="col-md-10">
     <input name="personcity" type="text" ng-model="person.city" class="form-control"/>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="personcountry" translate="" class="col-md-2 control-label">Country</label>
+  <label for="personcountry" class="col-md-2 control-label">{{ '_country_' | translate }}</label>
   <div class="col-md-10">
     <input name="personcountry" type="text" ng-model="person.country" class="form-control"/>
   </div>
 </div>
 
 <div ng-class="{ 'has-error': (personForm.personemail | shouldDisplayError:personForm)}" class="form-group required">
-  <label for="personemail" translate="" class="col-md-2 control-label">Email</label>
+  <label for="personemail" class="col-md-2 control-label">{{ '_email_' | translate }}</label>
   <div class="col-md-10">
     <input name="personemail" type="email" required="required" ng-model="person.email" class="form-control"/>
-    <p ng-show="personForm.personemail | shouldDisplayError:personForm" translate="" class="help-block">Person email field is required</p>
+    <p ng-show="personForm.personemail | shouldDisplayError:personForm" class="help-block">{{ '_person_email_field_is_required_' | translate}}</p>
   </div>
 </div>
 
 <div class="form-group required">
-  <label for="personcompany" translate="" class="col-md-2 control-label">Company</label>
+  <label for="personcompany" class="col-md-2 control-label">{{ '_company_' | translate }}</label>
   <div class="col-md-5">
     <input name="personcompany" readonly="readonly" type="text" ng-model="company.company_name" class="form-control"/>
     <input name="personcompanyid" type="text" ng-model="company.id" class="hidden form-control"/>

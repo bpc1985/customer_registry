@@ -15,7 +15,7 @@ angular.module('app').controller('crPersonEditCtrl',
     $scope.update = function(){
         $scope.person.company = $scope.company.id;
         crPersonFactory.updatePerson($scope.person).then(function(){
-            crNotifier.notify($translate.instant('Person has been updated'));
+            crNotifier.notify($translate.instant('_person_has_been_updated_'));
             $location.path('/persons');
         }, function(reason){
             crNotifier.error(reason);

@@ -1,23 +1,23 @@
 <div class="container">
   <a href="/persons/create" class="btn btn-addnew">
     <i class="glyphicon glyphicon-plus"></i>
-    <span translate>New Person</span>
+    <span>{{ '_new_person_' | translate }}</span>
   </a>
   <div class="well">
     <div class="row">
       <div class="col-md-10">
-        <h2 translate="">People List</h2>
+        <h2>{{ '_people_list_' | translate }}</h2>
       </div>
     </div>
     <div class="table-reponsive"></div>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th translate="">Name</th>
-          <th translate="">Title</th>
-          <th translate="">Telephone</th>
-          <th translate="">Email</th>
-          <th translate="">Company</th>
+          <th>{{ '_name_' | translate }}</th>
+          <th>{{ '_title_' | translate }}</th>
+          <th>{{ '_telephone_' | translate }}</th>
+          <th>{{ '_email_' | translate }}</th>
+          <th>{{ '_company_' | translate }}</th>
           <th></th>
         </tr>
       </thead>
@@ -28,7 +28,10 @@
           <td>{{person.telephone}}</td>
           <td>{{person.email}}</td>
           <td>{{person.company.company_name}}</td>
-          <td><a href="/persons/{{person.id}}" translate="">Edit</a>&nbsp;|&nbsp;<a href="" ng-click="delete(person)" translate="">Delete</a></td>
+          <td>
+            <a href="/persons/{{person.id}}">{{'_edit_' | translate}}</a>
+            &nbsp;|&nbsp;
+            <a href="" ng-click="delete(person)">{{'_delete_' | translate}}</a></td>
         </tr>
       </tbody>
     </table>
