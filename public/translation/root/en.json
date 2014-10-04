@@ -1,13 +1,3 @@
 {
-    "English": "English",
-    "Finnish": "Finnish",
-    "Swedish": "Swedish",
-    "German": "German",
-
-    "Home": "Home",
-    "Companies": "Companies",
-    "Persons": "Persons",
-    "Offices": "Offices",
-
-    "Language has been changed": "Language has been changed"
+    "_language_has_been_changed_": "Language has been changed"
 }

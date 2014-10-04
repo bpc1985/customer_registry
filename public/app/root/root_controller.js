@@ -10,6 +10,6 @@ angular.module('app').controller('RootCtrl', function($translate, $scope, $cooki
     $scope.changeLanguage = function (langKey) {
         $translate.use(langKey);
         moment.lang(langKey);
-        crNotifier.notify($translate.instant("Language has been changed"));
+        crNotifier.notify($translate.instant("_language_has_been_changed_"));
     };
 });

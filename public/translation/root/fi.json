@@ -1,13 +1,3 @@
 {
-    "English": "Englanti",
-    "Finnish": "Suomeksi",
-    "Swedish": "På svenska",
-    "German": "Saksa",
-
-    "Home": "Etusivu",
-    "Companies": "Yritykset",
-    "Persons": "Henkilöt",
-    "Offices": "Toimistot",
-
-    "Language has been changed": "Kieli on muuttunut"
+    "_language_has_been_changed_": "Kieli on muuttunut"
 }
