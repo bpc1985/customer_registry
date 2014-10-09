@@ -41,7 +41,9 @@
             <div class="form-group">
               <div class="col-md-12">
                 <ul class="zipcode-list">
-                  <li ng-repeat="zipcode in location.areas track by zipcode" class="zipcode-choice"><span>{{zipcode}}</span><a href="#" ng-click="removeZipCode(location, zipcode)" class="zipcode-close">x</a></li>
+                  <li ng-repeat="zipcode in location.areas track by zipcode" class="zipcode-choice">
+                    <a href="#" ng-click="removeZipCode(location, zipcode)" class="zipcode-close">x</a> {{zipcode}}
+                  </li>
                 </ul>
               </div>
             </div>

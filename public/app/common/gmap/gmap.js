@@ -34,6 +34,7 @@ angular.module('app').directive('gmap', function ($window, $translate) {
 
         function setMarker(map, latitude, longitude, title, content) {
             var marker;
+            var content = (scope.address && scope.city) ? scope.address + ', ' + scope.city : $translate.instant('If pin is not right place, you can move it');
             var markerOptions = {
                 position: new google.maps.LatLng(latitude, longitude),
                 map: map,
@@ -54,7 +55,7 @@ angular.module('app').directive('gmap', function ($window, $translate) {
             });
 
             infowindow = new google.maps.InfoWindow({
-              content: $translate.instant('If pin is not right place, you can move it')
+              content: content
             });
 
             google.maps.event.addListener(marker, 'click', function (map_marker) {

@@ -3,16 +3,16 @@
     "_new_person_": "Lisää uusi henkilö",
     "_edit_person_": "_edit_person_",
     "_name_": "Yhteyshenkilön Nimi",
-    "_title_": "Asema yrityksessä",
-    "_telephone_": "Yhteyshenkilön Puhelin",
-    "_phone_": "Matkapuhelin",
-    "_email_": "Sähköposti",
+    "_title_": "Yhteyshenkilön asema yrityksessä",
+    "_telephone_": "Yhteyshenkilön Puhelinnumero",
+    "_phone_": "Matkapuhelinnumero",
+    "_email_": "Sähköpostiosoite",
     "_company_": "Yritys",
     "_edit_": "Muokkaa",
     "_delete_": "Poista",
 
     "_person_form_": "Henkilötiedot",
-    "_mobile_": "Matkapuhelin",
+    "_mobile_": "Matkapuhelinnumero",
     "_street_": "Katuosoite",
     "_zipcode_": "Postinumero",
     "_city_": "Kaupunki",
@@ -25,8 +25,8 @@
     "_new_person_has_been_created_": "Uusi henkilö on luotu",
     "_person_has_been_updated_": "Henkilö on päivitetty",
 
-    "_person_name_field_is_required_": "_person_name_field_is_required_",
-    "_person_title_field_is_required_": "_person_title_field_is_required_",
-    "_person_telephone_field_is_required_": "_person_telephone_field_is_required_",
-    "_person_email_field_is_required_": "_person_email_field_is_required_"
+    "_person_name_field_is_required_": "Yhteyshenkilön Nimi puuttuu",
+    "_person_title_field_is_required_": "Yhteyshenkilön asema yrityksessä puuttuu",
+    "_person_telephone_field_is_required_": "Yhteyshenkilön Puhelinnumero puuttuu",
+    "_person_email_field_is_required_": "Yhteyshenkilön sähköpostiosoite puuttuu"
 }

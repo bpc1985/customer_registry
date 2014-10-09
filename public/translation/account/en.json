@@ -34,15 +34,14 @@
     "_you_should_input_correct_email_format_": "You should input correct email format",
 
     "_forgot_password_": "Forgot Password",
-    "_you_should_input_corrent_email_format_": "You should input correct email format",
     "_enter_your_email_address_below_and_we_will_send_you_password_reset_instructions_": "Enter your email address below and we will send you password reset instructions",
 
     "_contact_email_": "Contact",
     "_register_": "Register",
     "_english_": "English",
-    "_finnish_": "Finnish",
-    "_swedish_": "Swedish",
-    "_german_": "German",
+    "_finnish_": "Suomeksi",
+    "_swedish_": "på Svenska",
+    "_german_": "Deutsch",
     "_user_admin_": "User Admin",
     "_profile_": "Profile",
     "_main_": "Main",

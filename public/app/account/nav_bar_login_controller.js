@@ -17,6 +17,7 @@ angular.module('app').controller('crNavBarLoginCtrl', function($scope, $rootScop
                 $rootScope.$broadcast('loggedin');
                 $scope.identity = crIdentity;
                 crNotifier.notify($translate.instant('_you_have_successfully_signed_in_'));
+                $location.path('/');
             } else {
                 crNotifier.error($translate.instant('_email_password_combination_incorrect_'));
             }

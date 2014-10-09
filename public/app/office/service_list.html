@@ -33,7 +33,9 @@
             <div class="form-group">
               <div class="col-md-12">
                 <ul class="zipcode-list">
-                  <li ng-repeat="service in services track by service" class="zipcode-choice"><span>{{ service }}</span><a href="#" ng-click="removeService(service)" class="zipcode-close">x</a></li>
+                  <li ng-repeat="service in services track by service" class="zipcode-choice">
+                    <a href="#" ng-click="removeService(service)" class="zipcode-close">x</a> {{ service }}
+                  </li>
                 </ul>
               </div>
             </div>
