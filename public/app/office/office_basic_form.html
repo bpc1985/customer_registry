@@ -74,7 +74,7 @@
 </div>
 
 <div ng-class="{ 'has-error': (officeForm.office_phone | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_phone" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_phone_' | translate}}</label>
+  <label for="office_phone" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_office_phone_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_phone" type="text" required="required" ng-model="$parent.office.contact_info.phone" class="form-control"/>
     <p ng-show="officeForm.office_phone | shouldDisplayError:officeForm" class="help-block">{{'_office_phone_is_required_' | translate}}</p>
@@ -82,20 +82,20 @@
 </div>
 
 <div class="form-group">
-  <label for="office_altphone" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_alt_phone_' | translate}}</label>
+  <label for="office_altphone" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_alt_office_phone_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_altphone" type="text" ng-model="$parent.office.contact_info.alt_phone" class="form-control"/>
   </div>
 </div>
 
 <div class="form-group">
-  <label for="office_fax" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_fax_' | translate}}</label>
+  <label for="office_fax" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_office_fax_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="officefax" type="text" ng-model="$parent.office.contact_info.fax" class="form-control"/>
   </div>
 </div>
 <div ng-class="{ 'has-error': (officeForm.office_email | shouldDisplayError:officeForm)}" class="form-group required">
-  <label for="office_email" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_email_' | translate}}</label>
+  <label for="office_email" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_office_email_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <input name="office_email" type="email" required="required" ng-model="$parent.office.contact_info.email" class="form-control"/>
     <p ng-show="officeForm.office_email | shouldDisplayError:officeForm" class="help-block">{{'_office_email_is_required_' | translate}}</p>

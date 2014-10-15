@@ -1,15 +1,15 @@
 <legend>{{'_open_times_' | translate}}</legend>
 <div class="form-group" ng-repeat="openday in weekdays">
-  <label class="col-md-2 control-label">{{openday.day_of_week}}</label>
+  <label class="col-md-2 control-label">{{openday.day_of_week | translate}}</label>
   <div class="col-md-2">
     <timepicker-pop input-time="openday.from" disabled="disabled" show-meridian="false" description="{{'From'|translate}}" class="input-group"></timepicker-pop>
   </div>
   <div class="col-md-2">
     <timepicker-pop input-time="openday.to" disabled="disabled" show-meridian="false" description="{{'To'|translate}}" class="input-group"></timepicker-pop>
   </div>
-  <div class="col-sm-1 control-label">
+  <div class="col-sm-2 control-label" style="text-align: center;">
+    <input type="checkbox" ng-model="openday.is_closed" style="margin-right: 10px;" />
     <label>{{'_close_' | translate}}</label>
-    <input type="checkbox" ng-model="openday.is_closed" style="margin-left: 10px;" />
   </div>
 </div>
 
