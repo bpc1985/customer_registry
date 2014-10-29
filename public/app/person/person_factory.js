@@ -5,6 +5,9 @@ angular.module('app').factory('crPersonFactory', function($http, $cookies, $q, R
     var personFactory = {
         getPeople: function(){
             var user = crIdentity.currentUser;
+            if(user.roles && _.first(user.roles) === 'admin'){
+                return Restangular.all('people').getList().$object;
+            }
             if(user.id){
                 return Restangular.all('people').getList({user: user.id}).$object;
             }
