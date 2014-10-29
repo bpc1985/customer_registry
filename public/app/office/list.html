@@ -4,9 +4,12 @@
     <span>{{ '_add_new_office_' | translate }}</span>
   </a>
   <div class="well">
-    <div class="row">
+    <div class="row col-md-12">
       <div class="col-lg-10 col-md-10 col-xs-12">
         <h2>{{ '_offices_' | translate }}</h2>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-2 pull-right">
+        <input name="officesearch" type="text" ng-model="officesearch" placeholder="{{ '_search_' | translate }}" style="margin-top:25px;">
       </div>
     </div>
     <div class="table-reponsive"></div>
@@ -21,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="office in offices | orderBy:office_name">
+        <tr ng-repeat="office in offices | filter: officesearch | orderBy:office_name">
           <td>{{office.office_name}}</td>
           <td>{{office.contact_info.street_address}}, {{office.contact_info.city}}</td>
           <td>{{office.contact_info.phone}}</td>

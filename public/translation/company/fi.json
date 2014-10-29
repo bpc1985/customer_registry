@@ -41,6 +41,7 @@
     "_newsletter_": "Uutiskirje",
     "_submit_": "Tallenna",
     "_cancel_": "Peruuta",
+    "_search_": "_search_",
 
     "_company_name_field_is_required_": "Yrityksen virallinen nimi puuttuu",
     "_company_code_should_be_formatted_as_1234567-8_": "Y-tunnuksen pitäisi olla muodossa_1234567-8",

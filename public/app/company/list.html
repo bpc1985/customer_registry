@@ -4,9 +4,12 @@
     <span>{{ '_new_company_' | translate }}</span>
   </a>
   <div class="well">
-    <div class="row">
+    <div class="row col-md-12">
       <div class="col-md-10">
         <h2>{{ '_companies_' | translate }}</h2>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-2 pull-right">
+        <input name="companysearch" type="text" ng-model="companysearch" placeholder="{{ '_search_' | translate }}" style="margin-top:25px;">
       </div>
     </div>
     <div class="table-reponsive">
@@ -24,7 +27,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="company in companies | orderBy:name">
+          <tr ng-repeat="company in companies | filter:companysearch | orderBy:name">
             <td>{{company.company_name}}</td>
             <td>{{company.company_type}}</td>
             <td>{{company.company_code}}</td>

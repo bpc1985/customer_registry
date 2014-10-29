@@ -41,6 +41,7 @@
     "_newsletter_": "Newsletter",
     "_submit_": "Submit",
     "_cancel_": "Cancel",
+    "_search_": "Search here",
 
     "_company_name_field_is_required_": "Company name field is required",
     "_company_code_should_be_formatted_as_1234567-8_": "Company Code should be formatted as '1234567-8'",
