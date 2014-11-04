@@ -8,7 +8,7 @@
       <div class="col-md-10">
         <h2>{{ '_companies_' | translate }}</h2>
       </div>
-      <div class="col-md-2 col-sm-2 col-xs-2 pull-right">
+      <div class="col-md-2 col-sm-2 col-xs-2 pull-right" ng-if="user.isAdmin()">
         <input name="companysearch" type="text" ng-model="companysearch" placeholder="{{ '_search_' | translate }}" style="margin-top:25px;">
       </div>
     </div>
@@ -20,9 +20,9 @@
             <th>{{ '_type_' | translate }}</th>
             <th>{{ '_code_' | translate }}</th>
             <th>{{ '_address_' | translate }}</th>
-            <th>{{ '_telephone_' | translate }}</th>
-            <th>{{ '_email_' | translate }}</th>
-            <th>{{ '_contact_' | translate }}</th>
+            <th>{{ '_company_phone_' | translate }}</th>
+            <th>{{ '_company_email_' | translate }}</th>
+            <th>{{ '_company_contact_' | translate }}</th>
             <th></th>
           </tr>
         </thead>

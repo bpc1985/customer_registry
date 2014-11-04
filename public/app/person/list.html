@@ -8,7 +8,7 @@
       <div class="col-md-10">
         <h2>{{ '_people_list_' | translate }}</h2>
       </div>
-      <div class="col-md-2 col-sm-2 col-xs-2 pull-right">
+      <div class="col-md-2 col-sm-2 col-xs-2 pull-right" ng-if="identity.currentUser.isAdmin()">
         <input name="personsearch" type="text" ng-model="personsearch" placeholder="{{ '_search_' | translate }}" style="margin-top:25px;">
       </div>
     </div>
@@ -18,7 +18,7 @@
         <tr>
           <th>{{ '_name_' | translate }}</th>
           <th>{{ '_title_' | translate }}</th>
-          <th>{{ '_telephone_' | translate }}</th>
+          <th>{{ '_person_telephone_' | translate }}</th>
           <th>{{ '_email_' | translate }}</th>
           <th>{{ '_company_' | translate }}</th>
           <th></th>

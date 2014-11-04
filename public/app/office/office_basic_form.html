@@ -14,6 +14,10 @@
 <div ng-class="{'has-error': (officeForm.office_name | shouldDisplayError:officeForm)}" class="form-group required">
   <label for="office_name" class="col-md-2 control-label">{{'_office_name_' | translate}}</label>
   <div class="col-md-10">
+    <p style="font-weight:900;">{{'_the_information_below_will_appear_ekukka_fi_service_fill_out_information_carefully_' | translate}}
+      <a href='#' data-toggle='modal' data-target='#imagepopupModal'>{{'_click_here_' | translate}}</a>
+      <div ng-include="'/app/office/image_popup.html'"></div>
+    </p>
     <input name="office_name" type="text" required="required" ng-model="$parent.office.office_name" placeholder="{{'_enter_the_office_name_if_different_from_the_company_official_name_' | translate }}" class="form-control"/>
     <p ng-show="officeForm.office_name | shouldDisplayError:officeForm" class="help-block">{{'_office_name_is_required_' | translate}}</p>
   </div>
@@ -114,7 +118,7 @@
 <div ng-class="{ 'has-error': (officeForm.office_short_desc | shouldDisplayError:officeForm)}" class="form-group required">
   <label for="office_short_desc" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_short_desc_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
-    <textarea name="office_short_desc" type="text" required="required" ng-model="$parent.office.description.short_info" placeholder="{{'_enter_the_marketing_slogan_max_100_characters_for_example_service_is_our_passion_' | translate}}" class="form-control"></textarea>
+    <textarea name="office_short_desc" type="text" maxlength="80" required="required" ng-model="$parent.office.description.short_info" placeholder="{{'_enter_the_marketing_slogan_max_100_characters_for_example_service_is_our_passion_' | translate}}" class="form-control"></textarea>
     <p ng-show="officeForm.office_short_desc | shouldDisplayError:officeForm" class="help-block">{{'_office_short_description_is_required_' | translate}}</p>
   </div>
 </div>
@@ -122,7 +126,7 @@
 <div ng-class="{ 'has-error': (officeForm.office_long_desc | shouldDisplayError:officeForm)}" class="form-group required">
   <label for="office_long_desc" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_long_desc_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
-    <textarea name="office_long_desc" type="text" required="required" ng-model="$parent.office.description.long_info" placeholder="{{'_write_concise_description_of_the_operation_of_shop_' | translate}}" class="form-control"></textarea>
+    <textarea name="office_long_desc" type="text" maxlength="200" required="required" ng-model="$parent.office.description.long_info" placeholder="{{'_write_concise_description_of_the_operation_of_shop_' | translate}}" class="form-control"></textarea>
     <p ng-show="officeForm.office_long_desc | shouldDisplayError:officeForm" class="help-block">{{'_office_long_description_is_required_' | translate}}</p>
   </div>
 </div>

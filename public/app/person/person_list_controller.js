@@ -5,6 +5,7 @@ angular.module('app').controller('crPersonListCtrl',
 
     $scope.list = function(){
         $scope.people = crPersonFactory.getPeople();
+        $scope.identity = crIdentity;
     };
 
     $scope.delete = function(person){

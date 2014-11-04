@@ -4,14 +4,14 @@
       <ul ng-hide="identity.isAuthenticated()">
         <li>{{ '_contact_email_' | translate }} info@ekukka.fi</li>
         <li><a href="/signup">{{ '_register_' | translate }}</a></li>
-        <li>
+        <!--li>
           <select ng-model="language" ng-change="changeLanguage(language)">
             <option value="en">{{ '_english_' | translate }}</option>
             <option value="fi">{{ '_finnish_' | translate }}</option>
             <option value="se">{{ '_swedish_' | translate }}</option>
             <option value="de">{{ '_german_' | translate }}</option>
           </select>
-        </li>
+        </li-->
       </ul>
     </div>
   </div>
@@ -35,14 +35,14 @@
         <li ng-show="identity.currentUser.isAdmin()"><a href="/admin/users">{{ '_user_admin_' | translate }}</a></li>
         <li><a href="/profile">{{ '_profile_' | translate }}</a></li>
         <li><a href="" ng-click="signout()">{{ '_sign_out_' | translate }}</a></li>
-        <li>
+        <!--li>
           <select ng-model="language" ng-change="changeLanguage(language)">
             <option value="en">{{ '_english_' | translate }}</option>
             <option value="fi">{{ '_finnish_' | translate }}</option>
             <option value="se">{{ '_swedish_' | translate }}</option>
             <option value="de">{{ '_german_' | translate }}</option>
           </select>
-        </li>
+        </li-->
       </ul>
     </div>
   </div>

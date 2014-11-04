@@ -15,7 +15,7 @@
 </div>
 
 <div ng-class="{ 'has-error': (personForm.persontelephone | shouldDisplayError:personForm)}" class="form-group required">
-  <label for="persontelephone" class="col-md-2 control-label">{{ '_telephone_' | translate }}</label>
+  <label for="persontelephone" class="col-md-2 control-label">{{ '_person_telephone_' | translate }}</label>
   <div class="col-md-10">
     <input name="persontelephone" type="number" required="required" ng-model="person.telephone" class="form-control"/>
     <p ng-show="personForm.persontelephone | shouldDisplayError:personForm" class="help-block">{{ '_person_telephone_field_is_required_' | translate }}</p>
@@ -23,14 +23,7 @@
 </div>
 
 <div class="form-group">
-  <label for="personmobile" class="col-md-2 control-label">{{ '_mobile_' | translate }}</label>
-  <div class="col-md-10">
-    <input name="personmobile" type="text" ng-model="person.mobile" class="form-control"/>
-  </div>
-</div>
-
-<div class="form-group">
-  <label for="personstreet" class="col-md-2 control-label">{{ 'street' | translate }}</label>
+  <label for="personstreet" class="col-md-2 control-label">{{ '_street_' | translate }}</label>
   <div class="col-md-10">
     <input name="personstreet" type="text" ng-model="person.street" class="form-control"/>
   </div>

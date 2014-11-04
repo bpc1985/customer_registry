@@ -11,7 +11,7 @@ angular.module('app').directive('timepickerList', function() {
         },
         link : function(scope, element, attrs) {
             if(scope.weekdays && scope.weekdays.length === 0){
-                var days = ['_monday_', '_thursday_', '_wednesday_', '_tuesday_', '_friday_', '_saturday_', '_sunday_'];
+                var days = ['_monday_', '_tuesday_', '_wednesday_', '_thursday_', '_friday_', '_saturday_', '_sunday_'];
                 for (var i = 0; i < 7; i++) {
                     scope.weekdays[i] = {
                         day_of_week: days[i],

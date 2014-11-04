@@ -8,7 +8,7 @@
       <div class="col-lg-10 col-md-10 col-xs-12">
         <h2>{{ '_offices_' | translate }}</h2>
       </div>
-      <div class="col-md-2 col-sm-2 col-xs-2 pull-right">
+      <div class="col-md-2 col-sm-2 col-xs-2 pull-right" ng-if="identity.currentUser.isAdmin()">
         <input name="officesearch" type="text" ng-model="officesearch" placeholder="{{ '_search_' | translate }}" style="margin-top:25px;">
       </div>
     </div>

@@ -1,8 +1,9 @@
-angular.module('app').controller('crOfficeListCtrl', function($scope, $http, $translate, crNotifier, crOfficeFactory, crRootFactory){
+angular.module('app').controller('crOfficeListCtrl', function($scope, $http, $translate, crNotifier, crOfficeFactory, crRootFactory, crIdentity){
     crRootFactory.setLanguageDir('office');
 
     $scope.list = function(){
         $scope.offices = crOfficeFactory.getOffices();
+        $scope.identity = crIdentity;
     };
 
     $scope.delete = function(office){

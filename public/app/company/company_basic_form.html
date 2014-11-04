@@ -52,7 +52,7 @@
 </div>
 
 <div ng-class="{ 'has-error': (companyForm.companyphone | shouldDisplayError:companyForm)}" class="form-group required">
-  <label for="companyphone" class="col-md-2 control-label">{{ '_phone_' | translate }}</label>
+  <label for="companyphone" class="col-md-2 control-label">{{ '_company_phone_' | translate }}</label>
   <div class="col-md-10">
     <input name="companyphone" type="text" required="required" ng-model="company.phone" class="form-control"/>
     <p ng-show="companyForm.companyphone | shouldDisplayError:companyForm" class="help-block">{{ '_company_phone_field_is_required_' | translate }}</p>
@@ -96,6 +96,6 @@
     </select>
   </div>
   <div class="col-md-1">
-    <button type="button" data-toggle="modal" data-target="#personModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'_add_new_' | translate}}</button>
+    <button type="button" data-toggle="modal" data-target="#personModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'_add_new_person_' | translate}}</button>
   </div>
 </div>
