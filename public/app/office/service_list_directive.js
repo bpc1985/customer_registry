@@ -14,6 +14,7 @@ angular.module('app').directive('serviceList', function() {
             $scope.addService = function(){
                 if($scope.new_service && !_.contains($scope.services, $scope.new_service) ){
                     $scope.services.push($scope.new_service);
+                    $scope.disabled = $scope.services.length < 10 ? false : true;
                 }
                 delete $scope.new_service;
             };

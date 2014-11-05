@@ -24,7 +24,7 @@
           <form name="ServiceForm" class="form-horizontal">
             <div class="form-group">
               <div class="col-md-5">
-                <input type="text" name="service_name" ng-model="new_service" placeholder="{{'_add_new_service_'|translate}}" class="form-control"/>
+                <input type="text" maxlength="20" name="service_name" ng-model="new_service" ng-disabled="disabled" placeholder="{{'_add_new_service_'|translate}}" class="form-control"/>
               </div>
               <div class="col-md-">
                 <button type="button" ng-click="addService()" class="btn btn-primary add-zipcode-btn">{{'_add_' | translate}}</button>

@@ -30,9 +30,9 @@
         </div>
         <div class="modal-body">
           <form name="DeliveryForm" class="form-horizontal">
-            <div class="form-group" ng-show="location.areas.length <= 8">
+            <div class="form-group">
               <div class="col-md-5">
-                <input type="text" maxlength="25" name="delivery_zipcode" ng-model="location.new_zipcode" placeholder="{{'_enter_new_zipcode_'|translate}}" class="form-control"/>
+                <input type="text" maxlength="20" name="delivery_zipcode" ng-model="location.new_zipcode" ng-disabled="location.disabled" placeholder="{{'_enter_new_zipcode_'|translate}}" class="form-control"/>
               </div>
               <div class="col-md-">
                 <button type="button" ng-click="addZipCode(location)" class="btn btn-primary add-zipcode-btn">{{'_add_' | translate}}</button>
