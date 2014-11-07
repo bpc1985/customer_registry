@@ -1,5 +1,5 @@
 <div class="container">
-  <a href="/offices/create" class="btn btn-addnew">
+  <a href="/offices/create" class="btn btn-addnew" ng-if="!identity.currentUser.isAdmin()">
     <i class="glyphicon glyphicon-plus"></i>
     <span>{{ '_add_new_office_' | translate }}</span>
   </a>

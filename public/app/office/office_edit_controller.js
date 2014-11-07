@@ -8,9 +8,12 @@ angular.module('app').controller('crOfficeEditCtrl',
             $scope.office = Restangular.copy(office);
             $scope.office.contact_persons = _.pluck($scope.office.contact_persons, 'id');
             $scope.persons = crPersonFactory.getPeople();
+            if(crIdentity.currentUser.isAdmin()){
+                $scope.company = office.company;
+            }
         });
 
-        if(crIdentity.currentUser.company){
+        if(crIdentity.currentUser.company && !crIdentity.currentUser.isAdmin()){
             crCompanyFactory.getCompany(crIdentity.currentUser.company).then(function(company){
                 $scope.company = company;
             });

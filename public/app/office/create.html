@@ -42,7 +42,7 @@
           <div class="modal-body">
             <form name="companyForm" class="form-horizontal">
               <div ng-class="{'has-error': (companyForm.companyname | shouldDisplayError:companyForm)}" class="form-group required">
-                <label for="companyname" ,="," class="col-md-2 control-label">{{'_company_name' | translate}}</label>
+                <label for="companyname" ,="," class="col-md-2 control-label">{{'_company_name_' | translate}}</label>
                 <div class="col-md-10">
                   <input name="companyname" type="text" required="required" ng-model="company.name" class="form-control"/>
                   <p ng-show="companyForm.companyname | shouldDisplayError:companyForm" class="help-block">{{'_company_name_is_required_' | translate}}</p>
