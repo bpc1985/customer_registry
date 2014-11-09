@@ -17,7 +17,7 @@
 	"_office_form_": "Toimipisteen tiedot",
 	"_company_": "Yritykset",
 	"_please_select_company_": "Valitse yritys",
-	"_add_new_": "Lisää uusi yhtiö",
+	"_add_new_": "Täytä yrityksen perustiedot",
 	"_office_name_": "Toimipisteen nimi",
 	"_enter_the_office_name_if_different_from_the_company_official_name_": "Kirjoita tähän toimipisteen nimi, jonka haluat näkyvän ekukka.fi -hakupalvelussa",
 	"_head_office_": "Päätoimipiste",
@@ -80,7 +80,7 @@
 	"_term_of_services_": "Käyttöehdot",
 	"_accept_and_save_": "Hyväksy ja tallenna",
 
-	"_image_popup_title_": "Tällaisena liikkesi tiedot näkyvät ekukka.fi -hakupalvelussa",
+	"_image_popup_title_": "Tälläisena liikkesi tiedot näkyvät ekukka.fi -hakupalvelussa",
 	"_close_popup_": "Sulje",
 
 	"_add_new_company_": "Täytä yrityksen perustiedot",

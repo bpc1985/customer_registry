@@ -244,6 +244,9 @@ ul.frontpage-links li a:hover {
 .jumbotron p {
   font-size: 30px;
 }
+ul.content li {
+  list-style-type: none;
+}
 /*----- Footer ------*/
 footer {
   -webkit-font-smoothing: antialiased;
