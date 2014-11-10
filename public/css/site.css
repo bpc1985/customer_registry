@@ -244,7 +244,10 @@ ul.frontpage-links li a:hover {
 .jumbotron p {
   font-size: 30px;
 }
-ul.content li {
+ul.list-guide {
+  line-height: 30px;
+}
+ul.list-guide li {
   list-style-type: none;
 }
 /*----- Footer ------*/
