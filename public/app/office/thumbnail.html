@@ -14,7 +14,7 @@
           <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
           <h4 class="modal-title">{{'_choose_picture_' | translate}}</h4>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" style="overflow-y: scroll; height:500px;">
           <select id="selectImage" class="image-picker" ng-model="selectedImage">
             <option ng-repeat="image in images" data-img-src="{{image}}" value="{{image}}"></option>
           </select>

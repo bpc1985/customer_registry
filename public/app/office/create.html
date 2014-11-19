@@ -22,7 +22,7 @@
           <div class="row">
             <div class="col-md-8"></div>
             <div class="col-md-4">
-              <button type="submit" ng-disabled="company.id==undefined || office.services==0 || officeForm.$invalid" class="btn btn-primary btn-submit">{{'_submit_' | translate}}</button>
+              <button type="submit" class="btn btn-primary btn-submit">{{'_submit_' | translate}}</button>
               <a href="/offices" class="btn btn-default">{{'_cancel_' | translate}}</a>
             </div>
           </div>
@@ -32,7 +32,7 @@
   </div>
 
   <section ng-controller="crCompanyCreateCtrl">
-    <div id="companyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+    <div id="companyModal" company-popup popup="isCompanyPopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -44,14 +44,14 @@
               <div ng-class="{'has-error': (companyForm.companyname | shouldDisplayError:companyForm)}" class="form-group required">
                 <label for="companyname" ,="," class="col-md-2 control-label">{{'_company_name_' | translate}}</label>
                 <div class="col-md-10">
-                  <input name="companyname" type="text" required="required" ng-model="company.name" class="form-control"/>
-                  <p ng-show="companyForm.companyname | shouldDisplayError:companyForm" class="help-block">{{'_company_name_is_required_' | translate}}</p>
+                  <input name="companyname" type="text" required="required" ng-model="company.company_name" class="form-control"/>
+                  <p ng-show="companyForm.companyname | shouldDisplayError:companyForm" class="help-block">{{'_company_name_field_is_required_' | translate}}</p>
                 </div>
               </div>
               <div ng-class="{'has-error': (companyForm.companytype | shouldDisplayError:companyForm)}" class="form-group required">
                 <label for="companytype" class="col-md-2 control-label">{{'_company_type_' | translate}}</label>
                 <div class="col-md-5 required">
-                  <select name="companytype" required="required" ng-model="company.type" class="form-control">
+                  <select name="companytype" required="required" ng-model="company.company_type" class="form-control">
                     <option value="">{{'_please_select_company_type_' | translate}}</option>
                     <option value="TMI">{{'_TMI_' | translate}}</option>
                     <option value="KY">{{'_KY_' | translate}}</option>
@@ -66,7 +66,8 @@
               <div ng-class="{'has-error': (companyForm.companycode | shouldDisplayError:companyForm)}" class="form-group required">
                 <label for="companycode" class="col-md-2 control-label">{{'_company_code_' | translate}}</label>
                 <div class="col-md-10">
-                  <input name="companycode" type="text" required="required" ng-maxlength="9" ng-pattern="/^[0-9]{6,7}-[0-9]{1}$/" ng-model="company.code" class="form-control"/>
+                  <input name="companycode" type="text" required="required" ng-maxlength="9" ng-pattern="/^[0-9]{6,7}-[0-9]{1}$/" ng-model="company.company_code" class="form-control"/>
+                  <p translate="{{'_company_code_help_link_' | translate}}"></p>
                   <p ng-show="companyForm.companycode | shouldDisplayError:companyForm" class="help-block">{{'_company_code_should_be_formatted_as_1234567-8_' | translate}}</p>
                 </div>
               </div>

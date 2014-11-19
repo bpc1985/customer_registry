@@ -46,6 +46,7 @@
 
     "_company_name_field_is_required_": "Yrityksen virallinen nimi tarvitaan",
     "_company_code_should_be_formatted_as_1234567-8_": "Y-tunnuksen pitäisi olla muodossa 1234567-8",
+    "_company_code_help_link_": "Y-tunnus unohtunut? Katso <a href='http://www.ytj.fi/yrityshaku.aspx?path=1547;1631;1678&kielikoodi=1'>ytj.fi tietokannasta</a>",
     "_company_phone_field_is_required_": "Yrityksen puhelinnumero tarvitaan",
     "_company_email_field_is_required_": "Yrityksen sähköpostiosoite tarvitaan",
     "_company_street_is_required_": "Yrityksen osoite tarvitaan",
@@ -55,7 +56,7 @@
     "_company_email_is_required_": "Yrityksen sähköpostiosoite tarvitaan",
 
     "_add_new_company_": "Lisää uusi yritys eKukka.fi -hakupalveluun",
-    "_new_company_has_been_created_": "Uusi yhtiö on luotu",
+    "_new_company_has_been_created_": "Uusi yritys on luotu",
     "_company_has_been_updated_": "Yhtiö on päivitetty",
     "_company_has_been_deleted_": "Yhtiö on poistettu"
 }

@@ -75,6 +75,7 @@
 
 	"_office_has_been_deleted_": "_office_has_been_deleted_",
 	"_new_office_has_been_created_": "_new_office_has_been_created_",
+	"_new_office_creation_failed_validation_": "_new_office_creation_failed_validation_",
 	"_office_has_been_updated_": "_office_has_been_updated_",
 	"_if_pin_is_not_right_place_you_can_move_it_": "_if_pin_is_not_right_place_you_can_move_it_",
 	"_office_name_is_required_": "_office_name_is_required_",

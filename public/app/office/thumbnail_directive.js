@@ -9,18 +9,12 @@ angular.module('app').directive('thumbnail', function($timeout) {
 
         },
         link : function(scope, element, attrs) {
-            scope.images = [
-                '/images/profiles/profilpicture_1.png',
-                '/images/profiles/profilpicture_2.png',
-                '/images/profiles/profilpicture_3.png',
-                '/images/profiles/profilpicture_4.png',
-                '/images/profiles/profilpicture_5.png',
-                '/images/profiles/profilpicture_6.png',
-                '/images/profiles/profilpicture_7.png',
-                '/images/profiles/profilpicture_8.png',
-                '/images/profiles/profilpicture_9.png',
-                '/images/profiles/profilpicture_10.png'
-            ];
+            scope.images = [];
+
+            for(var i = 1; i <= 85; i++ ){
+                scope.images.push('/images/profiles/profilpicture_' + i + '.png');
+            }
+
             if(!scope.selectedImage){
                 scope.selectedImage = scope.images[0];
             }

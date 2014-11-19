@@ -6,6 +6,7 @@ angular.module('app').controller('crPersonEditCtrl',
     $scope.init = function(){
         crPersonFactory.getPerson($routeParams.id).then(function(person){
             $scope.person = Restangular.copy(person);
+            console.log($scope.person);
             crCompanyFactory.getCompany(crIdentity.currentUser.company).then(function(company){
                 $scope.company = Restangular.copy(company);
             });

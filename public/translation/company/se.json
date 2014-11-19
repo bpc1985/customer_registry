@@ -45,6 +45,7 @@
 
     "_company_name_field_is_required_": "_company_name_field_is_required_",
     "_company_code_should_be_formatted_as_1234567-8_": "_company_code_should_be_formatted_as_1234567-8_",
+    "_company_code_help_link_": "_company_code_help_link_",
     "_company_phone_field_is_required_": "_company_phone_field_is_required_",
     "_company_email_field_is_required_": "_company_email_field_is_required_",
 

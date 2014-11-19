@@ -45,6 +45,7 @@
 
     "_company_name_field_is_required_": "Company name field is required",
     "_company_code_should_be_formatted_as_1234567-8_": "Company Code should be formatted as '1234567-8'",
+    "_company_code_help_link_": "Forgot the company VAT code? Katso <a href = ' http://www.ytj.fi/yrityshaku.aspx?path=1547;1631;1678&kielikoodi=1'>ytj.fi</a> tietokannasta",
     "_company_phone_field_is_required_": "Company phone field is required",
     "_company_email_field_is_required_": "Company email field is required",
 

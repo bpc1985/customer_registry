@@ -9,16 +9,16 @@ angular.module('app').controller('crCompanyCreateCtrl',
 
     $scope.create = function(fromModal){
         var newCompanyData = {
-            company_name: $scope.company.name,
-            company_type: $scope.company.type,
-            company_code: $scope.company.code,
+            company_name: $scope.company.company_name,
+            company_type: $scope.company.company_type,
+            company_code: $scope.company.company_code,
             street: $scope.company.street,
             city: $scope.company.city,
             zip: $scope.company.zip,
             phone: $scope.company.phone,
-            alt_phone: $scope.company.altphone,
+            alt_phone: $scope.company.alt_phone,
             fax: $scope.company.fax,
-            web_url: $scope.company.web,
+            web_url: $scope.company.web_url,
             email: $scope.company.email,
             contact: $scope.company.contact,
             user: crIdentity.currentUser.id

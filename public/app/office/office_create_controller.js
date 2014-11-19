@@ -1,5 +1,5 @@
 angular.module('app').controller('crOfficeCreateCtrl',
-    function($scope, $translate, $location, crNotifier, crOfficeFactory, crPersonFactory, crCompanyFactory, crRootFactory, crIdentity){
+    function($scope, $translate, $location, $routeParams, crNotifier, crOfficeFactory, crPersonFactory, crCompanyFactory, crRootFactory, crIdentity){
     crRootFactory.setLanguageDir('office');
 
     $scope.init = function(){
@@ -7,7 +7,7 @@ angular.module('app').controller('crOfficeCreateCtrl',
         $scope.persons = crPersonFactory.getPeople();
         $scope.weekdays = [];
         $scope.office = {
-            show_office: true,
+            show_office: false,
             services: [],
             delivery_areas: [],
             contact_persons: []
@@ -17,6 +17,10 @@ angular.module('app').controller('crOfficeCreateCtrl',
             crCompanyFactory.getCompany(crIdentity.currentUser.company).then(function(company){
                 $scope.company = company;
             });
+        }
+
+        if($routeParams.company && !crIdentity.currentUser.company){
+            $scope.isCompanyPopup = true;
         }
     };
 
@@ -53,6 +57,8 @@ angular.module('app').controller('crOfficeCreateCtrl',
             }, function(reason){
                 crNotifier.error(reason);
             });
+        } else {
+          crNotifier.error($translate.instant('_new_office_creation_failed_validation_'));
         }
     };
 
