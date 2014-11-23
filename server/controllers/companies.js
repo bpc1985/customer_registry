@@ -1,4 +1,5 @@
 var Company = require('mongoose').model('Company');
+var Person = require('mongoose').model('Person');
 
 exports.getCompanies = function(req, res){
     Company.find({}).exec(function(err, collection){
@@ -22,8 +23,22 @@ exports.createCompany = function(req, res, next){
             res.status(400);
             return res.send({reason:err.toString()});
         }
+
+        Person.findOne({email: companyData.userEmail}, function (err, person) {
+            if (err) throw err;
+            person.company = company.id;
+            person.save(function (err) {
+                if(err) { res.status(400); return res.send({reason:err.toString()});}
+            });
+            company.contact = person.id;
+            company.save(function (err) {
+                if(err) { res.status(400); return res.send({reason:err.toString()});}
+            });
+        });
+
         res.send(company);
     });
+
 };
 
 exports.updateCompany = function(req, res){

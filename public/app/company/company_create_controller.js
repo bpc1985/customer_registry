@@ -21,7 +21,8 @@ angular.module('app').controller('crCompanyCreateCtrl',
             web_url: $scope.company.web_url,
             email: $scope.company.email,
             contact: $scope.company.contact,
-            user: crIdentity.currentUser.id
+            user: crIdentity.currentUser.id,
+            userEmail: crIdentity.currentUser.email
         };
 
         crCompanyFactory.createCompany(newCompanyData).then(function(newCompany){
