@@ -217,6 +217,11 @@ li.zipcode-choice a.zipcode-close {
   max-width: 140px;
   max-height: 100px;
 }
+.image-border {
+  border: 2px solid #cdcdcd;
+  padding: 5px;
+  text-align: center;
+}
 /*------Front page------*/
 .frontpage-content {
   background: url("../images/account_banner.jpg") top center no-repeat;
@@ -226,10 +231,12 @@ li.zipcode-choice a.zipcode-close {
 h1.frontpage-title {
   text-transform: uppercase;
   margin-top: -10px;
+  margin-bottom: 10px;
 }
 ul.frontpage-links li {
   color: #95ba00;
   list-style-type: none;
+  font-size: 24px;
 }
 ul.frontpage-links li a {
   color: #95ba00;

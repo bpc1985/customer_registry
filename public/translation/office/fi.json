@@ -20,6 +20,7 @@
 	"_office_add_new_company_": " Täytä yrityksen perustiedot",
 	"_office_name_": "Toimipisteen nimi",
 	"_enter_the_office_name_if_different_from_the_company_official_name_": "Kirjoita tähän toimipisteen nimi, jonka haluat näkyvän ekukka.fi -hakupalvelussa",
+	"_required_red_star_fields_description_": "Huomioithan, että *tähdellä merkityt tiedot ovat pakolliset",
 	"_head_office_": "Päätoimipiste",
 	"_street_": "Katuosoite",
 	"_city_": "Paikkakunta",

@@ -9,7 +9,7 @@
     "_user_admin_": "Käyttäjän Admin",
     "_profile_": "Profiili",
     "_sign_out_": "Kirjaudu ulos",
-    "_email_": "Sähköposti",
+    "_login_email_": "Sähköpostiosoite",
     "_password_": "Salasana",
     "_new_password_": "Uusi salasana",
     "_confirm_password_": "vahvista salasana",

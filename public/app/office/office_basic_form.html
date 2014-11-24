@@ -14,10 +14,12 @@
 <div ng-class="{'has-error': (officeForm.office_name | shouldDisplayError:officeForm)}" class="form-group required">
   <label for="office_name" class="col-md-2 control-label">{{'_office_name_' | translate}}</label>
   <div class="col-md-10">
-    <p style="font-weight:900;">{{'_the_information_below_will_appear_ekukka_fi_service_fill_out_information_carefully_' | translate}}
+    <p style="font-weight:900;">
+      {{'_the_information_below_will_appear_ekukka_fi_service_fill_out_information_carefully_' | translate}}
       <a href='#' data-toggle='modal' data-target='#imagepopupModal'>{{'_click_here_' | translate}}</a>
       <div ng-include="'/app/office/image_popup.html'"></div>
     </p>
+    <p style="font-weight:900;">{{'_required_red_star_fields_description_' | translate }}</p>
     <input name="office_name" type="text" required="required" ng-model="$parent.office.office_name" placeholder="{{'_enter_the_office_name_if_different_from_the_company_official_name_' | translate }}" class="form-control"/>
     <p ng-show="officeForm.office_name | shouldDisplayError:officeForm" class="help-block">{{'_office_name_is_required_' | translate}}</p>
   </div>

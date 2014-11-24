@@ -66,7 +66,7 @@
               <div ng-class="{'has-error': (companyForm.companycode | shouldDisplayError:companyForm)}" class="form-group required">
                 <label for="companycode" class="col-md-2 control-label">{{'_company_code_' | translate}}</label>
                 <div class="col-md-10">
-                  <input name="companycode" type="text" required="required" ng-maxlength="9" ng-pattern="/^[0-9]{6,7}-[0-9]{1}$/" ng-model="company.company_code" class="form-control"/>
+                  <input name="companycode" type="text" required="required" ng-maxlength="9" ng-pattern="/^[0-9]{7}-[0-9]{1}$/" ng-model="company.company_code" class="form-control"/>
                   <p translate="{{'_company_code_help_link_' | translate}}"></p>
                   <p ng-show="companyForm.companycode | shouldDisplayError:companyForm" class="help-block">{{'_company_code_should_be_formatted_as_1234567-8_' | translate}}</p>
                 </div>
