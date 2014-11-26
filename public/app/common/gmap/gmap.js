@@ -78,7 +78,9 @@ angular.module('app').directive('gmap', function ($window, $translate) {
             }
         }
 
-        runMap();
+        if(!scope.edit){
+            runMap();
+        }
 
         scope.$watch('[address, city]', function(){
             if(scope.address){
@@ -89,6 +91,12 @@ angular.module('app').directive('gmap', function ($window, $translate) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         lat = results[0].geometry.location.lat();
                         lng = results[0].geometry.location.lng();
+
+                        if(scope.edit){
+                            lat = scope.latitude;
+                            lng = scope.longitude;
+                            scope.edit = false;
+                        }
 
                         createMapOptions(lat, lng);
                         map = new google.maps.Map(element[0], mapOptions);
@@ -108,7 +116,8 @@ angular.module('app').directive('gmap', function ($window, $translate) {
             address: "=",
             city: "=",
             latitude: "=",
-            longitude: "="
+            longitude: "=",
+            edit: "=",
         },
         link: link
     };

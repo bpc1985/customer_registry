@@ -75,7 +75,7 @@
   <label for="office_map" class="col-lg-2 col-md-2 col-xs-12 control-label">{{'_map_' | translate}}</label>
   <div class="col-lg-10 col-md-10 col-xs-12">
     <div>{{'_if_pin_is_not_right_place_you_can_move_it_' | translate}}</div><br/>
-    <gmap address="$parent.office.contact_info.street_address" city="$parent.office.contact_info.city" latitude="$parent.office.contact_info.coordinates.latitude" longitude="$parent.office.contact_info.coordinates.longitude"></gmap>
+    <gmap address="$parent.office.contact_info.street_address" city="$parent.office.contact_info.city" latitude="$parent.office.contact_info.coordinates.latitude" longitude="$parent.office.contact_info.coordinates.longitude" edit="$parent.isEditOffice"></gmap>
   </div>
 </div>
 
