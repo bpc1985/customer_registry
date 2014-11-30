@@ -1,4 +1,4 @@
-angular.module('app').controller('crNavBarLoginCtrl', function($scope, $rootScope, $translate, $location, $rootScope, crIdentity, crNotifier, crAuth, crRootFactory){
+angular.module('app').controller('crNavBarLoginCtrl', function($scope, $rootScope, $translate, $location, $anchorScroll, $rootScope, crIdentity, crNotifier, crAuth, crRootFactory){
     crRootFactory.setLanguageDir('account');
 
     $rootScope.$on('signup', function(){
@@ -33,6 +33,11 @@ angular.module('app').controller('crNavBarLoginCtrl', function($scope, $rootScop
             crNotifier.notify($translate.instant("_you_have_successfully_signed_out_"));
             $location.path('/');
         });
+    };
+
+    $scope.scrollToTop = function() {
+      $location.hash('top');
+      $anchorScroll();
     };
 
     $scope.init();

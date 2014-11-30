@@ -1,10 +1,9 @@
-angular.module('app').controller('crResetPasswordCtrl', function($scope, crAuth){
+angular.module('app').controller('crResetPasswordCtrl', function($scope, $translate, crAuth){
     $scope.init = function(){
-        /*
-        crAuth.forgotPassword(token).then(function(){
 
+        crAuth.resetPassword($scope.token).then(function(){
         });
-        */
+
     };
 
     $scope.init();

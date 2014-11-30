@@ -21,7 +21,11 @@ angular.module('app').controller('crSignupCtrl', function($scope, $location, $ro
                 $location.path('/');
             });
         }, function(reason){
-            crNotifier.error(reason);
+            if(reason.match(/Duplicate/) != null) {
+              crNotifier.notify($translate.instant('_user_account_already_exists_'));
+            } else {
+              crNotifier.error(reason);
+            }
         });
     };
 });

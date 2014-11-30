@@ -1,6 +1,11 @@
 angular.module('app').controller('crOfficeCreateCtrl',
-    function($scope, $translate, $location, $routeParams, crNotifier, crOfficeFactory, crPersonFactory, crCompanyFactory, crRootFactory, crIdentity){
+    function($scope, $translate, $location, $routeParams, crModalService, crNotifier, crOfficeFactory, crPersonFactory, crCompanyFactory, crRootFactory, crIdentity, crModalService){
     crRootFactory.setLanguageDir('office');
+    var onRouteChangeOff;
+
+    function routeChange(event, newUrl) {
+        crModalService.displayModal(event, newUrl, $scope.officeForm, onRouteChangeOff);
+    }
 
     $scope.init = function(){
         $scope.company = {};
@@ -22,6 +27,7 @@ angular.module('app').controller('crOfficeCreateCtrl',
         if($routeParams.company && !crIdentity.currentUser.company){
             $scope.isCompanyPopup = true;
         }
+        onRouteChangeOff = $scope.$on('$locationChangeStart', routeChange);
     };
 
     $scope.checkHeadOffice = function(){
@@ -44,6 +50,7 @@ angular.module('app').controller('crOfficeCreateCtrl',
     }
 
     $scope.create = function(){
+        onRouteChangeOff();
         if($scope.officeForm.$valid){
             $scope.office.company = $scope.company.id;
             $scope.office.open_times = {

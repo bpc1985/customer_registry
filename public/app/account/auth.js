@@ -60,7 +60,6 @@ angular.module('app').factory('crAuth', function($window, $http, $q, crIdentity,
         },
 
         forgotPassword: function(email){
-            /*
             var deferred = $q.defer();
             $http.post('/forgot_password', {email: email}).then(function(response){
                 if(response.data.success){
@@ -71,11 +70,9 @@ angular.module('app').factory('crAuth', function($window, $http, $q, crIdentity,
                 }
             });
             return deferred.promise;
-            */
         },
 
         resetPassword: function(token){
-            /*
             var deferred = $q.defer();
             $http.get('/reset/' + token).then(function(response){
                 if(response.data.success){
@@ -86,7 +83,6 @@ angular.module('app').factory('crAuth', function($window, $http, $q, crIdentity,
                 }
             });
             return deferred.promise;
-            */
         },
 
         authorizeCurrentUserForRoute: function(role) {

@@ -1,10 +1,16 @@
 angular.module('app').controller('crOfficeEditCtrl',
-        function($scope, $location, $routeParams, $translate, Restangular, crNotifier, crIdentity, crOfficeFactory, crCompanyFactory, crRootFactory, crPersonFactory){
+        function($scope, $location, $routeParams, $translate, Restangular, crNotifier, crIdentity, crOfficeFactory, crCompanyFactory, crRootFactory, crPersonFactory, crModalService){
 
     crRootFactory.setLanguageDir('office');
+    var onRouteChangeOff;
+
+    function routeChange(event, newUrl) {
+        crModalService.displayModal(event, newUrl, $scope.officeForm, onRouteChangeOff);
+    }
 
     $scope.init = function(){
         crOfficeFactory.getOffice($routeParams.id).then(function(office){
+            $scope.edit = true;
             $scope.office = Restangular.copy(office);
             $scope.office.contact_persons = _.pluck($scope.office.contact_persons, 'id');
             $scope.persons = crPersonFactory.getPeople();
@@ -18,6 +24,7 @@ angular.module('app').controller('crOfficeEditCtrl',
                 $scope.company = company;
             });
         }
+        onRouteChangeOff = $scope.$on('$locationChangeStart', routeChange);
     };
 
     $scope.checkHeadOffice = function(){
@@ -40,6 +47,7 @@ angular.module('app').controller('crOfficeEditCtrl',
     }
 
     $scope.update = function(){
+        onRouteChangeOff();
         if($scope.officeForm.$valid){
             $scope.office.company = $scope.office.company.id;
 

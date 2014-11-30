@@ -1,5 +1,11 @@
-angular.module('app').controller('crPersonCreateCtrl', function($scope, $translate, $location, Restangular, crNotifier, crPersonFactory, crCompanyFactory, crRootFactory, crIdentity){
+angular.module('app').controller('crPersonCreateCtrl', function($scope, $translate, $location, Restangular, crNotifier, crPersonFactory, crCompanyFactory, crRootFactory, crIdentity, crModalService){
     crRootFactory.setLanguageDir('person');
+
+    var onRouteChangeOff;
+
+    function routeChange(event, newUrl) {
+        crModalService.displayModal(event, newUrl, $scope.personForm, onRouteChangeOff);
+    }
 
     $scope.init = function(){
         var user = crIdentity.currentUser;
@@ -8,9 +14,13 @@ angular.module('app').controller('crPersonCreateCtrl', function($scope, $transla
                 $scope.company = Restangular.copy(company);
             });
         }
+        onRouteChangeOff = $scope.$on('$locationChangeStart', routeChange);
     };
 
     $scope.create = function(from){
+
+        onRouteChangeOff();
+
         var newPersonData = {
             pname: $scope.person.pname,
             title: $scope.person.title,

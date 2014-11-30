@@ -1,13 +1,20 @@
 angular.module('app').controller('crCompanyCreateCtrl',
-        function($scope, $translate, $location, crNotifier, crCompanyFactory, crPersonFactory, crRootFactory, crIdentity, crAuth){
+        function($scope, $translate, $location, crNotifier, crCompanyFactory, crPersonFactory, crRootFactory, crIdentity, crAuth, crModalService){
 
     crRootFactory.setLanguageDir('company');
+    var onRouteChangeOff;
+
+    function routeChange(event, newUrl) {
+        crModalService.displayModal(event, newUrl, $scope.companyForm, onRouteChangeOff);
+    }
 
     $scope.init = function(){
         $scope.persons = crPersonFactory.getPeople();
+        onRouteChangeOff = $scope.$on('$locationChangeStart', routeChange);
     };
 
     $scope.create = function(fromModal){
+        onRouteChangeOff();
         var newCompanyData = {
             company_name: $scope.company.company_name,
             company_type: $scope.company.company_type,
