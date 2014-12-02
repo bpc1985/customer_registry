@@ -3,7 +3,7 @@ angular.module('app').service('crModalService', function($modal, $location){
         backdrop: true,
         keyboard: true,
         modalFade: true,
-        templateUrl: '/app/common/modal.html'
+        templateUrl: '/app/common/dialog_modal.html'
     };
 
     var modalOptions = {
