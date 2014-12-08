@@ -14,42 +14,46 @@ angular.module('app').controller('crCompanyCreateCtrl',
     };
 
     $scope.create = function(fromModal){
-        onRouteChangeOff();
-        var newCompanyData = {
-            company_name: $scope.company.company_name,
-            company_type: $scope.company.company_type,
-            company_code: $scope.company.company_code,
-            street: $scope.company.street,
-            city: $scope.company.city,
-            zip: $scope.company.zip,
-            phone: $scope.company.phone,
-            alt_phone: $scope.company.alt_phone,
-            fax: $scope.company.fax,
-            web_url: $scope.company.web_url,
-            email: $scope.company.email,
-            contact: $scope.company.contact,
-            user: crIdentity.currentUser.id,
-            userEmail: crIdentity.currentUser.email
-        };
+        $scope.$broadcast('showErrorsCheckValidity');
 
-        crCompanyFactory.createCompany(newCompanyData).then(function(newCompany){
-            var newUserData = {
-                email: crIdentity.currentUser.email,
-                firstName: crIdentity.currentUser.firstName,
-                lastName: crIdentity.currentUser.lastName,
-                company: newCompany.id
+        if ($scope.personForm.$valid) {
+            onRouteChangeOff();
+            var newCompanyData = {
+                company_name: $scope.company.company_name,
+                company_type: $scope.company.company_type,
+                company_code: $scope.company.company_code,
+                street: $scope.company.street,
+                city: $scope.company.city,
+                zip: $scope.company.zip,
+                phone: $scope.company.phone,
+                alt_phone: $scope.company.alt_phone,
+                fax: $scope.company.fax,
+                web_url: $scope.company.web_url,
+                email: $scope.company.email,
+                contact: $scope.company.contact,
+                user: crIdentity.currentUser.id,
+                userEmail: crIdentity.currentUser.email
             };
-            crAuth.updateCurrentUser(newUserData).then(function() {
-                crNotifier.notify($translate.instant('_new_company_has_been_created_'));
-                if(!fromModal){
-                    $location.path('/companies');
-                } else{
-                    $scope.$parent.company = newCompany;
-                }
+
+            crCompanyFactory.createCompany(newCompanyData).then(function(newCompany){
+                var newUserData = {
+                    email: crIdentity.currentUser.email,
+                    firstName: crIdentity.currentUser.firstName,
+                    lastName: crIdentity.currentUser.lastName,
+                    company: newCompany.id
+                };
+                crAuth.updateCurrentUser(newUserData).then(function() {
+                    crNotifier.notify($translate.instant('_new_company_has_been_created_'));
+                    if(!fromModal){
+                        $location.path('/companies');
+                    } else{
+                        $scope.$parent.company = newCompany;
+                    }
+                });
+            }, function(reason){
+                crNotifier.error(reason);
             });
-        }, function(reason){
-            crNotifier.error(reason);
-        });
+        }
     };
 
     $scope.init();

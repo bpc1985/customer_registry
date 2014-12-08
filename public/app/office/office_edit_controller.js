@@ -47,8 +47,10 @@ angular.module('app').controller('crOfficeEditCtrl',
     }
 
     $scope.update = function(){
-        onRouteChangeOff();
+        $scope.$broadcast('showErrorsCheckValidity');
+        
         if($scope.officeForm.$valid){
+            onRouteChangeOff();
             $scope.office.company = $scope.office.company.id;
 
             crOfficeFactory.updateOffice($scope.office).then(function(){

@@ -16,13 +16,17 @@ angular.module('app').controller('crCompanyEditCtrl',
     };
 
     $scope.update = function(){
-        onRouteChangeOff();
-        crCompanyFactory.updateCompany($scope.company).then(function(){
-            crNotifier.notify($translate.instant('_company_has_been_updated_'));
-            $location.path('/companies');
-        }, function(reason){
-            crNotifier.error(reason);
-        });;
+        $scope.$broadcast('showErrorsCheckValidity');
+
+        if ($scope.personForm.$valid) {
+            onRouteChangeOff();
+            crCompanyFactory.updateCompany($scope.company).then(function(){
+                crNotifier.notify($translate.instant('_company_has_been_updated_'));
+                $location.path('/companies');
+            }, function(reason){
+                crNotifier.error(reason);
+            });
+        }
     };
 
     $scope.init();

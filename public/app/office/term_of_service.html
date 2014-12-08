@@ -1,8 +1,8 @@
 <legend>{{'_accept_and_save_' | translate}}</legend>
-<div class="form-group">
+<div class="form-group" show-errors>
   <label for="office_show" class="col-md-2 control-label"></label>
   <div class="col-md-10">
-    <input name="office_show" type="checkbox" ng-model="office.show_office"/>
+    <input name="office_show" type="checkbox" required="required" ng-model="office.show_office"/>
     <span translate="{{'_show_office_on_ekukka_website_' | translate}}"></span>
   </div>
 

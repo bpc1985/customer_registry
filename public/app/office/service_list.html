@@ -1,4 +1,4 @@
-<div class="form-group required">
+<div class="form-group required" show-errors>
   <label for="office_services" class="col-md-2 control-label">{{'_services_' | translate}}</label>
   <div ng-show="services.length > 0" class="col-md-7">
     <div class="select2-container select2-container-multi form-control">
@@ -11,6 +11,7 @@
   </div>
   <div class="col-md-1">
     <button type="button" data-toggle="modal" data-target="#serviceModal" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>{{'_add_service_' | translate}}</button>
+    <p ng-if="services.length == 0" class="help-block">{{'_office_street_is_required_' | translate}}</p>
   </div>
 
   <div id="serviceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">

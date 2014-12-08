@@ -1,24 +1,25 @@
-<div ng-class="{ 'has-error': (personForm.personname | shouldDisplayError:personForm)}" class="form-group required">
+<div class="form-group required" show-errors>
   <label for="personname" class="col-md-2 control-label">{{ '_name_' | translate }}</label>
   <div class="col-md-10">
     <input name="personname" type="text" required="required" ng-model="$parent.person.pname" class="form-control"/>
-    <p ng-show="personForm.personname | shouldDisplayError:personForm" class="help-block">{{ '_person_name_field_is_required_' | translate}}</p>
+    <p class="help-block" ng-if="personForm.personname.$error.required">{{ '_person_name_field_is_required_' | translate}}</p>
   </div>
 </div>
 
-<div ng-class="{ 'has-error': (personForm.persontitle | shouldDisplayError:personForm)}" class="form-group required">
+<div class="form-group required" show-errors>
   <label for="persontitle" class="col-md-2 control-label">{{ '_title_' | translate }}</label>
   <div class="col-md-10">
     <input name="persontitle" type="text" required="required" ng-model="$parent.person.title" class="form-control"/>
-    <p ng-show="personForm.persontitle | shouldDisplayError:personForm" class="help-block">{{ '_person_title_field_is_required_' | translate }}</p>
+    <p class="help-block" ng-if="personForm.persontitle.$error.required">{{ '_person_title_field_is_required_' | translate }}</p>
   </div>
 </div>
 
-<div ng-class="{ 'has-error': (personForm.persontelephone | shouldDisplayError:personForm)}" class="form-group required">
+<div class="form-group required" show-errors>
   <label for="persontelephone" class="col-md-2 control-label">{{ '_person_telephone_' | translate }}</label>
   <div class="col-md-10">
     <input name="persontelephone" required="required" ng-model="$parent.person.telephone" ng-pattern="/^([0-9\(\)\/\+ \-]*)$/" class="form-control"/>
-    <p ng-show="personForm.persontelephone | shouldDisplayError:personForm" class="help-block">{{ '_person_telephone_field_is_required_' | translate }}</p>
+    <p class="help-block" ng-if="personForm.persontelephone.$error.required">{{ '_person_telephone_field_is_required_' | translate }}</p>
+    <p class="help-block" ng-if="personForm.persontelephone.$error.pattern">{{ '_person_telephone_field_is_not_number_' | translate }}</p>
   </div>
 </div>
 
@@ -50,18 +51,20 @@
   </div>
 </div>
 
-<div ng-class="{ 'has-error': (personForm.personemail | shouldDisplayError:personForm)}" class="form-group required">
+<div class="form-group required" show-errors>
   <label for="personemail" class="col-md-2 control-label">{{ '_email_' | translate }}</label>
   <div class="col-md-10">
     <input name="personemail" type="email" required="required" ng-model="$parent.person.email" class="form-control"/>
-    <p ng-show="personForm.personemail | shouldDisplayError:personForm" class="help-block">{{ '_person_email_field_is_required_' | translate}}</p>
+    <p class="help-block" ng-if="personForm.personemail.$error.required">{{ '_person_email_field_is_required_' | translate}}</p>
+    <p class="help-block" ng-if="personForm.personemail.$error.email">{{ '_person_email_field_is_invalid_' | translate}}</p>
   </div>
 </div>
 
-<div class="form-group required">
+<div class="form-group required" show-errors>
   <label for="personcompany" class="col-md-2 control-label">{{ '_company_' | translate }}</label>
   <div class="col-md-5">
     <input name="personcompany" readonly="readonly" type="text" ng-model="company.company_name" class="form-control"/>
     <input name="personcompanyid" type="text" ng-model="company.id" class="hidden form-control"/>
+    <p class="help-block" ng-if="personForm.personcompany.$error.required">{{ '_person_company_field_is_required_' | translate}}</p>
   </div>
 </div>

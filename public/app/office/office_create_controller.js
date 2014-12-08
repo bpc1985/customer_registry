@@ -50,8 +50,10 @@ angular.module('app').controller('crOfficeCreateCtrl',
     }
 
     $scope.create = function(){
-        onRouteChangeOff();
+        $scope.$broadcast('showErrorsCheckValidity');
+
         if($scope.officeForm.$valid){
+            onRouteChangeOff();
             $scope.office.company = $scope.company.id;
             $scope.office.open_times = {
                 'weekdays': $scope.weekdays,
@@ -64,8 +66,6 @@ angular.module('app').controller('crOfficeCreateCtrl',
             }, function(reason){
                 crNotifier.error(reason);
             });
-        } else {
-          crNotifier.error($translate.instant('_new_office_creation_failed_validation_'));
         }
     };
 

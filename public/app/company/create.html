@@ -1,6 +1,6 @@
 <div class="container">
   <div class="well">
-    <form name="companyForm" class="form-horizontal" ng-submit="create()">
+    <form name="companyForm" class="form-horizontal" ng-submit="create()" novalidate>
       <legend>{{ '_company_profile_' | translate }}</legend>
 
       <div ng-include="'/app/company/company_basic_form.html'"></div>
@@ -8,7 +8,7 @@
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
           <div class="pull-right">
-            <button type="submit" ng-disabled="companyForm.$invalid" class="btn btn-primary btn-submit">{{ '_submit_' | translate }}</button>
+            <button type="submit" class="btn btn-primary btn-submit">{{ '_submit_' | translate }}</button>
             <a href="/companies" class="btn btn-default">{{ '_cancel_' | translate }}</a>
           </div>
         </div>

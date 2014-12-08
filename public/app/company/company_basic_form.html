@@ -1,15 +1,15 @@
-<div ng-class="{ 'has-error': (companyForm.companyname | shouldDisplayError:companyForm)}" class="form-group required">
+<div class="form-group required" show-errors>
   <label for="companyname" class="col-md-2 control-label">{{ '_company_name_' | translate }}</label>
   <div class="col-md-10">
     <input name="companyname" type="text" required="required" ng-model="$parent.company.company_name" class="form-control"/>
-    <p ng-show="companyForm.companyname | shouldDisplayError:companyForm" class="help-block">{{ '_company_name_field_is_required_' | translate }}</p>
+    <p ng-if="companyForm.companyname.$error.required" class="help-block">{{ '_company_name_field_is_required_' | translate }}</p>
   </div>
 </div>
 
-<div ng-class="{ 'has-error': !company.company_type}" class="form-group required">
+<div class="form-group required" show-errors>
   <label for="companycode" class="col-md-2 control-label">{{ '_company_type_' | translate }}</label>
   <div class="col-md-5">
-    <select ng-model="$parent.company.company_type" class="form-control">
+    <select name="companytype" ng-model="$parent.company.company_type" class="form-control">
       <option value="TMI">{{ '_TMI_' | translate }}</option>
       <option value="KY">{{ '_KY_' | translate }}</option>
       <option value="AY">{{ '_AY_' | translate }}</option>
@@ -19,15 +19,17 @@
       <option value="Muu">{{ '_Muu_' | translate }}</option>
       <option value="YH">{{ '_YH_' | translate }}</option>
     </select>
+    <p ng-if="companyForm.companytype.$error.required" class="help-block">{{ '_company_type_field_is_required_' | translate }}</p>
   </div>
 </div>
 
-<div ng-class="{ 'has-error': (companyForm.companycode | shouldDisplayError:companyForm)}" class="form-group required">
+<div class="form-group required" show-errors>
   <label for="companycode" class="col-md-2 control-label">{{ '_company_code_' | translate }}</label>
   <div class="col-md-10">
     <input name="companycode" type="text" required="required" ng-maxlength="9" ng-pattern="/^[0-9]{7}-[0-9]{1}$/" ng-model="$parent.company.company_code" class="form-control"/>
     <p ng-html-bind = "'_company_code_help_link_' | translate"/>
-    <p ng-show="companyForm.companycode | shouldDisplayError:companyForm" class="help-block">{{ '_company_code_should_be_formatted_as_1234567-8_' | translate }}</p>
+    <p ng-if="companyForm.companycode.$error.required" class="help-block">{{ '_company_code_field_is_required_' | translate }}</p>
+    <p ng-if="companyForm.companycode.$error.pattern" class="help-block">{{ '_company_code_should_be_formatted_as_1234567-8_' | translate }}</p>
   </div>
 </div>
 
@@ -52,11 +54,11 @@
   </div>
 </div>
 
-<div ng-class="{ 'has-error': (companyForm.companyphone | shouldDisplayError:companyForm)}" class="form-group required">
+<div class="form-group required" show-errors>
   <label for="companyphone" class="col-md-2 control-label">{{ '_company_phone_' | translate }}</label>
   <div class="col-md-10">
     <input name="companyphone" type="text" required="required" ng-model="$parent.company.phone" class="form-control"/>
-    <p ng-show="companyForm.companyphone | shouldDisplayError:companyForm" class="help-block">{{ '_company_phone_field_is_required_' | translate }}</p>
+    <p ng-if="companyForm.companyphone.$error.required" class="help-block">{{ '_company_phone_field_is_required_' | translate }}</p>
   </div>
 </div>
 
@@ -81,11 +83,12 @@
   </div>
 </div>
 
-<div ng-class="{ 'has-error': (companyForm.companyemail | shouldDisplayError:companyForm)}" class="form-group required">
+<div class="form-group required" show-errors>
   <label for="companyemail" class="col-md-2 control-label">{{ '_email_' | translate }}</label>
   <div class="col-md-10">
     <input name="companyemail" type="email" required="required" ng-model="$parent.company.email" class="form-control"/>
-    <p ng-show="companyForm.companyemail | shouldDisplayError:companyForm" class="help-block">{{ '_company_email_field_is_required_' | translate }}</p>
+    <p ng-if="companyForm.companyemail.$error.required" class="help-block">{{ '_company_email_field_is_required_' | translate }}</p>
+    <p ng-if="companyForm.companyemail.$error.email" class="help-block">{{ '_company_email_field_is_invalid_' | translate }}</p>
   </div>
 </div>
 

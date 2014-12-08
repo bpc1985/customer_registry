@@ -19,36 +19,41 @@ angular.module('app').controller('crPersonCreateCtrl', function($scope, $transla
 
     $scope.create = function(from){
 
-        onRouteChangeOff();
+        $scope.$broadcast('showErrorsCheckValidity');
 
-        var newPersonData = {
-            pname: $scope.person.pname,
-            title: $scope.person.title,
-            telephone: $scope.person.telephone,
-            mobile: $scope.person.mobile,
-            street: $scope.person.street,
-            zipcode: $scope.person.zipcode,
-            city: $scope.person.city,
-            country: $scope.person.country,
-            email: $scope.person.email,
-            company: crIdentity.currentUser.company,
-            user: crIdentity.currentUser.id
-        };
+        if ($scope.personForm.$valid) {
 
-        crPersonFactory.createPerson(newPersonData).then(function(newPerson){
-            crNotifier.notify($translate.instant('_new_person_has_been_created_'));
-            if(from === 'modal-company'){
-                $scope.$parent.persons.push(newPerson);
-            }
-            else if(from === 'modal-office'){
-                $scope.$parent.office.contact_persons.push(newPerson);
-            }
-            else {
-                $location.path('/persons');
-            }
-        }, function(reason){
-            crNotifier.error(reason);
-        });
+            onRouteChangeOff();
+
+            var newPersonData = {
+                pname: $scope.person.pname,
+                title: $scope.person.title,
+                telephone: $scope.person.telephone,
+                mobile: $scope.person.mobile,
+                street: $scope.person.street,
+                zipcode: $scope.person.zipcode,
+                city: $scope.person.city,
+                country: $scope.person.country,
+                email: $scope.person.email,
+                company: crIdentity.currentUser.company,
+                user: crIdentity.currentUser.id
+            };
+
+            crPersonFactory.createPerson(newPersonData).then(function(newPerson){
+                crNotifier.notify($translate.instant('_new_person_has_been_created_'));
+                if(from === 'modal-company'){
+                    $scope.$parent.persons.push(newPerson);
+                }
+                else if(from === 'modal-office'){
+                    $scope.$parent.office.contact_persons.push(newPerson);
+                }
+                else {
+                    $location.path('/persons');
+                }
+            }, function(reason){
+                crNotifier.error(reason);
+            });
+        }
     };
 
     $scope.init();
