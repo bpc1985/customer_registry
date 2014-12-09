@@ -1,46 +1,52 @@
-
 <div class="container">
   <div class="well">
-    <form name="profileForm" class="form-horizontal">
+    <form name="profileForm" class="form-horizontal" novalidate>
       <legend>{{ '_user_profile_' | translate }}</legend>
+
       <div class="form-group required">
         <label for="email" class="col-md-2 control-label">{{ '_email_' | translate }}</label>
         <div class="col-md-10">
           <input name="email" type="email" disabled="disabled" placeholder="{{ '_email_' | translate }}" ng-model="email" required="required" class="form-control"/>
         </div>
       </div>
-      <div ng-class="{'has-error': (profileForm.fname | shouldDisplayError:profileForm)}" class="form-group required">
+
+      <div class="form-group required" show-errors>
         <label for="fname" class="col-md-2 control-label">{{ '_first_name_' | translate }}</label>
         <div class="col-md-10">
           <input name="fname" type="text" placeholder="{{ '_first_name_' | translate }}" ng-model="fname" required="required" class="form-control"/>
-          <p ng-show="profileForm.fname | shouldDisplayError:profileForm" class="help-block">{{ '_first_name_is_required_' | translate }}</p>
+          <p ng-if="profileForm.fname.$error.required" class="help-block">{{ '_first_name_is_required_' | translate }}</p>
         </div>
       </div>
-      <div ng-class="{'has-error': (profileForm.lname | shouldDisplayError:profileForm)}" class="form-group required">
+
+      <div class="form-group required" show-errors>
         <label for="lname" class="col-md-2 control-label">{{ '_last_name_' | translate }}</label>
         <div class="col-md-10">
           <input name="lname" type="text" placeholder="{{ '_last_name_' | translate }}" ng-model="lname" required="required" class="form-control"/>
-          <p ng-show="profileForm.lname | shouldDisplayError:profileForm" class="help-block">{{ '_last_name_is_required_' | translate }}</p>
+          <p ng-if="profileForm.lname.$error.required" class="help-block">{{ '_last_name_is_required_' | translate }}</p>
         </div>
       </div>
-      <div ng-class="{'has-error': (profileForm.password | shouldDisplayError:profileForm)}" class="form-group">
+
+      <div class="form-group" show-errors>
         <label for="password" class="col-md-2 control-label">{{ '_new_password_' | translate }}</label>
         <div class="col-md-10">
-          <input name="password" type="password" placeholder="{{ 'Password' | translate }}" ng-minlength="4" ng-model="password" class="form-control"/>
-          <p ng-show="profileForm.password | shouldDisplayError:profileForm" class="help-block">{{ '_password_should_have_at_least_4_characters_' | translate }}</p>
+          <input name="password" type="password" placeholder="{{ '_password_' | translate }}" ng-minlength="8" required="required" ng-model="password" class="form-control"/>
+          <p ng-if="profileForm.password.$error.required" class="help-block">{{ '_password_should_not_empty_' | translate }}</p>
+          <p ng-if="profileForm.password.$error.minlength" class="help-block">{{ '_password_should_have_at_least_8_characters_' | translate }}</p>
         </div>
       </div>
-      <div ng-class="{ 'has-error': password !== confirm_password}" class="form-group">
+
+      <div class="form-group" show-errors>
         <label for="confirm_password" class="col-md-2 control-label">{{ '_confirm_password_' | translate }}</label>
         <div class="col-md-10">
           <input name="confirm_password" type="password" placeholder="{{ '_confirm_password_' | translate }}" ng-model="confirm_password" class="form-control"/>
-          <p ng-show="password !== confirm_password" class="help-block">{{ '_confirmed_password_has_to_be_same_as_password_' | translate }}</p>
+          <p ng-if="password !== confirm_password" class="help-block">{{ '_confirmed_password_has_to_be_same_as_password_' | translate }}</p>
         </div>
       </div>
+
       <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
           <div class="pull-right">
-            <button ng-click="update()" ng-disabled="profileForm.$invalid || (password!==confirm_password)" class="btn btn-primary btn-submit">{{ '_submit_' | translate }}</button>
+            <button ng-click="update()" class="btn btn-primary btn-submit">{{ '_submit_' | translate }}</button>
             <a href="/" class="btn btn-default">{{ '_cancel_' | translate }}</a>
           </div>
         </div>

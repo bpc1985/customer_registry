@@ -4,20 +4,24 @@ angular.module('app').controller('crProfileCtrl', function($scope, crNotifier, c
     $scope.lname = crIdentity.currentUser.lastName;
 
     $scope.update = function(){
-        var newUserData = {
-            email: $scope.email,
-            firstName: $scope.fname,
-            lastName: $scope.lname
-        };
+        $scope.$broadcast('showErrorsCheckValidity');
 
-        if($scope.password && $scope.password.length > 0 && ($scope.password === $scope.confirm_password)) {
-            newUserData.password = $scope.password;
+        if ($scope.profileForm.$valid) {
+            var newUserData = {
+                email: $scope.email,
+                firstName: $scope.fname,
+                lastName: $scope.lname
+            };
+
+            if($scope.password && $scope.password.length > 0 && ($scope.password === $scope.confirm_password)) {
+                newUserData.password = $scope.password;
+            }
+
+            crAuth.updateCurrentUser(newUserData).then(function() {
+                crNotifier.notify('_your_user_account_has_been_updated_');
+            }, function(reason) {
+                crNotifier.error(reason);
+            });
         }
-
-        crAuth.updateCurrentUser(newUserData).then(function() {
-            crNotifier.notify('_your_user_account_has_been_updated_');
-        }, function(reason) {
-            crNotifier.error(reason);
-        })
     };
 });
